@@ -13,11 +13,11 @@ package a00892244.data;
  */
 
 public class Player {
-	private String id;
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String birthName;
+	private String birthDate;
 	
 	/**
 	 * 
@@ -31,29 +31,29 @@ public class Player {
 	 * @param firstName
 	 * @param lastName
 	 * @param email
-	 * @param birthName
+	 * @param birthDate
 	 */
-	public Player(String id, String firstName, String lastName, String email, String birthName) {
+	public Player(int id, String firstName, String lastName, String email, String birthDate) {
 		super();
 		setId(id);
 		setFirstName(firstName);
 		setLastName(lastName);
 		setEmail(email);
-		setBirthName(birthName);
+		setBirthDate(birthDate);
 	}
 
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id2 the id to set
 	 */
-	public void setId(String id) {
-		this.id = id;
+	public void setId(int id2) {
+		this.id = id2;
 	}
 
 	/**
@@ -101,17 +101,14 @@ public class Player {
 	/**
 	 * @return the birthName
 	 */
-	public String getBirthName() {
-		return birthName;
+	public String getBirthDate() {
+		return birthDate;
 	}
 
 	/**
 	 * @param birthName the birthName to set
 	 */
-	public void setBirthName(String birthName) {
-		this.birthName = birthName;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
-	
-	
-
 }
