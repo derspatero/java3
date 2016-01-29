@@ -10,6 +10,8 @@ package a00892244.utils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import a00892244.utils.ApplicationException;
+
 /**
  * @author Edward Lambke, A00892244
  *
@@ -30,13 +32,13 @@ public class Validator {
 	 * 
 	 * @param emailAddress
 	 * @return
+	 * @throws ApplicationException
 	 */
-	public String validateEmail(String emailAddress) {
-		if (emailAddress.matches(EMAIL_REGEX)) {
-			return emailAddress;
-		} else {
-			return "N/A";
+	public String validateEmail(String emailAddress) throws ApplicationException {
+		if (!emailAddress.matches(EMAIL_REGEX)) {
+			throw new ApplicationException("'" + emailAddress + "' is an invalid email address");
 		}
+		return emailAddress;
 	}
 
 	/**
@@ -46,13 +48,15 @@ public class Validator {
 	 */
 	public void validateInputString(String[] arg) throws ApplicationException {
 		if (arg.length < 1) {
-			throw new ApplicationException("Invalid argument String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
+			throw new ApplicationException(
+					"Invalid argument String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
 		}
 
 		String inputString = arg[0];
 
 		if (inputString.split(":").length < 1) {
-			throw new ApplicationException("Invalid argument String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
+			throw new ApplicationException(
+					"Invalid argument String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
 		}
 	}
 
@@ -66,15 +70,15 @@ public class Validator {
 			throw new ApplicationException("Invalid argument String.  Expected 6 elements but got " + playerString.split("\\|").length);
 		}
 	}
-	
+
 	/**
 	 * 
 	 * @param dateString
 	 * @return
 	 */
-	public LocalDate validateBirthdate(String dateString) throws ApplicationException{
+	public LocalDate validateBirthdate(String dateString) throws ApplicationException {
 		try {
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");	
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 			LocalDate bdate = LocalDate.parse(dateString, formatter);
 			return bdate;
 		} catch (Exception e) {

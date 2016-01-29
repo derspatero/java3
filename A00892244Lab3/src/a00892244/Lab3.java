@@ -40,7 +40,6 @@ public class Lab3 {
 			playerReport.printReport(players);
 
 		} catch (ApplicationException e) {
-			System.out.println("Usage java -jar A00123456Lab2.jar <input string>");
 			System.out.println(e.getMessage());
 			System.exit(-1);
 		}

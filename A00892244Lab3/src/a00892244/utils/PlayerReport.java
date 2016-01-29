@@ -33,6 +33,8 @@ public class PlayerReport {
 	 * @param players
 	 *            ArrayList of Players will be formated and displayed
 	 */
+
+	@SuppressWarnings("deprecation")
 	public void printReport(ArrayList<Player> players) {
 		LocalDateTime startDate = LocalDateTime.now();
 		System.out.println(startDate);
@@ -50,10 +52,10 @@ public class PlayerReport {
 			count++;
 		}
 		LocalDateTime endDate = LocalDateTime.now();
-		int timeDelta = endDate.getNano()/1000000 - startDate.getNano()/1000000;
+		int timeDelta = endDate.getNano() / 1000000 - startDate.getNano() / 1000000;
 		System.out.println(endDate);
 		System.out.format("Duration: %s ms\n", timeDelta);
-		
+
 	}
 
 }

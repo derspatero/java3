@@ -12,6 +12,7 @@ package a00892244.utils;
  *
  */
 
+@SuppressWarnings("serial")
 public class ApplicationException extends Exception {
 
 	/**
@@ -44,8 +45,8 @@ public class ApplicationException extends Exception {
 	public ApplicationException(String arg0, Throwable arg1) {
 		super(arg0, arg1);
 		// TODO Auto-generated constructor stub
-			}
-	
+	}
+
 	/**
 	 * @param arg0
 	 * @param arg1
@@ -56,6 +57,5 @@ public class ApplicationException extends Exception {
 		super(arg0, arg1, arg2, arg3);
 		// TODO Auto-generated constructor stub
 	}
-
 
 }
