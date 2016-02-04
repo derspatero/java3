@@ -14,7 +14,7 @@ import java.time.LocalDate;
  *
  */
 
-public class Player implements Comparable<Player> {
+public class Player {
 	private int identifier;
 	private String firstName;
 	private String lastName;
@@ -153,17 +153,6 @@ public class Player implements Comparable<Player> {
 	@Override
 	public String toString() {
 		return "Player [identifier=" + identifier + ", firstName=" + firstName + ", lastName=" + lastName + ", emailAddress=" + emailAddress + ", gamerTag=" + gamerTag + "]";
-	}
-
-	@Override
-	public int compareTo(Player player) {
-		if (player.getBirthdate().isAfter(this.getBirthdate())){
-		return -1;
-		}
-		if (player.getBirthdate().isBefore(this.getBirthdate())){
-			return 1;
-		}
-		return 0;
 	}
 
 }

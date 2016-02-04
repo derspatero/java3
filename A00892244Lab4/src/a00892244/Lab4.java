@@ -43,8 +43,12 @@ public class Lab4 {
 				players.add(playerReader.getNextPlayer());
 			}
 			
-			players = CompareByBirthdate.sortByBirthdate(players);
-
+			players = CompareByBirthdate.sortByBirthdateAscending(players);
+			System.out.println("Sort by Birthdate (Ascending)");
+			playerReport.printReport(players);
+			
+			players = CompareByBirthdate.sortByBirthdateDescending(players);
+			System.out.println("\n\nSort by Birthdate (Descending)");
 			playerReport.printReport(players);
 			
 			LocalDateTime endDate = LocalDateTime.now();
