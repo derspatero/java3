@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab4
+ * Project: A00892244Lab5
  * File: Player.java
- * Date: Jan 27, 2016
+ * Date: Feb 16, 2016
  * Time: 10:33:00 AM
  */
 

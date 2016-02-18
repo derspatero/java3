@@ -1,11 +1,12 @@
 /**
- * Project: A00892244Lab4
+ * Project: A00892244Lab5
  * File: PlayerReader.java
- * Date: Jan 27, 2016
+ * Date: Feb16, 2016
  * Time: 10:08:53 AM
  */
 
 package a00892244.utils;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -41,10 +42,10 @@ public class PlayerReader {
 		try {
 			scanner = new Scanner(new File(inputFile));
 		} catch (FileNotFoundException e) {
-			throw new ApplicationException("File error");
+			throw new ApplicationException(e.getMessage());
 		}
 		// Close the input stream
-		
+
 		validator = new Validator();
 		this.playerStrings = new ArrayList<String>();
 
@@ -53,7 +54,7 @@ public class PlayerReader {
 			validator.validatePlayerString(player);
 			this.playerStrings.add(player);
 		}
-	
+
 		if (scanner != null) {
 			try {
 				scanner.close();

@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab4
+ * Project: A00892244Lab5
  * File: Validator.java
- * Date: Jan 27, 2016
+ * Date: Feb 16, 2016
  * Time: 10:09:08 AM
  */
 
@@ -49,14 +49,14 @@ public class Validator {
 	public void validateInputString(String arg) throws ApplicationException {
 		if (arg.length() < 1) {
 			throw new ApplicationException(
-					"Invalid argument String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
+					"Invalid Player String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
 		}
 
 		String inputString = arg;
 
 		if (inputString.split(":").length < 1) {
 			throw new ApplicationException(
-					"Invalid argument String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
+					"Invalid Player String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
 		}
 	}
 
@@ -67,7 +67,7 @@ public class Validator {
 	 */
 	public void validatePlayerString(String playerString) throws ApplicationException {
 		if (playerString.split("\\|").length != 6) {
-			throw new ApplicationException("Invalid argument String.  Expected 6 elements but got " + playerString.split("\\|").length);
+			throw new ApplicationException("Invalid Player String.  Expected 6 elements but got " + playerString.split("\\|").length);
 		}
 	}
 

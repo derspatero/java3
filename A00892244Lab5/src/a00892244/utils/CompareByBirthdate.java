@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab4
+ * Project: A00892244Lab5
  * File: CompareByBirthdate.java
- * Date: Feb 2, 2016
+ * Date: Feb 16, 2016
  * Time: 4:17:31 PM
  */
 

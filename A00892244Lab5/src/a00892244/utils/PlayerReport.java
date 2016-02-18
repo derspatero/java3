@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab4
+ * Project: A00892244Lab5
  * File: PlayerReport.java
- * Date: Jan 27, 2016
+ * Date: Feb 16, 2016
  * Time: 10:08:17 AM
  */
 
@@ -24,6 +24,7 @@ import a00892244.data.Player;
 
 public class PlayerReport {
 	Formatter output = null;
+
 	/**
 	 *  
 	 * 
@@ -31,6 +32,7 @@ public class PlayerReport {
 	public PlayerReport() {
 
 	}
+
 	/**
 	 * 
 	 * @param players
@@ -54,29 +56,27 @@ public class PlayerReport {
 			count++;
 		}
 
-
 	}
 
 	/**
 	 * 
 	 * @param players
 	 *            ArrayList of Players will be formated and displayed
-	 * @param startDate 
-	 * @param string 
+	 * @param startDate
+	 * @param fileName
+	 * @param string
 	 */
 
 	@SuppressWarnings("deprecation")
-	public void writeReport(List<Player> players, String title, LocalDateTime startDate) throws ApplicationException {
+	public void writeReport(List<Player> players, String title, LocalDateTime startDate, String fileName) throws ApplicationException {
 		try {
-			output = new Formatter("C:\\Users\\elambke\\Desktop\\comp2613\\players_report.txt");
+			output = new Formatter(fileName);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			throw new ApplicationException("File error");
+			throw new ApplicationException(e.getMessage());
 		}
-		
+
 		output.format("%s\n", title);
-		
+
 		output.format("Players Report\n");
 		output.format("---------------------------------------------------------------------------------------------------------------\n");
 		output.format("  #. ID     First name      Last name       Email                         Gamertag            Birthdate\n");
@@ -92,12 +92,14 @@ public class PlayerReport {
 		}
 		LocalDateTime endDate = LocalDateTime.now();
 		long timeDelta = startDate.until(endDate, ChronoUnit.MILLIS);
-		output.format("%s\nDuration: %s ms\n",endDate, timeDelta);
+		output.format("%s\nDuration: %s ms\n", endDate, timeDelta);
 
 		if (output != null) {
 			try {
 				output.close();
-			} catch (Exception e) {}
+			} catch (Exception e) {
+				throw new ApplicationException(e.getMessage());
+			}
 		}
 
 	}
