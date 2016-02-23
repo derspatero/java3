@@ -14,7 +14,7 @@ package a00892244.data;
 
 public class Score {
 
-	private String personaId;
+	private int personaId;
 	private String gameId;
 	private String win;
 	
@@ -30,7 +30,7 @@ public class Score {
 	 * @param gameId
 	 * @param win
 	 */
-	public Score(String personaId, String gameId, String win) {
+	public Score(int personaId, String gameId, String win) {
 		super();
 		setPersonaId(personaId);
 		setGameId(gameId);
@@ -40,14 +40,14 @@ public class Score {
 	/**
 	 * @return the personaId
 	 */
-	public String getPersonaId() {
+	public int getPersonaId() {
 		return personaId;
 	}
 
 	/**
 	 * @param personaId the personaId to set
 	 */
-	public void setPersonaId(String personaId) {
+	public void setPersonaId(int personaId) {
 		this.personaId = personaId;
 	}
 
@@ -78,6 +78,16 @@ public class Score {
 	public void setWin(String win) {
 		this.win = win;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Score [personaId=" + personaId + ", gameId=" + gameId + ", win=" + win + "]";
+	}
+
+
 	
 	
 	

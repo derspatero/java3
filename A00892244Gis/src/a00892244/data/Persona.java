@@ -13,8 +13,8 @@ package a00892244.data;
  */
 
 public class Persona {
-	private String id;
-	private String playerId;
+	private int id;
+	private int playerId;
 	private String gamerTag;
 	private String platform;
 
@@ -32,7 +32,7 @@ public class Persona {
 	 * @param gamerTag
 	 * @param platform
 	 */
-	public Persona(String id, String playerId, String gamerTag, String platform) {
+	public Persona(int id, int playerId, String gamerTag, String platform) {
 		setId(id);
 		setPlayerId(playerId);
 		setGamerTag(gamerTag);
@@ -42,28 +42,28 @@ public class Persona {
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
 	/**
 	 * @return the playerId
 	 */
-	public String getPlayerId() {
+	public int getPlayerId() {
 		return playerId;
 	}
 
 	/**
 	 * @param playerId the playerId to set
 	 */
-	public void setPlayerId(String playerId) {
+	public void setPlayerId(int playerId) {
 		this.playerId = playerId;
 	}
 
@@ -93,6 +93,14 @@ public class Persona {
 	 */
 	public void setPlatform(String platform) {
 		this.platform = platform;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Persona [id=" + id + ", playerId=" + playerId + ", gamerTag=" + gamerTag + ", platform=" + platform + "]";
 	}
 	
 	

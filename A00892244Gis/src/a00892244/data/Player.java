@@ -1,11 +1,13 @@
 /**
- * Project: A00892244Gis
+ * Project: A00892244Lab5
  * File: Player.java
- * Date: Jan 13, 2016
- * Time: 11:30:10 AM
+ * Date: Feb 16, 2016
+ * Time: 10:33:00 AM
  */
 
 package a00892244.data;
+
+import java.time.LocalDate;
 
 /**
  * @author Edward Lambke, A00892244
@@ -13,47 +15,58 @@ package a00892244.data;
  */
 
 public class Player {
-	private int id;
+	private int identifier;
 	private String firstName;
 	private String lastName;
-	private String email;
-	private String birthDate;
-	
+	private String emailAddress;
+	private LocalDate birthdate;
+
 	/**
-	 * 
+	 * default constructor
 	 */
 	public Player() {
-		
+
 	}
 
 	/**
-	 * @param id
+	 * @param identifier
 	 * @param firstName
 	 * @param lastName
-	 * @param email
-	 * @param birthDate
+	 * @param emailAddress
+	 * @param gamerTag
 	 */
-	public Player(int id, String firstName, String lastName, String email, String birthDate) {
-		super();
-		setId(id);
+	public Player(int identifier, String firstName, String lastName, String emailAddress, LocalDate birthdate) {
+		setIdentifier(identifier);
 		setFirstName(firstName);
 		setLastName(lastName);
-		setEmail(email);
-		setBirthDate(birthDate);
+		setEmailAddress(emailAddress);
+		setBirthdate(birthdate);
 	}
 
 	/**
-	 * @return the id
+	 * @return the identifier
 	 */
-	public int getId() {
-		return id;
+	public int getIdentifier() {
+		return identifier;
+	}
+
+	@Deprecated
+	public String getFormatedIdentifier() {
+		String id = identifier + "";
+		StringBuilder formatedId = new StringBuilder();
+		for (int i = 6; i > id.length(); --i) {
+			formatedId.append("0");
+		}
+		formatedId.append(id);
+		return formatedId.toString();
 	}
 
 	/**
-	 * @param id2 the id to set
+	 * @param identifier
+	 *            the identifier to set
 	 */
-	public void setId(int id2) {
-		this.id = id2;
+	public void setIdentifier(int identifier) {
+		this.identifier = identifier;
 	}
 
 	/**
@@ -64,7 +77,8 @@ public class Player {
 	}
 
 	/**
-	 * @param firstName the firstName to set
+	 * @param firstName
+	 *            the firstName to set
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -78,37 +92,52 @@ public class Player {
 	}
 
 	/**
-	 * @param lastName the lastName to set
+	 * @param lastName
+	 *            the lastName to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
 	/**
-	 * @return the email
+	 * @return the emailAddress
 	 */
-	public String getEmail() {
-		return email;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
 
 	/**
-	 * @param email the email to set
+	 * @param emailAddress
+	 *            the emailAddress to set
 	 */
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+
+	/**
+	 * @return the birthdate
+	 */
+	public LocalDate getBirthdate() {
+		return birthdate;
 	}
 
 	/**
-	 * @return the birthName
+	 * @param birthdate
+	 *            the birthdate to set
 	 */
-	public String getBirthDate() {
-		return birthDate;
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
 	}
 
-	/**
-	 * @param birthName the birthName to set
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
 	 */
-	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+	@Override
+	public String toString() {
+		return "Player [identifier=" + identifier + ", firstName=" + firstName + ", lastName=" + lastName + ", emailAddress=" + emailAddress + ", birthdate=" + birthdate + "]";
 	}
+
+
+
 }

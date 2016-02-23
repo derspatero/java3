@@ -77,6 +77,14 @@ public class Game {
 	public void setProducer(String producer) {
 		this.producer = producer;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Game [id=" + id + ", name=" + name + ", producer=" + producer + "]";
+	}
 	
 	
 	

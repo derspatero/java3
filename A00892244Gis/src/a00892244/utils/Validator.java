@@ -1,11 +1,16 @@
 /**
- * Project: A00892244Lab2
+ * Project: A00892244Lab5
  * File: Validator.java
- * Date: Jan 19, 2016
+ * Date: Feb 16, 2016
  * Time: 10:09:08 AM
  */
 
 package a00892244.utils;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+import a00892244.utils.ApplicationException;
 
 /**
  * @author Edward Lambke, A00892244
@@ -27,13 +32,13 @@ public class Validator {
 	 * 
 	 * @param emailAddress
 	 * @return
+	 * @throws ApplicationException
 	 */
-	public String validateEmail(String emailAddress) {
-		if (emailAddress.matches(EMAIL_REGEX)) {
-			return emailAddress;
-		} else {
-			return "N/A";
+	public String validateEmail(String emailAddress) throws ApplicationException {
+		if (!emailAddress.matches(EMAIL_REGEX)) {
+			throw new ApplicationException("'" + emailAddress + "' is an invalid email address");
 		}
+		return emailAddress;
 	}
 
 	/**
@@ -41,15 +46,17 @@ public class Validator {
 	 * @param arg
 	 * @throws Exception
 	 */
-	public void validateInputString(String[] arg) throws Exception {
-		if (arg.length < 1) {
-			throw new Exception("Invalid argument String.");
+	public void validateInputString(String arg) throws ApplicationException {
+		if (arg.length() < 1) {
+			throw new ApplicationException(
+					"Invalid Player String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
 		}
 
-		String inputString = arg[0];
+		String inputString = arg;
 
 		if (inputString.split(":").length < 1) {
-			throw new Exception("Invalid argument String.");
+			throw new ApplicationException(
+					"Invalid Player String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
 		}
 	}
 
@@ -58,27 +65,24 @@ public class Validator {
 	 * @param playerString
 	 * @throws Exception
 	 */
-	public void validatePlayerString(String playerString) throws Exception {
+	public void validatePlayerString(String playerString) throws ApplicationException {
 		if (playerString.split("\\|").length != 5) {
-			throw new Exception("Invalid argument String.  Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
+			throw new ApplicationException("Invalid Player String.  Expected 5 elements but got " + playerString.split("\\|").length);
 		}
 	}
-	
-	public void validatePersonaString(String personaString) throws Exception {
-		if (personaString.split("\\|").length != 4) {
-			throw new Exception("Invalid argument String.  Must be \"<ID_1>\\|<PLAYER_ID_1>\\|<GAMERTAG_1>\\|<PLATFORM>:<ID_2>\\|<PLAYER_ID_2>\\|<GAMERTAG_2>\\|<PLATFORM_2>...");
-		}
-	}
-	
-	public void validateGameString(String gameString) throws Exception {
-		if (gameString.split("\\|").length != 4) {
-			throw new Exception("Invalid argument String.  Must be \"<ID_1>\\|<PLAYER_ID_1>\\|<PRODUCER_1>:<ID_2>\\|<PLAYER_ID_2>\\|<PRODUCER_2>...");
-		}
-	}
-	
-	public void validateScoreString(String scoreString) throws Exception {
-		if (scoreString.split("\\|").length != 3) {
-			throw new Exception("Invalid argument String.  Must be \"<PERSONA_ID_1>\\|<GAME_ID_1>\\|<WIN_1>:<PERSONA_ID_2>\\|<GAME_ID_2>\\|<WIN_2>...");
+
+	/**
+	 * 
+	 * @param dateString
+	 * @return
+	 */
+	public LocalDate validateBirthdate(String dateString) throws ApplicationException {
+		try {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+			LocalDate bdate = LocalDate.parse(dateString, formatter);
+			return bdate;
+		} catch (Exception e) {
+			throw new ApplicationException("Birthdate needs to be in the format yyyyMMdd");
 		}
 	}
 }

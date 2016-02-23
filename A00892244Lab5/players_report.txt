@@ -10,5 +10,5 @@ Players Report
   2. 000002 Laurie          Nash            laurieeenash@gmail.com        Mazzzap             Sat Aug 28 1982 
   3. 000001 Fred            Fish            fredfish@gamer.net            Ithroeann           Tue Mar 22 1977 
   4. 000003 Conrad          Washington      fredfish@gamer.net            Crayonbreath        Wed Jul 12 1972 
-2016-02-17T21:40:25.465
-Duration: 67 ms
+2016-02-22T20:20:33.440
+Duration: 55 ms
