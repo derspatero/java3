@@ -28,6 +28,12 @@ public class Game {
 		scores = new ArrayList<Score>();
 	}
 
+	public Game(Game sourceGame) {
+		setId(sourceGame.getId());
+		setName(sourceGame.getName());
+		setProducer(sourceGame.getWinLossRatio());
+		scores = new ArrayList<Score>();
+	}
 	/**
 	 * 
 	 * @param id
