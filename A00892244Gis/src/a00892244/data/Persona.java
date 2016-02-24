@@ -7,6 +7,11 @@
 
 package a00892244.data;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author Edward Lambke, A00892244
  *
@@ -17,14 +22,15 @@ public class Persona {
 	private int playerId;
 	private String gamerTag;
 	private String platform;
+	private Map<String, Game> games;
 
 	/**
 	 * 
 	 */
 	public Persona() {
-		
+		games = new HashMap<String, Game>();
 	}
-	
+
 	/**
 	 * 
 	 * @param id
@@ -37,6 +43,7 @@ public class Persona {
 		setPlayerId(playerId);
 		setGamerTag(gamerTag);
 		setPlatform(platform);
+		games = new HashMap<String, Game>();
 	}
 
 	/**
@@ -47,7 +54,8 @@ public class Persona {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -61,7 +69,8 @@ public class Persona {
 	}
 
 	/**
-	 * @param playerId the playerId to set
+	 * @param playerId
+	 *            the playerId to set
 	 */
 	public void setPlayerId(int playerId) {
 		this.playerId = playerId;
@@ -75,7 +84,8 @@ public class Persona {
 	}
 
 	/**
-	 * @param gamerTag the gamerTag to set
+	 * @param gamerTag
+	 *            the gamerTag to set
 	 */
 	public void setGamerTag(String gamerTag) {
 		this.gamerTag = gamerTag;
@@ -89,10 +99,27 @@ public class Persona {
 	}
 
 	/**
-	 * @param platform the platform to set
+	 * @param platform
+	 *            the platform to set
 	 */
 	public void setPlatform(String platform) {
 		this.platform = platform;
+	}
+
+	/**
+	 * 
+	 * @param game
+	 */
+	public void addGame(Game game){
+		games.put(game.getId(), game);
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Map<String, Game> getGames(){
+		return games;
 	}
 
 	/* (non-Javadoc)
@@ -100,8 +127,15 @@ public class Persona {
 	 */
 	@Override
 	public String toString() {
-		return "Persona [id=" + id + ", playerId=" + playerId + ", gamerTag=" + gamerTag + ", platform=" + platform + "]";
+		return "Persona [id=" + id + ", playerId=" + playerId + ", gamerTag=" + gamerTag + ", platform=" + platform + ", games=" + games + "]";
 	}
+
+
+
+
+
+
+
 	
 	
 	

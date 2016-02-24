@@ -17,6 +17,7 @@ public class Score {
 	private int personaId;
 	private String gameId;
 	private String win;
+
 	
 	/**
 	 * 
@@ -88,6 +89,7 @@ public class Score {
 	}
 
 
+	
 	
 	
 	

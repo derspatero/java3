@@ -7,6 +7,9 @@
 
 package a00892244.data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Edward Lambke, A00892244
  *
@@ -16,24 +19,26 @@ public class Game {
 	private String id;
 	private String name;
 	private String producer;
+	private List<Score> scores;
 
 	/**
 	 * 
 	 */
 	public Game() {
-		
+		scores = new ArrayList<Score>();
 	}
-	
+
 	/**
 	 * 
 	 * @param id
 	 * @param name
 	 * @param producer
 	 */
-	public Game(String id, String name, String producer){
+	public Game(String id, String name, String producer) {
 		setId(id);
 		setName(name);
 		setProducer(producer);
+		scores = new ArrayList<Score>();
 	}
 
 	/**
@@ -44,7 +49,8 @@ public class Game {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -58,7 +64,8 @@ public class Game {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -72,10 +79,27 @@ public class Game {
 	}
 
 	/**
-	 * @param producer the producer to set
+	 * @param producer
+	 *            the producer to set
 	 */
 	public void setProducer(String producer) {
 		this.producer = producer;
+	}
+
+	/**
+	 * 
+	 * @param score
+	 */
+	public void addScore(Score score) {
+		scores.add(score);
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public List<Score> getScores() {
+		return scores;
 	}
 
 	/* (non-Javadoc)
@@ -83,9 +107,26 @@ public class Game {
 	 */
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", producer=" + producer + "]";
+		return "Game [id=" + id + ", name=" + name + ", producer=" + producer + ", scores=" + scores + "]";
 	}
 	
-	
-	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getWinLossRatio() {
+		int winTotal = 0;
+		int lossTotal = 0;
+		
+		for (Score score : scores){
+			if (score.getWin().equals("WIN")){
+				winTotal++;
+			}
+			else {
+				lossTotal++;
+			}
+		}
+		return winTotal + ":" + lossTotal;
+	}
+
 }
