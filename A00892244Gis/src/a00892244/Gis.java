@@ -58,7 +58,7 @@ public class Gis {
 
 			readData();
 			analyseData();
-//			reportData();
+			reportData();
 
 			LocalDateTime startDate = LocalDateTime.now();
 
@@ -135,39 +135,31 @@ public class Gis {
 			LOG.warn(score.toString() + " goes to " + persona.toString());
 			if (!persona.getGames().containsKey(score.getGameId())) {
 
-				persona.addGame(games.get(score.getGameId()));
+				persona.addGame(new Game(games.get(score.getGameId()).getId(), games.get(score.getGameId()).getName(), games.get(score.getGameId()).getProducer()));
 			}
 
 			game = persona.getGames().get(score.getGameId());
 
-			LOG.warn("GAMES MUTHAFUCKA: " + games.toString());
 			game.addScore(score);
-			LOG.warn("There it is: " + games.toString());
-			persona.addGame(game);
-			personas.put(persona.getId(), persona);
+			// persona.addGame(game);
+			// personas.put(persona.getId(), persona);
 			LOG.info("Added Game " + game.toString() + " to persona id " + persona.getId());
 
 		}
-		
-		LOG.info("FUCK");
-		LOG.info("FUCK");
-		LOG.info("FUCK");
-		LOG.info("FUCK");
-		LOG.info(personas.get(1).getGames().toString());
 
-//		for (int key : personas.keySet()) {
-//			Player player = players.get(personas.get(key).getPlayerId());
-//			player.addPersona(personas.get(key));
-//			players.put(player.getIdentifier(), player);
-//			LOG.info("Added Persona " + personas.get(key) + " to player id " + player.getIdentifier());
-//		}
-//
-//		LOG.info(players.toString());
+		for (int key : personas.keySet()) {
+			Player player = players.get(personas.get(key).getPlayerId());
+			player.addPersona(personas.get(key));
+			players.put(player.getIdentifier(), player);
+			LOG.info("Added Persona " + personas.get(key) + " to player id " + player.getIdentifier());
+		}
+
+		LOG.info(players.toString());
 
 	}
 
 	private static void reportData() {
-		LOG.info("Win:Loss = " + players.get(1).getPersona(3).getGames().get("CODE").getWinLossRatio());
+		// LOG.info("Win:Loss = " + players.get(1).getPersona(3).getGames().get("CODE").getWinLossRatio());
 
 		System.out.println("Players Report");
 		System.out.println("---------------------------------------------------------------------------------------------------------------");
@@ -180,13 +172,13 @@ public class Gis {
 
 			for (int personaKey : player.getPersonas().keySet()) {
 				Persona persona = player.getPersona(personaKey);
-				for (String gameKey : persona.getGames().keySet()){
+				for (String gameKey : persona.getGames().keySet()) {
 					Game game = persona.getGames().get(gameKey);
 					System.out.format("%-10s %-20s %-20s%-30s\n", game.getWinLossRatio(), game.getName(), persona.getGamerTag(), persona.getPlatform());
 
 				}
 
-		}
+			}
 		}
 
 	}
