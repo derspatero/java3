@@ -1,8 +1,8 @@
 /**
- * Project: A00892244Lab5
- * File: PlayerReader.java
- * Date: Feb16, 2016
- * Time: 10:08:53 AM
+ * Project: A00892244Gis
+ * File: ScoreReader.java
+ * Date: Feb22, 2016
+ * Time: 10:08:53 PM
  */
 
 package a00892244.io;
@@ -16,7 +16,7 @@ import a00892244.utils.Validator;
  *
  */
 
-public class ScoreReader extends AbstractDataReader{
+public class ScoreReader extends AbstractDataReader {
 	Validator validator;
 
 	/**
@@ -28,8 +28,8 @@ public class ScoreReader extends AbstractDataReader{
 
 	/**
 	 * 
-	 * @param inputString
-	 * @throws Exception
+	 * @param inputFile
+	 * @throws ApplicationException
 	 */
 	public ScoreReader(String inputFile) throws ApplicationException {
 		super(inputFile);
@@ -55,7 +55,5 @@ public class ScoreReader extends AbstractDataReader{
 		newScore.setWin(playerAttributes[2]);
 		return newScore;
 	}
-
-
 
 }

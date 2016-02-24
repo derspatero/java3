@@ -1,8 +1,8 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Gis
  * File: PlayerReader.java
- * Date: Feb16, 2016
- * Time: 10:08:53 AM
+ * Date: Feb22, 2016
+ * Time: 10:08:53 PM
  */
 
 package a00892244.io;
@@ -28,13 +28,13 @@ public class PlayerReader extends AbstractDataReader {
 
 	/**
 	 * 
-	 * @param inputString
-	 * @throws Exception
+	 * @param inputFile
+	 * @throws ApplicationException
 	 */
 	public PlayerReader(String inputFile) throws ApplicationException {
 		super(inputFile);
 		validator = new Validator();
-		if(!getNextDataString().equals("ID|FIRST_NAME|LAST_NAME|EMAIL|BIRTHDATE")) {
+		if (!getNextDataString().equals("ID|FIRST_NAME|LAST_NAME|EMAIL|BIRTHDATE")) {
 			throw new ApplicationException("Missing file header.  Expecting \"ID|FIRST_NAME|LAST_NAME|EMAIL|BIRTHDATE\"");
 		}
 
@@ -56,7 +56,5 @@ public class PlayerReader extends AbstractDataReader {
 		newPlayer.setBirthdate(validator.validateBirthdate(playerAttributes[4]));
 		return newPlayer;
 	}
-
-
 
 }

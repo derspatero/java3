@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Gis
  * File: CompareByBirthdate.java
  * Date: Feb 16, 2016
  * Time: 4:17:31 PM

@@ -1,8 +1,8 @@
 /**
- * Project: A00892244Lab5
- * File: PlayerReader.java
- * Date: Feb16, 2016
- * Time: 10:08:53 AM
+ * Project: A00892244Gis
+ * File: AbstractDataReader.java
+ * Date: Feb22, 2016
+ * Time: 10:08:53 PM
  */
 
 package a00892244.io;
@@ -34,8 +34,8 @@ public abstract class AbstractDataReader {
 
 	/**
 	 * 
-	 * @param inputString
-	 * @throws Exception
+	 * @param inputFile
+	 * @throws ApplicationException
 	 */
 	public AbstractDataReader(String inputFile) throws ApplicationException {
 		Scanner scanner;
@@ -65,8 +65,6 @@ public abstract class AbstractDataReader {
 		}
 
 	}
-
-
 
 	/**
 	 * 

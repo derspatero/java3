@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Gis
  * File: Player.java
  * Date: Feb 16, 2016
  * Time: 10:33:00 AM

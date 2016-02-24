@@ -1,8 +1,8 @@
 /**
- * Project: A00892244Lab5
- * File: PlayerReader.java
- * Date: Feb16, 2016
- * Time: 10:08:53 AM
+ * Project: A00892244Gis
+ * File: AbstractDatReader.java
+ * Date: Feb22, 2016
+ * Time: 10:08:53 PM
  */
 
 package a00892244.io;
@@ -11,13 +11,12 @@ import a00892244.data.Game;
 import a00892244.utils.ApplicationException;
 import a00892244.utils.Validator;
 
-
 /**
  * @author Edward Lambke, A00892244
  *
  */
 
-public class GameReader extends AbstractDataReader{
+public class GameReader extends AbstractDataReader {
 	Validator validator;
 
 	/**
@@ -29,8 +28,8 @@ public class GameReader extends AbstractDataReader{
 
 	/**
 	 * 
-	 * @param inputString
-	 * @throws Exception
+	 * @param inputFile
+	 * @throws ApplicationException
 	 */
 	public GameReader(String inputFile) throws ApplicationException {
 		super(inputFile);
@@ -56,7 +55,5 @@ public class GameReader extends AbstractDataReader{
 		newGame.setProducer(playerAttributes[2]);
 		return newGame;
 	}
-
-
 
 }

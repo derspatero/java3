@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Gis
  * File: Validator.java
  * Date: Feb 16, 2016
  * Time: 10:09:08 AM
