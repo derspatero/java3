@@ -29,7 +29,6 @@ public class GamesReport {
 		
 		public String getReport(){
 			StringBuilder report = new StringBuilder();
-			report.append("\n----------------------------------------------------------\n");
 			Iterator<Game> iterator = games.iterator();
 			while(iterator.hasNext()) {
 				Game game = iterator.next();

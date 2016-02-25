@@ -27,6 +27,7 @@ import a00892244.data.Score;
 import a00892244.io.GameReader;
 import a00892244.io.PersonaReader;
 import a00892244.io.PlayerReader;
+import a00892244.io.FileWriter;
 import a00892244.io.ScoreReader;
 import a00892244.utils.ApplicationException;
 import a00892244.utils.CompareByBirthdate;
@@ -61,29 +62,40 @@ public class Gis {
 			readData();
 			analyseData();
 
+			FileWriter fileWriter = new FileWriter();
 			if (args.length > 0) {
 				if (args[0].equals("players")) {
 					PlayerReport playerReport = new PlayerReport(players);
 					LOG.info(playerReport.getReport());
+					fileWriter.writeFile("players_report.txt", playerReport.getReport());
+
 				}
 
 				else {
 					LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
-//					leaderBoardReport.filterByPlatform("PC");
+					// leaderBoardReport.filterByPlatform("PC");
 					leaderBoardReport.sortByGame();
-//					leaderBoardReport.sortByCount();
+					// leaderBoardReport.sortByCount();
 					leaderBoardReport.desc();
-					LOG.info(leaderBoardReport.getReport());
+					
 
 					if (args[0].equals("total")) {
 						GamesReport gamesReport = new GamesReport(games);
-						LOG.info(gamesReport.getReport());
+						LOG.info(leaderBoardReport.getReport() + gamesReport.getReport());
+						fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport() + gamesReport.getReport());
+					} else {
+						LOG.info(leaderBoardReport.getReport());
+						fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport());
+
 					}
+
 				}
 			} else {
 				LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
 				LOG.info(leaderBoardReport.getReport());
-				
+				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport());
+
+
 			}
 
 			LocalDateTime startDate = LocalDateTime.now();
