@@ -21,11 +21,11 @@ public class FileWriter {
 	private String filename;
 	private String text;
 	private Formatter output;
-	
+
 	public FileWriter() {
 		super();
 	}
-	
+
 	/**
 	 * @param filename
 	 * @param reportText
@@ -36,29 +36,31 @@ public class FileWriter {
 		setFilename(filename);
 		setText(text);
 	}
-	
+
 	/**
 	 * 
 	 * @throws ApplicationException
 	 */
-	public void writeReport() throws ApplicationException{
+	public void writeReport() throws ApplicationException {
+		System.out.println(text);
 		writeFile(filename, text);
 	}
-	
+
 	/**
 	 * 
 	 * @param filename
-	 * @param reportText
+	 * @param text
 	 * @throws ApplicationException
 	 */
-	public void writeFile(String filename, String reportText) throws ApplicationException{
+	public void writeFile(String filename, String text) throws ApplicationException {
+		System.out.println(text);
 		try {
 			output = new Formatter(filename);
 		} catch (FileNotFoundException e) {
 			throw new ApplicationException(e.getMessage());
 		}
 
-		output.format(reportText);
+		output.format(text);
 
 		if (output != null) {
 			try {
@@ -85,18 +87,19 @@ public class FileWriter {
 	}
 
 	/**
-	 * @return the reportText
+	 * 
+	 * @return
 	 */
 	public String getText() {
 		return text;
 	}
 
 	/**
-	 * @param reportText
-	 *            the reportText to set
+	 * 
+	 * @param text
 	 */
-	public void setText(String reportText) {
-		this.text = reportText;
+	public void setText(String text) {
+		this.text = text;
 	}
 
 }

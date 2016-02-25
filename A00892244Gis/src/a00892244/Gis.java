@@ -29,7 +29,6 @@ import a00892244.io.PlayerReader;
 import a00892244.io.FileWriter;
 import a00892244.io.ScoreReader;
 import a00892244.utils.ApplicationException;
-import a00892244.utils.GamesReport;
 import a00892244.utils.PlayerReport;
 import a00892244.utils.Validator;
 import a00892244.utils.LeaderBoardReport;
@@ -125,9 +124,8 @@ public class Gis {
 			}
 
 			if (arguments.contains("total")) {
-				GamesReport gamesReport = new GamesReport(games);
-				LOG.info(leaderBoardReport.getReport() + gamesReport.getReport());
-				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport() + gamesReport.getReport());
+				LOG.info(leaderBoardReport.getReportWithTotal());
+				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReportWithTotal());
 
 			} else {
 				LOG.info(leaderBoardReport.getReport());

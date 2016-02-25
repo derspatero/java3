@@ -10,6 +10,7 @@ package a00892244.utils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -59,6 +60,31 @@ public class LeaderBoardReport {
 	 * 
 	 * @return
 	 */
+	private String getGameTotals() {
+		StringBuilder report = new StringBuilder();
+		Iterator<LeaderBoardReportEntry> iterator = reportLines.iterator();
+		Map<String, Integer> games = new HashMap<String, Integer>();
+		while (iterator.hasNext()) {
+			LeaderBoardReportEntry line = iterator.next();
+			if (games.containsKey(line.getGameName())) {
+				int total = games.get(line.getGameName());
+				total += Integer.parseInt(line.getWinLoss().split(":")[0]) + Integer.parseInt(line.getWinLoss().split(":")[1]);
+				games.put(line.getGameName(), (Integer) total++);
+			} else {
+				games.put(line.getGameName(), Integer.parseInt(line.getWinLoss().split(":")[0]) + Integer.parseInt(line.getWinLoss().split(":")[1]));
+			}
+		}
+		for (String key : games.keySet()) {
+			report.append(String.format("%-20s%s\n", key, games.get(key)));
+		}
+		report.append("----------------------------------------------------------\n");
+		return report.toString();
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
 	public String getReport() {
 		StringBuilder report = new StringBuilder();
 		report.append("\n----------------------------------------------------------\n");
@@ -74,6 +100,14 @@ public class LeaderBoardReport {
 		}
 		report.append("----------------------------------------------------------\n");
 		return report.toString();
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getReportWithTotal() {
+		return getReport() + getGameTotals();
 	}
 
 	/**
@@ -95,7 +129,9 @@ public class LeaderBoardReport {
 		Collections.sort(reportLines, new Comparator<LeaderBoardReportEntry>() {
 			@Override
 			public int compare(LeaderBoardReportEntry o1, LeaderBoardReportEntry o2) {
-				return o1.getWinLoss().compareTo(o2.getWinLoss());
+				Integer o1WinLoss = Integer.parseInt(o1.getWinLoss().split(":")[0]) + Integer.parseInt(o1.getWinLoss().split(":")[1]);
+				Integer o2WinLoss = Integer.parseInt(o2.getWinLoss().split(":")[0]) + Integer.parseInt(o2.getWinLoss().split(":")[1]);
+				return o1WinLoss.compareTo(o2WinLoss);
 			}
 		});
 	}
