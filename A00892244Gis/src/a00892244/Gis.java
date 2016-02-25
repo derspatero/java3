@@ -30,7 +30,9 @@ import a00892244.io.PlayerReader;
 import a00892244.io.ScoreReader;
 import a00892244.utils.ApplicationException;
 import a00892244.utils.CompareByBirthdate;
+import a00892244.utils.GamesReport;
 import a00892244.utils.PlayerReport;
+import a00892244.utils.LeaderBoardReport;
 
 /**
  * @author Edward Lambke, A00892244
@@ -58,7 +60,32 @@ public class Gis {
 
 			readData();
 			analyseData();
-			reportData();
+
+			if (args.length > 0) {
+				if (args[0].equals("players")) {
+					PlayerReport playerReport = new PlayerReport(players);
+					playerReport.printReport();
+				}
+
+				else {
+					LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
+//					leaderBoardReport.filterByPlatform("PC");
+					leaderBoardReport.sortByGame();
+//					leaderBoardReport.sortByCount();
+					leaderBoardReport.desc();
+					leaderBoardReport.reportData();
+					
+					
+
+					if (args[0].equals("total")) {
+						GamesReport gamesReport = new GamesReport(games);
+						gamesReport.printReport();
+					}
+				}
+			} else {
+				LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
+				leaderBoardReport.reportData();
+			}
 
 			LocalDateTime startDate = LocalDateTime.now();
 
@@ -156,35 +183,6 @@ public class Gis {
 
 		LOG.info(players.toString());
 
-	}
-
-	private static void reportData() {
-		// LOG.info("Win:Loss = " + players.get(1).getPersona(3).getGames().get("CODE").getWinLossRatio());
-
-		System.out.println("Players Report");
-		System.out.println("----------------------------------------------------------");
-		System.out.println("Win:Loss   Game Name            Gamertag        Platform");
-		System.out.println("----------------------------------------------------------");
-		for (int key : players.keySet()) {
-
-			Player player = players.get(key);
-
-			for (int personaKey : player.getPersonas().keySet()) {
-				Persona persona = player.getPersona(personaKey);
-				for (String gameKey : persona.getGames().keySet()) {
-					Game game = persona.getGames().get(gameKey);
-					System.out.format("%-10s %-20s %-20s%-30s\n", game.getWinLossRatio(), game.getName(), persona.getGamerTag(), persona.getPlatform());
-
-				}
-
-			}
-		}
-		System.out.println("----------------------------------------------------------");
-		for (String key : games.keySet()) {
-			System.out.format("%-20s%s\n", games.get(key).getName(), games.get(key).getScores().size());
-
-		}
-		System.out.println("----------------------------------------------------------");
 	}
 
 }

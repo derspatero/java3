@@ -8,7 +8,9 @@
 package a00892244.data;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -152,6 +154,41 @@ public class Player {
 
 	public Map<Integer, Persona> getPersonas() {
 		return personas;
+	}
+	
+	public int getTotalGamesPlayed() {
+		int total = 0;
+		for (int personaKey : personas.keySet()){
+			Persona persona = personas.get(personaKey);
+			for (String gameKey : persona.getGames().keySet()){
+				total += persona.getGames().get(gameKey).getScores().size();
+			}
+		}		
+		return total;
+	}
+	
+	public int getTotalWins() {
+		int total = 0;
+		for (int personaKey : personas.keySet()){
+			Persona persona = personas.get(personaKey);
+			for (String gameKey : persona.getGames().keySet()){
+				Iterator<Score> iterator = persona.getGames().get(gameKey).getScores().iterator();
+				while (iterator.hasNext()){
+					Score score = iterator.next();
+					if (score.getWin().equals("WIN")){
+						total++;
+					}
+				}
+			}
+		}		
+		return total;
+	}
+	
+	public long getAge() {
+		LocalDate now = LocalDate.now();
+		return ChronoUnit.YEARS.between(birthdate, now);
+
+		
 	}
 	
 	/*
