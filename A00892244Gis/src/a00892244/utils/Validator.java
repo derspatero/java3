@@ -9,6 +9,8 @@ package a00892244.utils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
+import java.util.List;
 
 import a00892244.utils.ApplicationException;
 
@@ -83,6 +85,22 @@ public class Validator {
 			return bdate;
 		} catch (Exception e) {
 			throw new ApplicationException("Birthdate needs to be in the format yyyyMMdd");
+		}
+	}
+
+	/**
+	 * 
+	 * @param list
+	 * @param regex
+	 * @throws ApplicationException
+	 */
+	public static void verifyListEntries(List<String> list, String regex) throws ApplicationException {
+		Iterator<String> iterator = list.iterator();
+		while (iterator.hasNext()) {
+			String arg = iterator.next();
+			if (!arg.matches(regex)) {
+				throw new ApplicationException(arg + " is not valid.  Valid strings: " + regex);
+			}
 		}
 	}
 }

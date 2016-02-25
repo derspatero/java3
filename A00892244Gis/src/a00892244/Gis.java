@@ -31,6 +31,7 @@ import a00892244.io.ScoreReader;
 import a00892244.utils.ApplicationException;
 import a00892244.utils.GamesReport;
 import a00892244.utils.PlayerReport;
+import a00892244.utils.Validator;
 import a00892244.utils.LeaderBoardReport;
 
 /**
@@ -53,29 +54,34 @@ public class Gis {
 	public static void main(String[] args) {
 
 		try {
-
 			LocalDateTime startDate = LocalDateTime.now();
 			LOG.info("Starting program");
 			LOG.info("program arguments: " + Arrays.toString(args));
 
+			LOG.info("Reading data");
 			readData();
+
+			LOG.info("Writing report");
 			writeReport(args);
 
 			LocalDateTime endDate = LocalDateTime.now();
 			long timeDelta = startDate.until(endDate, ChronoUnit.MILLIS);
 			LOG.info("Exiting.  Duration: " + timeDelta + " ms\n");
 
-		} catch (ApplicationException e) {
-			LOG.error(e.getMessage());
+		} catch (Exception e) {
+			LOG.error(e);
 			LOG.error("Terminating Program");
 			System.exit(-1);
 		}
-
 	}
 
+	/**
+	 * 
+	 * @param args
+	 * @throws ApplicationException
+	 */
 	private static void writeReport(String[] args) throws ApplicationException {
 		List<String> arguments = new ArrayList<String>(Arrays.asList(args));
-
 		FileWriter fileWriter = new FileWriter();
 
 		if (arguments.size() == 0) {
@@ -84,24 +90,31 @@ public class Gis {
 			fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport());
 		}
 
-		else if (arguments.contains("players")) {
+		else if ((arguments.size() == 1) && (arguments.contains("players"))) {
+			LOG.info("arguments: " + arguments.toString());
 			PlayerReport playerReport = new PlayerReport(players);
 			LOG.info(playerReport.getReport());
 			fileWriter.writeFile("players_report.txt", playerReport.getReport());
 		}
 
 		else {
+
+			LOG.info("Validating arguments " + arguments.toString());
+			Validator.verifyListEntries(arguments, "(by_game|by_count|platform=(AN|IO|PC|PS|XB)|total|desc)");
+
 			LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
-			
 			Iterator<String> iterator = arguments.iterator();
 			while (iterator.hasNext()) {
 				String arg = iterator.next();
-				if (arg.matches("platform=[A-Z][A-Z]")){
+				if (arg.matches("platform=(AN|IO|PC|PS|XB)")) {
 					leaderBoardReport.filterByPlatform(arg.split("platform=")[1]);
 				}
 			}
 
 			if (arguments.contains("by_game")) {
+				if (arguments.contains("by_count")) {
+					throw new ApplicationException("Invalid arg string. Valid: [by_game|by_count] [patform=AN|IO|PC|PS|XB] [total] [desc]");
+				}
 				leaderBoardReport.sortByGame();
 			} else if (arguments.contains("by_count")) {
 				leaderBoardReport.sortByCount();
@@ -111,26 +124,27 @@ public class Gis {
 				leaderBoardReport.desc();
 			}
 
-
 			if (arguments.contains("total")) {
 				GamesReport gamesReport = new GamesReport(games);
 				LOG.info(leaderBoardReport.getReport() + gamesReport.getReport());
 				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport() + gamesReport.getReport());
+
 			} else {
 				LOG.info(leaderBoardReport.getReport());
 				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport());
-
 			}
-
 		}
 	}
 
+	/**
+	 * 
+	 * @throws ApplicationException
+	 */
 	private static void readData() throws ApplicationException {
-
 		Map<Integer, Persona> personas = new HashMap<Integer, Persona>();
 		games = new HashMap<String, Game>();
 		players = new HashMap<Integer, Player>();
-		
+
 		LOG.info("Reading from personas.dat");
 		PersonaReader personaReader = new PersonaReader("personas.dat");
 
@@ -141,7 +155,7 @@ public class Gis {
 		}
 
 		LOG.debug(personas.toString());
-		
+
 		LOG.info("Reading from games.dat");
 		GameReader gameReader = new GameReader("games.dat");
 
@@ -151,20 +165,24 @@ public class Gis {
 			games.put(newGame.getId(), newGame);
 		}
 		LOG.debug(games.toString());
-		
+
 		LOG.info("Reading from scores.dat");
 		ScoreReader scoreReader = new ScoreReader("scores.dat");
 
-		while (scoreReader.moreData()) {
-			Score score = scoreReader.getNextScore();
-			LOG.debug("New " + score.toString());
-			if (!personas.get(score.getPersonaId()).getGames().containsKey(score.getGameId())) {
-				personas.get(score.getPersonaId()).addGame(new Game(games.get(score.getGameId())));
+		try {
+			while (scoreReader.moreData()) {
+				Score score = scoreReader.getNextScore();
+				LOG.debug("New " + score.toString());
+				if (!personas.get(score.getPersonaId()).getGames().containsKey(score.getGameId())) {
+					personas.get(score.getPersonaId()).addGame(new Game(games.get(score.getGameId())));
+				}
+				Game game = personas.get(score.getPersonaId()).getGames().get(score.getGameId());
+				game.addScore(score);
+				LOG.debug("Added Game " + game.toString() + " to persona id " + personas.get(score.getPersonaId()).getId());
+				games.get(score.getGameId()).addScore(score);
 			}
-			Game game = personas.get(score.getPersonaId()).getGames().get(score.getGameId());
-			game.addScore(score);
-			LOG.debug("Added Game " + game.toString() + " to persona id " + personas.get(score.getPersonaId()).getId());
-			games.get(score.getGameId()).addScore(score);
+		} catch (Exception e) {
+			throw new ApplicationException("Invalid score data. " + e);
 		}
 
 		LOG.info("Reading from players.dat");
@@ -176,15 +194,19 @@ public class Gis {
 			players.put(newPlayer.getIdentifier(), newPlayer);
 		}
 		LOG.debug(players.toString());
-		
-		LOG.info("Assigning personas to players");
-		for (int key : personas.keySet()) {
-			Player player = players.get(personas.get(key).getPlayerId());
-			player.addPersona(personas.get(key));
-			players.put(player.getIdentifier(), player);
-			LOG.debug("Added Persona " + personas.get(key) + " to player id " + player.getIdentifier());
+
+		try {
+			LOG.info("Assigning personas to players");
+			for (int key : personas.keySet()) {
+				Player player = players.get(personas.get(key).getPlayerId());
+				player.addPersona(personas.get(key));
+				players.put(player.getIdentifier(), player);
+				LOG.debug("Added Persona " + personas.get(key) + " to player id " + player.getIdentifier());
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Invalid player id in persona data.  " + e);
 		}
-		
+
 		LOG.debug(players.toString());
 	}
 
