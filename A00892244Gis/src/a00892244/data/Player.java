@@ -34,11 +34,12 @@ public class Player {
 	}
 
 	/**
+	 * 
 	 * @param identifier
 	 * @param firstName
 	 * @param lastName
 	 * @param emailAddress
-	 * @param gamerTag
+	 * @param birthdate
 	 */
 	public Player(int identifier, String firstName, String lastName, String emailAddress, LocalDate birthdate) {
 		setIdentifier(identifier);
@@ -56,7 +57,10 @@ public class Player {
 		return identifier;
 	}
 
-	@Deprecated
+	/**
+	 * 
+	 * @return
+	 */
 	public String getFormatedIdentifier() {
 		String id = identifier + "";
 		StringBuilder formatedId = new StringBuilder();
@@ -152,45 +156,60 @@ public class Player {
 		return personas.get(personaId);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Map<Integer, Persona> getPersonas() {
 		return personas;
 	}
-	
+
+	/**
+	 * 
+	 * @return
+	 */
 	public int getTotalGamesPlayed() {
 		int total = 0;
-		for (int personaKey : personas.keySet()){
+		for (int personaKey : personas.keySet()) {
 			Persona persona = personas.get(personaKey);
-			for (String gameKey : persona.getGames().keySet()){
+			for (String gameKey : persona.getGames().keySet()) {
 				total += persona.getGames().get(gameKey).getScores().size();
 			}
-		}		
+		}
 		return total;
 	}
-	
+
+	/**
+	 * 
+	 * @return
+	 */
 	public int getTotalWins() {
 		int total = 0;
-		for (int personaKey : personas.keySet()){
+		for (int personaKey : personas.keySet()) {
 			Persona persona = personas.get(personaKey);
-			for (String gameKey : persona.getGames().keySet()){
+			for (String gameKey : persona.getGames().keySet()) {
 				Iterator<Score> iterator = persona.getGames().get(gameKey).getScores().iterator();
-				while (iterator.hasNext()){
+				while (iterator.hasNext()) {
 					Score score = iterator.next();
-					if (score.getWin().equals("WIN")){
+					if (score.getWin().equals("WIN")) {
 						total++;
 					}
 				}
 			}
-		}		
+		}
 		return total;
 	}
-	
+
+	/**
+	 * 
+	 * @return
+	 */
 	public long getAge() {
 		LocalDate now = LocalDate.now();
 		return ChronoUnit.YEARS.between(birthdate, now);
 
-		
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()

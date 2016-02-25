@@ -28,12 +28,17 @@ public class Game {
 		scores = new ArrayList<Score>();
 	}
 
+	/**
+	 * 
+	 * @param sourceGame
+	 */
 	public Game(Game sourceGame) {
 		setId(sourceGame.getId());
 		setName(sourceGame.getName());
 		setProducer(sourceGame.getWinLossRatio());
 		scores = new ArrayList<Score>();
 	}
+
 	/**
 	 * 
 	 * @param id
@@ -108,14 +113,6 @@ public class Game {
 		return scores;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", producer=" + producer + ", scores=" + scores + "]";
-	}
-	
 	/**
 	 * 
 	 * @return
@@ -123,16 +120,24 @@ public class Game {
 	public String getWinLossRatio() {
 		int winTotal = 0;
 		int lossTotal = 0;
-		
-		for (Score score : scores){
-			if (score.getWin().equals("WIN")){
+
+		for (Score score : scores) {
+			if (score.getWin().equals("WIN")) {
 				winTotal++;
-			}
-			else {
+			} else {
 				lossTotal++;
 			}
 		}
 		return winTotal + ":" + lossTotal;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Game [id=" + id + ", name=" + name + ", producer=" + producer + ", scores=" + scores + "]";
 	}
 
 }

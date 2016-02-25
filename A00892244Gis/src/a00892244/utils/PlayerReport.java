@@ -21,9 +21,13 @@ import a00892244.data.Player;
 public class PlayerReport {
 	ArrayList<Player> players;
 
+	public PlayerReport() {
+
+	}
+
 	/**
-	 *  
 	 * 
+	 * @param players
 	 */
 	public PlayerReport(Map<Integer, Player> players) {
 		this.players = new ArrayList<Player>(players.values());
@@ -31,29 +35,9 @@ public class PlayerReport {
 
 	/**
 	 * 
-	 * @param players
-	 *            ArrayList of Players will be formated and displayed
+	 * @return
 	 */
-
-	public void printReport() {
-
-		System.out.println("Players Report");
-		System.out.println("----------------------------------------------------------------------------------------------");
-		System.out.println("Player ID  Full name            Email                     Age  Total games played   Total Wins");
-		System.out.println("----------------------------------------------------------------------------------------------");
-
-		Iterator<Player> iterator = players.iterator();
-		while (iterator.hasNext()) {
-			Player player = iterator.next();
-			System.out.format("        %-2s %-20s %-26s%-22s%-12s %s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(), player.getEmailAddress(),
-					player.getAge(), player.getTotalGamesPlayed(), player.getTotalWins());
-
-		}
-		System.out.println("----------------------------------------------------------------------------------------------");
-
-	}
-	
-	public String getReport(){
+	public String getReport() {
 		StringBuilder report = new StringBuilder();
 		report.append("\n----------------------------------------------------------------------------------------------\n");
 		report.append("Player ID  Full name            Email                     Age  Total games played   Total Wins\n");
@@ -62,15 +46,13 @@ public class PlayerReport {
 		Iterator<Player> iterator = players.iterator();
 		while (iterator.hasNext()) {
 			Player player = iterator.next();
-			report.append(String.format("        %-2s %-20s %-26s%-22s%-12s %s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(), player.getEmailAddress(),
-					player.getAge(), player.getTotalGamesPlayed(), player.getTotalWins()));
+			report.append(String.format("        %-2s %-20s %-26s%-22s%-12s %s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(),
+					player.getEmailAddress(), player.getAge(), player.getTotalGamesPlayed(), player.getTotalWins()));
 
 		}
 		report.append("----------------------------------------------------------------------------------------------\n");
 
-		
 		return report.toString();
 	}
-
 
 }

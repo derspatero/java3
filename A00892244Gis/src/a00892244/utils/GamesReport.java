@@ -21,21 +21,33 @@ import a00892244.data.Game;
 
 public class GamesReport {
 
-		private List<Game> games;
+	private List<Game> games;
 
-		public GamesReport(Map<String, Game> games) {
-			this.games = new ArrayList<Game>(games.values());
+	public GamesReport() {
+
+	}
+
+	/**
+	 * 
+	 * @param games
+	 */
+	public GamesReport(Map<String, Game> games) {
+		this.games = new ArrayList<Game>(games.values());
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getReport() {
+		StringBuilder report = new StringBuilder();
+		Iterator<Game> iterator = games.iterator();
+		while (iterator.hasNext()) {
+			Game game = iterator.next();
+			report.append(String.format("%-20s%s\n", game.getName(), game.getScores().size()));
 		}
-		
-		public String getReport(){
-			StringBuilder report = new StringBuilder();
-			Iterator<Game> iterator = games.iterator();
-			while(iterator.hasNext()) {
-				Game game = iterator.next();
-				report.append(String.format("%-20s%s\n", game.getName(), game.getScores().size()));
-			}
-			report.append("----------------------------------------------------------\n");
-			return report.toString();
-		}
-		
+		report.append("----------------------------------------------------------\n");
+		return report.toString();
+	}
+
 }

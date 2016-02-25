@@ -27,12 +27,19 @@ public class LeaderBoardReport {
 	private List<Player> players;
 	private List<LeaderBoardReportEntry> reportLines;
 
+	/**
+	 * 
+	 * @param players
+	 */
 	public LeaderBoardReport(Map<Integer, Player> players) {
 		this.players = new ArrayList<Player>(players.values());
 		reportLines = new ArrayList<LeaderBoardReportEntry>();
 		generateReport();
 	}
 
+	/**
+	 * 
+	 */
 	private void generateReport() {
 		Iterator<Player> iterator = players.iterator();
 		while (iterator.hasNext()) {
@@ -48,6 +55,10 @@ public class LeaderBoardReport {
 		}
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getReport() {
 		StringBuilder report = new StringBuilder();
 		report.append("\n----------------------------------------------------------\n");
@@ -65,6 +76,9 @@ public class LeaderBoardReport {
 		return report.toString();
 	}
 
+	/**
+	 * 
+	 */
 	public void sortByGame() {
 		Collections.sort(reportLines, new Comparator<LeaderBoardReportEntry>() {
 			@Override
@@ -74,6 +88,9 @@ public class LeaderBoardReport {
 		});
 	}
 
+	/**
+	 * 
+	 */
 	public void sortByCount() {
 		Collections.sort(reportLines, new Comparator<LeaderBoardReportEntry>() {
 			@Override
@@ -83,10 +100,17 @@ public class LeaderBoardReport {
 		});
 	}
 
+	/**
+	 * 
+	 */
 	public void desc() {
 		Collections.reverse(reportLines);
 	}
 
+	/**
+	 * 
+	 * @param platform
+	 */
 	public void filterByPlatform(String platform) {
 		Iterator<LeaderBoardReportEntry> iterator = reportLines.iterator();
 		while (iterator.hasNext()) {

@@ -19,7 +19,7 @@ public class LeaderBoardReportEntry {
 	private String platform;
 	
 	public LeaderBoardReportEntry(){
-		
+
 	}
 	
 	/**
