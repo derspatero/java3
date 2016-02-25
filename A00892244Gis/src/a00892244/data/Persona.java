@@ -108,19 +108,20 @@ public class Persona {
 	 * 
 	 * @param game
 	 */
-	public void addGame(Game game){
+	public void addGame(Game game) {
 		games.put(game.getId(), game);
 	}
-	
+
 	/**
 	 * 
 	 * @return
 	 */
-	public Map<String, Game> getGames(){
+	public Map<String, Game> getGames() {
 		return games;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -128,13 +129,4 @@ public class Persona {
 		return "Persona [id=" + id + ", playerId=" + playerId + ", gamerTag=" + gamerTag + ", platform=" + platform + ", games=" + games + "]";
 	}
 
-
-
-
-
-
-
-	
-	
-	
 }

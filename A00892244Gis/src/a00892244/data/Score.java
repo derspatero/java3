@@ -18,14 +18,13 @@ public class Score {
 	private String gameId;
 	private String win;
 
-	
 	/**
 	 * 
 	 */
 	public Score() {
-		
+
 	}
-	
+
 	/**
 	 * @param personaId
 	 * @param gameId
@@ -46,7 +45,8 @@ public class Score {
 	}
 
 	/**
-	 * @param personaId the personaId to set
+	 * @param personaId
+	 *            the personaId to set
 	 */
 	public void setPersonaId(int personaId) {
 		this.personaId = personaId;
@@ -60,7 +60,8 @@ public class Score {
 	}
 
 	/**
-	 * @param gameId the gameId to set
+	 * @param gameId
+	 *            the gameId to set
 	 */
 	public void setGameId(String gameId) {
 		this.gameId = gameId;
@@ -74,13 +75,15 @@ public class Score {
 	}
 
 	/**
-	 * @param win the win to set
+	 * @param win
+	 *            the win to set
 	 */
 	public void setWin(String win) {
 		this.win = win;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -88,10 +91,4 @@ public class Score {
 		return "Score [personaId=" + personaId + ", gameId=" + gameId + ", win=" + win + "]";
 	}
 
-
-	
-	
-	
-	
-	
 }

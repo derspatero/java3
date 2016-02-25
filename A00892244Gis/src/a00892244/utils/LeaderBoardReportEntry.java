@@ -17,11 +17,11 @@ public class LeaderBoardReportEntry {
 	private String gameName;
 	private String gamerTag;
 	private String platform;
-	
-	public LeaderBoardReportEntry(){
+
+	public LeaderBoardReportEntry() {
 
 	}
-	
+
 	/**
 	 * @param winLoss
 	 * @param gameName
@@ -46,7 +46,8 @@ public class LeaderBoardReportEntry {
 	}
 
 	/**
-	 * @param winLoss the winLoss to set
+	 * @param winLoss
+	 *            the winLoss to set
 	 */
 	public void setWinLoss(String winLoss) {
 		this.winLoss = winLoss;
@@ -60,7 +61,8 @@ public class LeaderBoardReportEntry {
 	}
 
 	/**
-	 * @param gameName the gameName to set
+	 * @param gameName
+	 *            the gameName to set
 	 */
 	public void setGameName(String gameName) {
 		this.gameName = gameName;
@@ -74,7 +76,8 @@ public class LeaderBoardReportEntry {
 	}
 
 	/**
-	 * @param gamerTag the gamerTag to set
+	 * @param gamerTag
+	 *            the gamerTag to set
 	 */
 	public void setGamerTag(String gamerTag) {
 		this.gamerTag = gamerTag;
@@ -88,11 +91,11 @@ public class LeaderBoardReportEntry {
 	}
 
 	/**
-	 * @param platform the platform to set
+	 * @param platform
+	 *            the platform to set
 	 */
 	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
-	
-	
+
 }
