@@ -64,7 +64,7 @@ public class Gis {
 			if (args.length > 0) {
 				if (args[0].equals("players")) {
 					PlayerReport playerReport = new PlayerReport(players);
-					playerReport.printReport();
+					LOG.info(playerReport.getReport());
 				}
 
 				else {
@@ -73,18 +73,17 @@ public class Gis {
 					leaderBoardReport.sortByGame();
 //					leaderBoardReport.sortByCount();
 					leaderBoardReport.desc();
-					leaderBoardReport.reportData();
-					
-					
+					LOG.info(leaderBoardReport.getReport());
 
 					if (args[0].equals("total")) {
 						GamesReport gamesReport = new GamesReport(games);
-						gamesReport.printReport();
+						LOG.info(gamesReport.getReport());
 					}
 				}
 			} else {
 				LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
-				leaderBoardReport.reportData();
+				LOG.info(leaderBoardReport.getReport());
+				
 			}
 
 			LocalDateTime startDate = LocalDateTime.now();

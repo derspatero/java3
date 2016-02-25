@@ -7,13 +7,8 @@
 
 package a00892244.utils;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import a00892244.data.Player;
@@ -56,6 +51,25 @@ public class PlayerReport {
 		}
 		System.out.println("----------------------------------------------------------------------------------------------");
 
+	}
+	
+	public String getReport(){
+		StringBuilder report = new StringBuilder();
+		report.append("\n----------------------------------------------------------------------------------------------\n");
+		report.append("Player ID  Full name            Email                     Age  Total games played   Total Wins\n");
+		report.append("----------------------------------------------------------------------------------------------\n");
+
+		Iterator<Player> iterator = players.iterator();
+		while (iterator.hasNext()) {
+			Player player = iterator.next();
+			report.append(String.format("        %-2s %-20s %-26s%-22s%-12s %s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(), player.getEmailAddress(),
+					player.getAge(), player.getTotalGamesPlayed(), player.getTotalWins()));
+
+		}
+		report.append("----------------------------------------------------------------------------------------------\n");
+
+		
+		return report.toString();
 	}
 
 	/**

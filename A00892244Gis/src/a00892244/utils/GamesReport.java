@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 import a00892244.data.Game;
-import a00892244.data.Player;
 
 /**
  * @author Edward Lambke, A00892244
@@ -28,14 +27,16 @@ public class GamesReport {
 			this.games = new ArrayList<Game>(games.values());
 		}
 		
-		public void printReport(){
-			System.out.println("----------------------------------------------------------");
+		public String getReport(){
+			StringBuilder report = new StringBuilder();
+			report.append("\n----------------------------------------------------------\n");
 			Iterator<Game> iterator = games.iterator();
 			while(iterator.hasNext()) {
 				Game game = iterator.next();
-				System.out.format("%-20s%s\n", game.getName(), game.getScores().size());
+				report.append(String.format("%-20s%s\n", game.getName(), game.getScores().size()));
 			}
-			System.out.println("----------------------------------------------------------");
+			report.append("----------------------------------------------------------\n");
+			return report.toString();
 		}
 		
 }
