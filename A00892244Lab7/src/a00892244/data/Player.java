@@ -52,7 +52,11 @@ public class Player {
 		return identifier;
 	}
 
-	@Deprecated
+
+	/**
+	 * 
+	 * @return
+	 */
 	public String getFormatedIdentifier() {
 		String id = identifier + "";
 		StringBuilder formatedId = new StringBuilder();

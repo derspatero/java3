@@ -102,13 +102,17 @@ public class Lab7 {
 					playerDao.add(playerReader.getNextPlayer());
 				}
 				
+				playerReport.printReport(playerDao.selectAll());
+				System.out.println("sort by birth date");
+				playerReport.printReport(playerDao.sortByBirthDate());
+				System.out.println("sort by birth date desc");
+				playerReport.printReport(playerDao.sortDescByBirthDateDesc());
+				
 				LOG.info("Writing player report to players_report.txt");
-				playerDao.selectAll();
-				while (playerDao.hasNextResult()){
-					System.out.println(playerDao.getNextPlayer().toString());
-					
-				}
-//				playerReport.writeReport(players, "\n\nSort by Birthdate (Descending)", startDate, "players_report.txt");
+				
+
+
+				playerReport.writeReport(playerDao.selectAll(), "\n\nSort by Birthdate (Descending)", startDate, "players_report.txt");
 
 			} catch (Exception e) {
 				throw new ApplicationException("Read Error:  " + e.getMessage());

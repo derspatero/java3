@@ -13,6 +13,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import a00892244.data.Player;
 import a00892244.utils.ApplicationException;
@@ -61,28 +63,48 @@ public class PlayerDao extends Dao {
 		}
 	}
 
-	public void selectAll() throws SQLException, Exception {
+	public List<Player> selectAll() throws SQLException, Exception {
+		return exicuteSQL("SELECT * FROM %s");
+	}
+	
+	public List<Player> sortDescByBirthDateDesc() throws SQLException, Exception{
+		return exicuteSQL("SELECT * FROM %s ORDER BY BIRTHDATE DESC");
+	}
+	
+	public List<Player> sortByBirthDate() throws SQLException, Exception{
+		return exicuteSQL("SELECT * FROM %s ORDER BY BIRTHDATE");
+	}
+
+	public List<Player> exicuteSQL(String sqlStatement) throws SQLException, Exception {
 		Connection connection;
 		Statement statement = null;
-		Player player = null;
+		List<Player> players = new ArrayList<Player>();
 		try {
 			connection = database.getConnection();
 			statement = connection.createStatement();
 			// Execute a statement
-			String sqlString = String.format("SELECT * FROM %s", tableName);
+			String sqlString = String.format(sqlStatement, tableName);
 			resultSet = statement.executeQuery(sqlString);
 
-			// get the Student
-			// throw an exception if we get more than one result
+			while (resultSet.next()) {
+				players.add(nextPlayerResult());
+			}
 
 		} finally {
 			close(statement);
 		}
-
+		return players;
 	}
 
-	public boolean hasNextResult() throws SQLException{
-		return resultSet.next();
+	public Player nextPlayerResult() throws SQLException {
+		Player player = new Player();
+		player.setIdentifier(Integer.parseInt(resultSet.getString(Fields.IDENTIFIER.name())));
+		player.setFirstName(resultSet.getString(Fields.FIRSTNAME.name()));
+		player.setLastName(resultSet.getString(Fields.LASTNAME.name()));
+		player.setEmailAddress(resultSet.getString(Fields.EMAILADDRESS.name()));
+		player.setBirthdate(LocalDate.parse(resultSet.getString(Fields.BIRTHDATE.name())));
+		player.setGamerTag(resultSet.getString(Fields.GAMERTAG.name()));
+		return player;
 	}
 
 	public Player getNextPlayer() throws ApplicationException {
