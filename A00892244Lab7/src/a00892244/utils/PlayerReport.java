@@ -46,7 +46,7 @@ public class PlayerReport {
 		System.out.println("  #. ID     First name      Last name       Email                         Gamertag            Birthdate");
 		System.out.println("---------------------------------------------------------------------------------------------------------------");
 
-		int count = 0;
+		int count = 1;
 		Iterator<Player> iterator = players.iterator();
 		while (iterator.hasNext()) {
 			Player player = iterator.next();
@@ -80,7 +80,7 @@ public class PlayerReport {
 		output.format("  #. ID     First name      Last name       Email                         Gamertag            Birthdate\n");
 		output.format("---------------------------------------------------------------------------------------------------------------\n");
 
-		int count = 0;
+		int count = 1;
 		Iterator<Player> iterator = players.iterator();
 		while (iterator.hasNext()) {
 			Player player = iterator.next();

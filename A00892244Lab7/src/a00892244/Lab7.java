@@ -19,13 +19,11 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Properties;
 
-import a00892244.data.Player;
 import a00892244.database.PlayerDao;
 import a00892244.database.Database;
 import a00892244.utils.ApplicationException;
 import a00892244.utils.PlayerReader;
 import a00892244.utils.PlayerReport;
-import a00892244.utils.Validator;
 
 /**
  * @author Edward Lambke, A00892244
@@ -60,11 +58,13 @@ public class Lab7 {
 			Lab7 lab7 = new Lab7(dbPropertiesFile);
 			lab7.run();
 		} catch (Exception e) {
-			LOG.error(e.getMessage());	
+			LOG.error(e.getMessage());
 			LOG.error("Terminating Program");
 			System.exit(-1);
 		} finally {
 			database.shutdown();
+			LOG.error("Terminating Program");
+			System.exit(0);
 		}
 
 	}
@@ -107,24 +107,9 @@ public class Lab7 {
 				while (playerReader.morePlayers()) {
 					playerDao.add(playerReader.getNextPlayer());
 				}
-				
-				System.out.println("\nRaw Data");
-				playerReport.printReport(playerDao.selectAll());
-				System.out.println("\nsort by birth date");
-				playerReport.printReport(playerDao.sortByBirthDate());
-				System.out.println("\nsort by birth date desc");
-				playerReport.printReport(playerDao.sortDescByBirthDateDesc());
+
 				LOG.info("Writing player report to players_report.txt");
 				playerReport.writeReport(playerDao.sortDescByBirthDateDesc(), "\n\nSort by Birthdate (Descending)", startDate, "players_report.txt");
-			
-				System.out.println("\nUpdating #1");
-				playerDao.update(new Player(1, "asdf", "asdf", "asdf@asdf.asdf", "asdf", Validator.validateBirthdate("21120101")));
-				playerReport.printReport(playerDao.selectAll());
-				
-				System.out.println("\nDeleting #3");
-				playerDao.delete(3);
-				playerReport.printReport(playerDao.selectAll());
-				
 
 			} catch (Exception e) {
 				throw new ApplicationException("Read Error:  " + e.getMessage());
@@ -136,8 +121,6 @@ public class Lab7 {
 		} finally {
 			connection.close();
 		}
-
-
 	}
 
 	/**

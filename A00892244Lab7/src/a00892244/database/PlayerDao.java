@@ -72,22 +72,22 @@ public class PlayerDao extends Dao {
 	}
 
 	public List<Player> selectAll() throws SQLException, Exception {
-		return executeQuery("SELECT * FROM %s");
+		return getPlayersByQuery("SELECT * FROM %s");
 	}
 
 	public List<Player> sortDescByBirthDateDesc() throws SQLException, Exception {
-		return executeQuery("SELECT * FROM %s ORDER BY BIRTHDATE DESC");
+		return getPlayersByQuery("SELECT * FROM %s ORDER BY BIRTHDATE DESC");
 	}
 
 	public List<Player> sortByBirthDate() throws SQLException, Exception {
-		return executeQuery("SELECT * FROM %s ORDER BY BIRTHDATE");
+		return getPlayersByQuery("SELECT * FROM %s ORDER BY BIRTHDATE");
 	}
 
-	public List<Player> getPlayerByName(String name) throws SQLException, Exception {
-		return executeQuery("SELECT * FROM %s WHERE LASTNAME = " + name);
+	public List<Player> getPlayer(String gamertag) throws SQLException, Exception {
+		return getPlayersByQuery("SELECT * FROM %s WHERE " + Fields.GAMERTAG + " = '" + gamertag + "'");
 	}
 
-	public List<Player> executeQuery(String sqlStatement) throws SQLException, Exception {
+	public List<Player> getPlayersByQuery(String sqlStatement) throws SQLException, Exception {
 		Connection connection;
 		Statement statement = null;
 		List<Player> players = new ArrayList<Player>();
@@ -117,6 +117,27 @@ public class PlayerDao extends Dao {
 		player.setBirthdate(LocalDate.parse(resultSet.getString(Fields.BIRTHDATE.name())));
 		player.setGamerTag(resultSet.getString(Fields.GAMERTAG.name()));
 		return player;
+	}
+
+	public List<String> getGamertags() throws SQLException {
+		Connection connection;
+		Statement statement = null;
+		List<String> results = new ArrayList<String>();
+		try {
+			connection = database.getConnection();
+			statement = connection.createStatement();
+			// Execute a statement
+			String sqlString = String.format("SELECT %s FROM %s", Fields.GAMERTAG, tableName);
+			resultSet = statement.executeQuery(sqlString);
+
+			while (resultSet.next()) {
+				results.add(resultSet.getString(Fields.GAMERTAG.name()));
+			}
+
+		} finally {
+			close(statement);
+		}
+		return results;
 	}
 
 	public enum Fields {
