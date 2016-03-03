@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Lab7
  * File: Player.java
  * Date: Feb 16, 2016
  * Time: 10:33:00 AM
@@ -51,7 +51,6 @@ public class Player {
 	public int getIdentifier() {
 		return identifier;
 	}
-
 
 	/**
 	 * 

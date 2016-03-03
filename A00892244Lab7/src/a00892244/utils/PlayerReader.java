@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Lab7
  * File: PlayerReader.java
  * Date: Feb16, 2016
  * Time: 10:08:53 AM
@@ -22,7 +22,6 @@ import a00892244.data.Player;
 
 public class PlayerReader {
 	List<String> playerStrings;
-	Validator validator;
 
 	/**
 	 * default constructor
@@ -46,12 +45,11 @@ public class PlayerReader {
 		}
 		// Close the input stream
 
-		validator = new Validator();
 		this.playerStrings = new ArrayList<String>();
 
 		while (scanner.hasNextLine()) {
 			String player = scanner.nextLine();
-			validator.validatePlayerString(player);
+			Validator.validatePlayerString(player);
 			this.playerStrings.add(player);
 		}
 
@@ -77,9 +75,9 @@ public class PlayerReader {
 		newPlayer.setIdentifier(Integer.parseInt(playerAttributes[0]));
 		newPlayer.setFirstName(playerAttributes[1]);
 		newPlayer.setLastName(playerAttributes[2]);
-		newPlayer.setEmailAddress(validator.validateEmail(playerAttributes[3]));
+		newPlayer.setEmailAddress(Validator.validateEmail(playerAttributes[3]));
 		newPlayer.setGamerTag(playerAttributes[4]);
-		newPlayer.setBirthdate(validator.validateBirthdate(playerAttributes[5]));
+		newPlayer.setBirthdate(Validator.validateBirthdate(playerAttributes[5]));
 		return newPlayer;
 	}
 

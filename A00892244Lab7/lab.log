@@ -29,3 +29,116 @@
 2016-03-02 10:06:26.690 [main] INFO  a00892244.Lab7 - create the tables
 2016-03-02 10:06:26.824 [main] INFO  a00892244.Lab7 - Reading from players.txt
 2016-03-02 10:06:27.139 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 11:19:39.595 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 11:19:41.140 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 11:19:41.792 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 11:19:41.974 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 11:19:42.542 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 11:20:16.432 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 11:20:17.049 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 11:20:17.486 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 11:20:17.613 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 11:20:18.009 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 11:20:53.977 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 11:20:54.667 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 11:20:55.057 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 11:20:55.206 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 11:20:55.521 [main] ERROR a00892244.Lab7 - Read Error:  The statement was aborted because it would have caused a duplicate key value in a unique or primary key constraint or unique index identified by 'SQL160302112055080' defined on 'PLAYER'.
+2016-03-02 11:20:55.522 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 11:21:32.343 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 11:21:32.990 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 11:21:33.428 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 11:21:33.537 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 11:21:33.921 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 11:22:36.982 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 11:22:37.714 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 11:22:38.188 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 11:22:38.319 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 11:22:38.642 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 13:06:14.135 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:06:15.527 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:06:16.138 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:06:16.306 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:06:16.324 [main] ERROR a00892244.Lab7 - SQL Exception: Table/View 'PLAYER' already exists in Schema 'ADMIN'.
+2016-03-02 13:06:16.325 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 13:16:47.044 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:16:47.664 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:16:48.079 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:16:48.162 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:16:48.174 [main] ERROR a00892244.Lab7 - SQL Exception: Table/View 'PLAYER' already exists in Schema 'ADMIN'.
+2016-03-02 13:16:48.174 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 13:17:07.885 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:17:08.515 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:17:08.851 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:17:08.956 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:17:09.449 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 13:25:35.486 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:25:36.122 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:25:36.642 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:25:36.731 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:25:37.154 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 13:30:36.515 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:30:37.590 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:30:38.244 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:30:38.386 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:30:38.851 [main] ERROR a00892244.Lab7 - Read Error:  Syntax error: Encountered "(" at line 1, column 19.
+2016-03-02 13:30:38.851 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 13:32:08.804 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:32:09.431 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:32:09.977 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:32:10.102 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:32:10.595 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 13:37:11.058 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:37:12.096 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:37:12.507 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:37:12.662 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:37:13.137 [main] ERROR a00892244.Lab7 - Read Error:  Format specifier '%s'
+2016-03-02 13:37:13.138 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 13:39:24.704 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:39:25.314 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:39:25.737 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:39:25.845 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:39:26.343 [main] ERROR a00892244.Lab7 - Read Error:  Format specifier '%s'
+2016-03-02 13:39:26.344 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 13:40:30.586 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:40:31.211 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:40:31.580 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:40:31.716 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:40:32.251 [main] ERROR a00892244.Lab7 - Read Error:  Format specifier '%s'
+2016-03-02 13:40:32.251 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 13:41:14.978 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:41:15.645 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:41:16.059 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:41:16.165 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:41:16.599 [main] ERROR a00892244.Lab7 - Read Error:  Format specifier '%s'
+2016-03-02 13:41:16.600 [main] ERROR a00892244.Lab7 - Terminating Program
+2016-03-02 13:42:16.884 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:42:17.480 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:42:18.047 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:42:18.183 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:42:18.982 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 13:51:19.755 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:51:20.800 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:51:21.302 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:51:21.397 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:51:21.804 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 13:53:34.026 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:53:34.652 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:53:35.098 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:53:35.257 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:53:35.612 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 13:54:46.463 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 13:54:47.176 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 13:54:47.656 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 13:54:47.871 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 13:54:48.209 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 16:04:33.325 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 16:04:34.722 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 16:04:35.426 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 16:04:35.650 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 16:04:36.016 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt
+2016-03-02 16:12:07.606 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-02 16:12:08.992 [main] INFO  a00892244.Lab7 - drop the tables if they exist
+2016-03-02 16:12:09.807 [main] INFO  a00892244.Lab7 - create the tables
+2016-03-02 16:12:10.059 [main] INFO  a00892244.Lab7 - Reading from players.txt
+2016-03-02 16:12:10.510 [main] INFO  a00892244.Lab7 - Writing player report to players_report.txt

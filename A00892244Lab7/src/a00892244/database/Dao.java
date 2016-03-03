@@ -1,9 +1,20 @@
+/**
+ * Project: A00892244Lab7
+ * File: Dao.java
+ * Date: Mar 1, 2016
+ * Time: 8:43:46 PM
+ */
+
 package a00892244.database;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * @author Edward Lambke, A00892244
+ *
+ */
 
 public abstract class Dao {
 
@@ -47,6 +58,17 @@ public abstract class Dao {
 			if (DbUtil.tableExists(connection, tableName)) {
 				statement.executeUpdate("drop table " + tableName);
 			}
+		} finally {
+			close(statement);
+		}
+	}
+
+	public void executeUpdate(String sqlString) throws SQLException {
+		Statement statement = null;
+		try {
+			Connection connection = database.getConnection();
+			statement = connection.createStatement();
+			statement.executeUpdate(sqlString);
 		} finally {
 			close(statement);
 		}

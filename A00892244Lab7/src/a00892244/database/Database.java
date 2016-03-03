@@ -1,8 +1,8 @@
 /**
- * Project: examples8
+ * Project: A00892244Lab7
  * File: Database.java
- * Date: 2012-10-28
- * Time: 12:26:04 PM
+ * Date: Mar 1, 2016
+ * Time: 8:43:46 PM
  */
 
 package a00892244.database;
@@ -57,8 +57,7 @@ public class Database {
 	private void connect() throws ClassNotFoundException, SQLException {
 		Class.forName(properties.getProperty(DB_DRIVER_KEY));
 		System.out.println("Driver loaded");
-		connection = DriverManager.getConnection(properties.getProperty(DB_URL_KEY),
-		        properties.getProperty(DB_USER_KEY), properties.getProperty(DB_PASSWORD_KEY));
+		connection = DriverManager.getConnection(properties.getProperty(DB_URL_KEY), properties.getProperty(DB_USER_KEY), properties.getProperty(DB_PASSWORD_KEY));
 		System.out.println("Database connected");
 	}
 

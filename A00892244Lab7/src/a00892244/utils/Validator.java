@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Lab7
  * File: Validator.java
  * Date: Feb 16, 2016
  * Time: 10:09:08 AM
@@ -34,7 +34,7 @@ public class Validator {
 	 * @return
 	 * @throws ApplicationException
 	 */
-	public String validateEmail(String emailAddress) throws ApplicationException {
+	public static String validateEmail(String emailAddress) throws ApplicationException {
 		if (!emailAddress.matches(EMAIL_REGEX)) {
 			throw new ApplicationException("'" + emailAddress + "' is an invalid email address");
 		}
@@ -46,7 +46,7 @@ public class Validator {
 	 * @param arg
 	 * @throws Exception
 	 */
-	public void validateInputString(String arg) throws ApplicationException {
+	public static void validateInputString(String arg) throws ApplicationException {
 		if (arg.length() < 1) {
 			throw new ApplicationException(
 					"Invalid Player String. Must be \"<ID1>\\|<FirstName1>\\|<LastName1\\|<email1>\\|<gamertag1>\\|<birthdate1>:<ID2>\\|<FirstName2>\\|<LastName2>\\|...");
@@ -65,7 +65,7 @@ public class Validator {
 	 * @param playerString
 	 * @throws Exception
 	 */
-	public void validatePlayerString(String playerString) throws ApplicationException {
+	public static void validatePlayerString(String playerString) throws ApplicationException {
 		if (playerString.split("\\|").length != 6) {
 			throw new ApplicationException("Invalid Player String.  Expected 6 elements but got " + playerString.split("\\|").length);
 		}
@@ -76,7 +76,7 @@ public class Validator {
 	 * @param dateString
 	 * @return
 	 */
-	public LocalDate validateBirthdate(String dateString) throws ApplicationException {
+	public static LocalDate validateBirthdate(String dateString) throws ApplicationException {
 		try {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 			LocalDate bdate = LocalDate.parse(dateString, formatter);

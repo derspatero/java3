@@ -8,7 +8,6 @@
 package a00892244.database;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import a00892244.data.Player;
-import a00892244.utils.ApplicationException;
 
 /**
  * @author Edward Lambke, A00892244
@@ -45,37 +43,51 @@ public class PlayerDao extends Dao {
 	}
 
 	public void add(Player player) throws SQLException {
-		Statement statement = null;
-		try {
-			Connection connection = database.getConnection();
-			statement = connection.createStatement();
-			String insertString = String.format("insert into %s values('%s', '%s', '%s', '%s', '%s', '%s')", tableName, //
-					player.getIdentifier(), //
-					player.getFirstName(), //
-					player.getLastName(), //
-					player.getEmailAddress(), //
-					player.getGamerTag(), //
-					player.getBirthdate());
-			statement.executeUpdate(insertString);
-			System.out.println(insertString);
-		} finally {
-			close(statement);
-		}
+		String insertString = String.format("insert into %s values('%s', '%s', '%s', '%s', '%s', '%s')", tableName, //
+				player.getIdentifier(), //
+				player.getFirstName(), //
+				player.getLastName(), //
+				player.getEmailAddress(), //
+				player.getGamerTag(), //
+				player.getBirthdate());
+		executeUpdate(insertString);
+	}
+
+	public void update(Player player) throws SQLException {
+		String insertString = String.format(
+				"update %s set " + Fields.FIRSTNAME + "='%s', " + Fields.LASTNAME + "='%s', " + Fields.EMAILADDRESS + "='%s', " + Fields.GAMERTAG + "='%s', " + Fields.BIRTHDATE
+						+ "='%s' WHERE " + Fields.IDENTIFIER + "='%s'",
+				tableName, //
+				player.getFirstName(), //
+				player.getLastName(), //
+				player.getEmailAddress(), //
+				player.getGamerTag(), //
+				player.getBirthdate(), player.getIdentifier());
+		executeUpdate(insertString);
+	}
+
+	public void delete(int playerUID) throws SQLException {
+		String insertString = String.format("delete from %s where " + Fields.IDENTIFIER + "='" + playerUID + "'", tableName);
+		executeUpdate(insertString);
 	}
 
 	public List<Player> selectAll() throws SQLException, Exception {
-		return exicuteSQL("SELECT * FROM %s");
-	}
-	
-	public List<Player> sortDescByBirthDateDesc() throws SQLException, Exception{
-		return exicuteSQL("SELECT * FROM %s ORDER BY BIRTHDATE DESC");
-	}
-	
-	public List<Player> sortByBirthDate() throws SQLException, Exception{
-		return exicuteSQL("SELECT * FROM %s ORDER BY BIRTHDATE");
+		return executeQuery("SELECT * FROM %s");
 	}
 
-	public List<Player> exicuteSQL(String sqlStatement) throws SQLException, Exception {
+	public List<Player> sortDescByBirthDateDesc() throws SQLException, Exception {
+		return executeQuery("SELECT * FROM %s ORDER BY BIRTHDATE DESC");
+	}
+
+	public List<Player> sortByBirthDate() throws SQLException, Exception {
+		return executeQuery("SELECT * FROM %s ORDER BY BIRTHDATE");
+	}
+
+	public List<Player> getPlayerByName(String name) throws SQLException, Exception {
+		return executeQuery("SELECT * FROM %s WHERE LASTNAME = " + name);
+	}
+
+	public List<Player> executeQuery(String sqlStatement) throws SQLException, Exception {
 		Connection connection;
 		Statement statement = null;
 		List<Player> players = new ArrayList<Player>();
@@ -104,25 +116,6 @@ public class PlayerDao extends Dao {
 		player.setEmailAddress(resultSet.getString(Fields.EMAILADDRESS.name()));
 		player.setBirthdate(LocalDate.parse(resultSet.getString(Fields.BIRTHDATE.name())));
 		player.setGamerTag(resultSet.getString(Fields.GAMERTAG.name()));
-		return player;
-	}
-
-	public Player getNextPlayer() throws ApplicationException {
-		Player player = new Player();
-
-		try {
-
-			player = new Player();
-			player.setIdentifier(Integer.parseInt(resultSet.getString(Fields.IDENTIFIER.name())));
-			player.setFirstName(resultSet.getString(Fields.FIRSTNAME.name()));
-			player.setLastName(resultSet.getString(Fields.LASTNAME.name()));
-			player.setEmailAddress(resultSet.getString(Fields.EMAILADDRESS.name()));
-			player.setBirthdate(LocalDate.parse(resultSet.getString(Fields.BIRTHDATE.name())));
-			player.setGamerTag(resultSet.getString(Fields.GAMERTAG.name()));
-
-		} catch (Exception e) {
-			throw new ApplicationException(e);
-		}
 		return player;
 	}
 

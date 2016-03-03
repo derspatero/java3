@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab5
+ * Project: A00892244Lab7
  * File: PlayerReport.java
  * Date: Feb 16, 2016
  * Time: 10:08:17 AM
@@ -39,7 +39,6 @@ public class PlayerReport {
 	 *            ArrayList of Players will be formated and displayed
 	 */
 
-	@SuppressWarnings("deprecation")
 	public void printReport(List<Player> players) {
 
 		System.out.println("Players Report");
@@ -67,7 +66,6 @@ public class PlayerReport {
 	 * @param string
 	 */
 
-	@SuppressWarnings("deprecation")
 	public void writeReport(List<Player> players, String title, LocalDateTime startDate, String fileName) throws ApplicationException {
 		try {
 			output = new Formatter(fileName);
