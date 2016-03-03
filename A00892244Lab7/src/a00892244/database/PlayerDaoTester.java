@@ -21,6 +21,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.JUnitCore;
 
 import a00892244.Lab7;
 import a00892244.data.Player;
@@ -42,6 +43,10 @@ public class PlayerDaoTester {
 
 	private static final Logger LOG = LogManager.getLogger(Lab7.class);
 	private static PlayerReader playerReader;
+	
+	public static void main(String[] args) throws Exception {                    
+	       JUnitCore.main("a00892244.database.PlayerDaoTester");            
+	}
 
 	@BeforeClass
 	public static void setup() {
