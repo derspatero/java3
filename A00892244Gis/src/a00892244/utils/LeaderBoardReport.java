@@ -41,19 +41,20 @@ public class LeaderBoardReport {
 	/**
 	 * 
 	 */
+	
 	private void generateReport() {
-		Iterator<Player> iterator = players.iterator();
-		while (iterator.hasNext()) {
-			Player player = iterator.next();
-			for (int personaKey : player.getPersonas().keySet()) {
-				Persona persona = player.getPersona(personaKey);
-				for (String gameKey : persona.getGames().keySet()) {
-					Game game = persona.getGames().get(gameKey);
-					reportLines.add(new LeaderBoardReportEntry(game.getWinLossRatio(), game.getName(), persona.getGamerTag(), persona.getPlatform()));
-				}
-
-			}
-		}
+//		Iterator<Player> iterator = players.iterator();
+//		while (iterator.hasNext()) {
+//			Player player = iterator.next();
+//			for (int personaKey : player.getPersonas().keySet()) {
+//				Persona persona = player.getPersona(personaKey);
+//				for (String gameKey : persona.getGames().keySet()) {
+//					Game game = persona.getGames().get(gameKey);
+//					reportLines.add(new LeaderBoardReportEntry(game.getWinLossRatio(), game.getName(), persona.getGamerTag(), persona.getPlatform()));
+//				}
+//
+//			}
+//		}
 	}
 
 	/**

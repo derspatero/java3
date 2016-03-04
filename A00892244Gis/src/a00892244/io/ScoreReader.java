@@ -48,11 +48,11 @@ public class ScoreReader extends AbstractDataReader {
 	 */
 	public Score getNextScore() throws ApplicationException {
 		Score newScore = new Score();
-		String gameString = getNextDataString();
-		String[] playerAttributes = gameString.trim().split("\\|");
-		newScore.setPersonaId(Integer.parseInt(playerAttributes[0]));
-		newScore.setGameId(playerAttributes[1]);
-		newScore.setWin(playerAttributes[2]);
+		String scoreString = getNextDataString();
+		String[] scoreAttributes = scoreString.trim().split("\\|");
+		newScore.setPersonaId(Integer.parseInt(scoreAttributes[0]));
+		newScore.setGameId(scoreAttributes[1]);
+		newScore.setWin(scoreAttributes[2]);
 		return newScore;
 	}
 

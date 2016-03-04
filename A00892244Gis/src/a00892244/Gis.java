@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -29,8 +28,10 @@ import a00892244.data.Persona;
 import a00892244.data.Player;
 import a00892244.data.Score;
 import a00892244.database.Database;
+import a00892244.database.GamesDao;
 import a00892244.database.PersonaDao;
 import a00892244.database.PlayerDao;
+import a00892244.database.ScoresDao;
 import a00892244.io.GameReader;
 import a00892244.io.PersonaReader;
 import a00892244.io.PlayerReader;
@@ -51,18 +52,26 @@ public class Gis {
 	private static Database database;
 	private static PlayerDao playerDao;
 	private static PersonaDao personaDao;
+	private static GamesDao gamesDao;
+	private static ScoresDao scoresDao;
 
 	private static Properties dbProperties;
 	private static Connection connection;
 	public static final String DB_PROPERTIES_FILENAME = "db.properties";
 	public static final String PLAYERS_DATA_FILE_NAME = "players.dat";
 	public static final String PERSONAS_DATA_FILE_NAME = "personas.dat";
+	private static final String GAMES_DATA_FILE_NAME = "games.dat";
+	private static final String SCORES_DATA_FILE_NAME = "scores.dat";
 
 	private static final Logger LOG = LogManager.getLogger(Gis.class);
+
+
 	static Map<Integer, Player> players;
 	static Map<String, Game> games;
 	static Map<Integer, Persona> personas;
 	static List<Score> scores;
+
+	
 
 	/**
 	 * @param
@@ -75,12 +84,42 @@ public class Gis {
 
 			LOG.info("Starting program");
 			LOG.info("program arguments: " + Arrays.toString(args));
+			
+			File dbPropertiesFile = new File(DB_PROPERTIES_FILENAME);
+			if (!dbPropertiesFile.exists()) {
+				System.exit(-1);
+			}
+			dbProperties = new Properties();
+
+			try {
+				dbProperties.load(new FileReader(dbPropertiesFile));
+				database = new Database(dbProperties);
+				connection = database.getConnection();
+
 
 			LOG.info("Reading data");
 			readData();
+			LOG.info("data is read:");
+			LOG.info(playerDao.selectAll().toString());
+			LOG.info(personaDao.selectAll().toString());
+			LOG.info(gamesDao.selectAll().toString());
+			LOG.info(scoresDao.selectAll().toString());
 
-			LOG.info("Writing report");
-			writeReport(args);
+//			LOG.info("Writing report");
+//			writeReport(args);
+
+			} catch (Exception e) {
+				LOG.error("SQL Exception: " + e.getMessage());
+			} finally {
+				try {
+					LOG.info("closing connection");
+					connection.close();
+					LOG.info("connection closed");
+					System.gc();
+				} catch (SQLException e) {
+					LOG.error("SQL Exception: " + e.getMessage());
+				}
+			}
 
 			LocalDateTime endDate = LocalDateTime.now();
 			long timeDelta = startDate.until(endDate, ChronoUnit.MILLIS);
@@ -155,61 +194,17 @@ public class Gis {
 
 	/**
 	 * 
-	 * @throws ApplicationException
+	 * @throws Exception 
 	 */
-	private static void readData() throws ApplicationException {
-		Map<Integer, Persona> personas = new HashMap<Integer, Persona>();
-		games = new HashMap<String, Game>();
-		players = new HashMap<Integer, Player>();
+	private static void readData() throws Exception {
 
 
-
-
-		LOG.info("Reading from games.dat");
-		GameReader gameReader = new GameReader("games.dat");
-
-		while (gameReader.moreData()) {
-			Game newGame = gameReader.getNextGame();
-			LOG.debug("New " + newGame.toString());
-			games.put(newGame.getId(), newGame);
-		}
-		LOG.debug(games.toString());
-
-		LOG.info("Reading from scores.dat");
-		ScoreReader scoreReader = new ScoreReader("scores.dat");
-
-		try {
-			while (scoreReader.moreData()) {
-				Score score = scoreReader.getNextScore();
-				LOG.debug("New " + score.toString());
-				if (!personas.get(score.getPersonaId()).getGames().containsKey(score.getGameId())) {
-					personas.get(score.getPersonaId()).addGame(new Game(games.get(score.getGameId())));
-				}
-				Game game = personas.get(score.getPersonaId()).getGames().get(score.getGameId());
-				game.addScore(score);
-				LOG.debug("Added Game " + game.toString() + " to persona id " + personas.get(score.getPersonaId()).getId());
-				games.get(score.getGameId()).addScore(score);
-			}
-		} catch (Exception e) {
-			throw new ApplicationException("Invalid score data. " + e);
-		}
-
-		File dbPropertiesFile = new File(DB_PROPERTIES_FILENAME);
-		if (!dbPropertiesFile.exists()) {
-			System.exit(-1);
-		}
-		dbProperties = new Properties();
-
-		try {
-			dbProperties.load(new FileReader(dbPropertiesFile));
-			database = new Database(dbProperties);
-			connection = database.getConnection();
 			playerDao = new PlayerDao(database);
 
 			LOG.info("drop the tables if they exist");
 			playerDao.drop();
 
-			LOG.info("create the tables");
+			LOG.info("create the players table");
 			playerDao.create();
 
 			LOG.info("Reading from " + PLAYERS_DATA_FILE_NAME);
@@ -222,16 +217,19 @@ public class Gis {
 			} catch (Exception e) {
 				LOG.error("Read Error:  " + e.getMessage());
 			}
+			
+
+			LOG.info(playerDao.selectAll().toString());
 
 			personaDao = new PersonaDao(database);
 			LOG.info("drop the tables if they exist");
 			personaDao.drop();
 
-			LOG.info("create the tables");
+			LOG.info("create the personas table");
 			personaDao.create();
 			
-			LOG.info("Reading from personas.dat");
-			PersonaReader personaReader = new PersonaReader("personas.dat");
+			LOG.info("Reading from " + PERSONAS_DATA_FILE_NAME);
+			PersonaReader personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
 
 			try {
 				personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
@@ -242,16 +240,57 @@ public class Gis {
 			} catch (Exception e) {
 				LOG.error("Read Error:  " + e.getMessage());
 			}
+			
 
-		} catch (Exception e) {
-			LOG.error("SQL Exception: " + e.getMessage());
-		} finally {
+			LOG.info(personaDao.selectAll().toString());
+			
+			gamesDao = new GamesDao(database);
+			LOG.info("drop the tables if they exist");
+			gamesDao.drop();
+
+			LOG.info("create the games table");
+			gamesDao.create();
+			
+			LOG.info("Reading from " + GAMES_DATA_FILE_NAME);
+			GameReader gameReader = new GameReader(GAMES_DATA_FILE_NAME);
+
 			try {
-				connection.close();
-			} catch (SQLException e) {
-				LOG.error("SQL Exception: " + e.getMessage());
+				gameReader = new GameReader(GAMES_DATA_FILE_NAME);
+
+				while (gameReader.moreData()) {
+					gamesDao.add(gameReader.getNextGame());
+				}
+			} catch (Exception e) {
+				LOG.error("Games Read Error:  " + e.getMessage());
 			}
-		}
+			
+
+			LOG.info(gamesDao.selectAll().toString());
+			
+			
+			scoresDao = new ScoresDao(database);
+			LOG.info("drop the tables if they exist");
+			scoresDao.drop();
+
+			LOG.info("create the scores table");
+			scoresDao.create();
+			
+			LOG.info("Reading from " + SCORES_DATA_FILE_NAME);
+			ScoreReader scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+
+			try {
+				scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+
+				while (scoreReader.moreData()) {
+					scoresDao.add(scoreReader.getNextScore());
+				}
+			} catch (Exception e) {
+				LOG.error("Scores Read Error:  " + e.getMessage());
+			}
+
+
+			LOG.info(scoresDao.selectAll().toString());
+
 
 	}
 

@@ -396,3 +396,656 @@ Win:Loss   Game Name            Gamertag        Platform
 
 2016-03-03 16:50:03.646 [main] INFO  a00892244.Gis - Exiting.  Duration: 2207 ms
 
+2016-03-03 22:23:14.183 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:23:14.197 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:23:14.197 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:23:14.201 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:23:15.792 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:23:16.522 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:23:16.616 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:23:16.782 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:23:16.833 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:23:16.875 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:23:16.888 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:23:16.889 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:23:16.910 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:23:16.943 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:23:16.978 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:23:16.979 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:23:16.994 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:23:17.016 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:23:17.040 [main] ERROR a00892244.Gis - Read Error:  For input string: "NUPI"
+2016-03-03 22:23:17.041 [main] INFO  a00892244.Gis - Writing report
+2016-03-03 22:23:17.042 [main] INFO  a00892244.Gis - Validating arguments [by_count, desc, platform=IO, total]
+2016-03-03 22:23:17.057 [main] ERROR a00892244.Gis - java.lang.NullPointerException
+2016-03-03 22:23:17.058 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:28:52.338 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:28:52.359 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:28:52.360 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:28:52.375 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:28:53.623 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:28:54.042 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:28:54.161 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:28:54.368 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:28:54.404 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:28:54.447 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:28:54.467 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:28:54.469 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:28:54.539 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:28:54.568 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:28:54.600 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:28:54.601 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:28:54.657 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:28:54.686 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:28:54.710 [main] ERROR a00892244.Gis - Read Error:  For input string: "NUPI"
+2016-03-03 22:28:54.712 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:28:54.713 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:29:26.112 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:29:26.115 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:29:26.115 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:29:26.117 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:29:26.808 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:29:27.199 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:29:27.313 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:29:27.510 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:29:27.541 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:29:27.573 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:29:27.591 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:29:27.591 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:29:27.631 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:29:27.652 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:29:27.683 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:29:27.684 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:29:27.724 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:29:27.754 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:29:27.788 [main] ERROR a00892244.Gis - Read Error:  For input string: "NUPI"
+2016-03-03 22:29:27.791 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:29:27.792 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:30:39.607 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:30:39.621 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:30:39.621 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:30:39.623 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:30:40.244 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:30:40.668 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:30:40.814 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:30:41.202 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:30:41.244 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:30:41.293 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:30:41.313 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:30:41.314 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:30:41.368 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:30:41.411 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:30:41.444 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:30:41.447 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:30:41.447 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:32:16.255 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:32:16.257 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:32:16.257 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:32:16.259 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:32:17.162 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:32:17.820 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:32:17.981 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:32:18.182 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:32:18.226 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:32:18.258 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:32:18.271 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:32:18.272 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:32:18.340 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:32:18.390 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:32:18.425 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:32:18.428 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:32:18.428 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:32:56.784 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:32:56.787 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:32:56.788 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:32:56.789 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:32:57.458 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:32:57.927 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:32:58.068 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:32:58.340 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:32:58.406 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:32:58.432 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:32:58.451 [main] ERROR a00892244.Gis - Read Error:  Format specifier '%s'
+2016-03-03 22:32:58.453 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:32:58.498 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:32:58.523 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:32:58.590 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:32:58.591 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:33:41.370 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:33:41.373 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:33:41.373 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:33:41.375 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:33:42.037 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:33:42.431 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:33:42.574 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:33:42.819 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:33:42.864 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:33:42.894 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:33:43.069 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:33:43.169 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:33:43.198 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:33:43.297 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:33:43.297 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:34:39.121 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:34:39.136 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:34:39.137 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:34:39.138 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:34:39.969 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:34:40.361 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:34:40.491 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:34:40.722 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:34:40.772 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:34:40.809 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:34:40.961 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:34:41.035 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:34:41.066 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:34:41.141 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:34:41.141 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:35:41.084 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:35:41.086 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:35:41.087 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:35:41.088 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:35:41.820 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:35:42.219 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:35:42.322 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:35:42.504 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:35:42.536 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:35:42.581 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:35:42.730 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:35:42.731 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:36:06.009 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:36:06.011 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:36:06.011 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:36:06.013 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:36:06.692 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:36:07.052 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:36:07.165 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:36:07.395 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:36:07.395 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:38:22.616 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:38:22.619 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:38:22.619 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:38:22.621 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:38:23.277 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:38:23.655 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:38:23.771 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:38:24.021 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:38:24.022 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:38:24.114 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:38:24.151 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:38:24.289 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:38:24.383 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:38:24.435 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:38:24.514 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:38:24.515 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:39:00.889 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:39:00.892 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:39:00.893 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:39:00.894 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:39:01.550 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:39:01.902 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:39:02.014 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:39:02.295 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:39:02.296 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:39:02.336 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:39:02.374 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:39:02.607 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:39:02.608 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:39:02.700 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:39:02.740 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:39:02.826 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:39:02.827 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:39:38.740 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:39:38.742 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:39:38.742 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:39:38.744 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:39:39.426 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:39:39.812 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:39:39.941 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:39:40.188 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:39:40.189 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:39:40.235 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:39:40.273 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:39:40.432 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:39:40.433 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:39:40.537 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:39:40.586 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:39:40.652 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:39:40.653 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:39:40.740 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:39:40.782 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:39:40.797 [main] ERROR a00892244.Gis - Read Error:  For input string: "NUPI"
+2016-03-03 22:39:40.801 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:39:40.801 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:40:14.883 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:40:14.887 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:40:14.887 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:40:14.889 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:40:15.609 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:15.958 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:40:16.088 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:40:16.347 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:40:16.349 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:16.411 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:40:16.448 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:40:16.644 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:40:16.645 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:16.750 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:40:16.795 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:40:16.877 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:40:16.878 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:16.920 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:40:16.965 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:40:16.983 [main] ERROR a00892244.Gis - Read Error:  For input string: "NUPI"
+2016-03-03 22:40:16.994 [main] INFO  a00892244.Gis - []
+2016-03-03 22:40:17.002 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:40:17.003 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:40:46.032 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:40:46.037 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:40:46.037 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:40:46.039 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:40:46.753 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:47.178 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:40:47.276 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:40:47.547 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:40:47.549 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:47.616 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:40:47.669 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:40:47.816 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:40:47.819 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:47.872 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:40:47.897 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:40:47.961 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:40:47.962 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:40:48.012 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:40:48.059 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:40:48.085 [main] ERROR a00892244.Gis - Scores Read Error:  For input string: "NUPI"
+2016-03-03 22:40:48.095 [main] INFO  a00892244.Gis - []
+2016-03-03 22:40:48.102 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:40:48.103 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:43:49.076 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:43:49.083 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:43:49.084 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:43:49.086 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:43:49.742 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:43:50.313 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:43:50.413 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:43:50.704 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:43:50.715 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:43:50.772 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:43:50.805 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:43:51.037 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:43:51.093 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:43:51.129 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:43:51.167 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:43:51.227 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:43:51.288 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:43:51.331 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:43:51.371 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:43:51.428 [main] ERROR a00892244.Gis - Scores Read Error:  The number of values assigned is not the same as the number of specified or implied columns.
+2016-03-03 22:43:51.433 [main] INFO  a00892244.Gis - []
+2016-03-03 22:43:51.437 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:43:51.437 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:46:45.207 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:46:45.221 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:46:45.221 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:46:45.236 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:46:46.552 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:46:47.150 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:46:47.282 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:46:48.259 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:46:48.267 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:46:48.303 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:46:48.336 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:46:48.490 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:46:48.501 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:46:48.563 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:46:48.594 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:46:48.663 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:46:48.665 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:46:48.769 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:46:48.835 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:46:49.154 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 22:46:49.170 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:46:49.171 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:50:10.531 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:50:10.546 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:50:10.547 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:50:10.562 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:50:11.866 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:12.557 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:50:12.677 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:50:13.009 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:50:13.011 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:13.059 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:50:13.096 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:50:13.229 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:50:13.231 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:13.309 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:50:13.358 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:50:13.426 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:50:13.427 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:13.470 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:50:13.535 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:50:13.831 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 22:50:13.923 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:50:13.923 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:50:46.863 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:50:46.869 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:50:46.870 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:50:46.881 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:50:47.664 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:48.152 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:50:48.262 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:50:48.513 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:50:48.514 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:48.559 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:50:48.596 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:50:48.749 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:50:48.751 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:48.822 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:50:48.882 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:50:48.958 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:50:48.959 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:50:49.026 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:50:49.052 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:50:49.385 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 22:50:49.404 [main] INFO  a00892244.Gis - closing connection
+2016-03-03 22:50:49.477 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:50:49.479 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:51:24.016 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:51:24.019 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:51:24.019 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:51:24.021 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:51:24.773 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:51:25.197 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:51:25.292 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:51:25.508 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:51:25.510 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:51:25.547 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:51:25.590 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:51:25.704 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:51:25.705 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:51:25.831 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:51:25.857 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:51:25.913 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:51:25.916 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:51:25.961 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:51:25.991 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:51:26.265 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 22:51:26.269 [main] INFO  a00892244.Gis - closing connection
+2016-03-03 22:51:26.350 [main] INFO  a00892244.Gis - connection closed
+2016-03-03 22:51:26.354 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:51:26.354 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:52:20.587 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:52:20.595 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:52:20.595 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:52:20.598 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:52:21.328 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:21.760 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:52:21.908 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:52:22.144 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:52:22.145 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:22.191 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:52:22.228 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:52:22.378 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:52:22.379 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:22.458 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:52:22.474 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:52:22.522 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:52:22.526 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:22.567 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:52:22.594 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:52:22.898 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 22:52:22.899 [main] INFO  a00892244.Gis - closing connection
+2016-03-03 22:52:22.986 [main] INFO  a00892244.Gis - connection closed
+2016-03-03 22:52:22.989 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:52:22.990 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:52:51.627 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:52:51.630 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:52:51.631 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:52:51.632 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:52:52.340 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:52.714 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:52:52.856 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:52:53.084 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:52:53.085 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:53.143 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:52:53.174 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:52:53.319 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:52:53.323 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:53.415 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:52:53.443 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:52:53.485 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:52:53.492 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:52:53.549 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:52:53.579 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:52:53.929 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 22:52:53.947 [main] INFO  a00892244.Gis - closing connection
+2016-03-03 22:52:53.947 [main] INFO  a00892244.Gis - connection closed
+2016-03-03 22:52:54.014 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:52:54.015 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:55:32.637 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:55:32.649 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:55:32.649 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:55:32.657 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 22:55:34.210 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:55:34.785 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 22:55:34.860 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 22:55:35.028 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 22:55:35.029 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:55:35.073 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 22:55:35.115 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 22:55:35.254 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 22:55:35.289 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:55:35.302 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 22:55:35.321 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 22:55:35.552 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 22:55:35.584 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 22:55:35.603 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 22:55:35.626 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 22:55:35.846 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 22:55:35.850 [main] INFO  a00892244.Gis - closing connection
+2016-03-03 22:55:35.851 [main] INFO  a00892244.Gis - connection closed
+2016-03-03 22:55:35.876 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 22:55:35.876 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 22:59:59.894 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 22:59:59.910 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 22:59:59.910 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 22:59:59.918 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 23:00:01.686 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:00:02.243 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 23:00:02.334 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 23:00:02.519 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 23:00:02.521 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:00:02.550 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 23:00:02.573 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 23:00:02.826 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 23:00:02.828 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:00:02.871 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 23:00:02.909 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 23:00:02.973 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 23:00:02.975 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:00:03.001 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 23:00:03.017 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 23:00:03.209 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 23:00:03.210 [main] INFO  a00892244.Gis - closing connection
+2016-03-03 23:00:03.213 [main] INFO  a00892244.Gis - connection closed
+2016-03-03 23:00:03.259 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 23:00:03.259 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 23:07:27.669 [main] INFO  a00892244.Gis - Starting program
+2016-03-03 23:07:27.683 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-03 23:07:27.683 [main] INFO  a00892244.Gis - Reading data
+2016-03-03 23:07:27.688 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 23:07:30.173 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:07:31.160 [main] INFO  a00892244.Gis - create the players table
+2016-03-03 23:07:31.257 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-03 23:07:31.493 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 23:07:31.509 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:07:31.556 [main] INFO  a00892244.Gis - create the personas table
+2016-03-03 23:07:31.591 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-03 23:07:31.875 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-03 23:07:31.877 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:07:31.913 [main] INFO  a00892244.Gis - create the games table
+2016-03-03 23:07:31.960 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-03 23:07:32.043 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-03 23:07:32.048 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-03 23:07:32.107 [main] INFO  a00892244.Gis - create the scores table
+2016-03-03 23:07:32.126 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-03 23:07:32.379 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-03 23:07:32.384 [main] INFO  a00892244.Gis - closing connection
+2016-03-03 23:07:32.392 [main] INFO  a00892244.Gis - connection closed
+2016-03-03 23:07:32.404 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-03 23:07:32.405 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-03 23:11:42.690 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-03 23:11:45.407 [main] INFO  a00892244.database.PlayerDaoTester - drop the tables if they exist
+2016-03-03 23:11:46.378 [main] INFO  a00892244.database.PlayerDaoTester - create the tables
+2016-03-03 23:11:46.479 [main] INFO  a00892244.database.PlayerDaoTester - Reading from players.dat
+2016-03-03 23:11:46.957 [main] INFO  a00892244.database.PlayerDaoTester - testing selectAll()
+2016-03-03 23:11:46.963 [main] INFO  a00892244.database.PlayerDaoTester - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 23:11:46.964 [main] INFO  a00892244.database.PlayerDaoTester - testing delete()
+2016-03-03 23:11:46.966 [main] INFO  a00892244.database.PlayerDaoTester - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 23:11:46.966 [main] INFO  a00892244.database.PlayerDaoTester - Deleting 1
+2016-03-03 23:11:46.993 [main] INFO  a00892244.database.PlayerDaoTester - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-03 23:11:46.994 [main] INFO  a00892244.database.PlayerDaoTester - getting player ID=1
+2016-03-03 23:11:47.001 [main] INFO  a00892244.database.PlayerDaoTester - []
+2016-03-03 23:11:47.001 [main] INFO  a00892244.database.PlayerDaoTester - testing update()
+2016-03-03 23:11:47.001 [main] INFO  a00892244.database.PlayerDaoTester - getting player 3
+2016-03-03 23:11:47.007 [main] INFO  a00892244.database.PlayerDaoTester - [Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}]]
+2016-03-03 23:11:47.007 [main] INFO  a00892244.database.PlayerDaoTester - updating player 3
+2016-03-03 23:11:47.138 [main] INFO  a00892244.database.PlayerDaoTester - [Player [identifier=3, firstName=NewTestName, lastName=asdf, emailAddress=asdf@asdf.asdf, birthdate=2112-01-01, personas={}]]
+2016-03-04 09:02:50.204 [main] INFO  a00892244.Gis - Starting program
+2016-03-04 09:02:50.215 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-04 09:02:50.216 [main] INFO  a00892244.Gis - Reading data
+2016-03-04 09:02:50.222 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-04 09:02:52.723 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:02:53.785 [main] INFO  a00892244.Gis - create the players table
+2016-03-04 09:02:53.846 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-04 09:02:54.017 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-04 09:02:54.020 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:02:54.076 [main] INFO  a00892244.Gis - create the personas table
+2016-03-04 09:02:54.093 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-04 09:02:54.300 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-04 09:02:54.302 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:02:54.325 [main] INFO  a00892244.Gis - create the games table
+2016-03-04 09:02:54.342 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-04 09:02:54.453 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-04 09:02:54.457 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:02:54.494 [main] INFO  a00892244.Gis - create the scores table
+2016-03-04 09:02:54.510 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-04 09:02:54.734 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 09:02:54.738 [main] INFO  a00892244.Gis - closing connection
+2016-03-04 09:02:54.741 [main] INFO  a00892244.Gis - connection closed
+2016-03-04 09:02:54.840 [main] ERROR a00892244.Gis - java.sql.SQLNonTransientConnectionException: No current connection.
+2016-03-04 09:02:54.841 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-04 09:27:09.764 [main] INFO  a00892244.Gis - Starting program
+2016-03-04 09:27:09.773 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-04 09:27:09.774 [main] INFO  a00892244.Gis - Reading data
+2016-03-04 09:27:09.780 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-04 09:27:12.002 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:27:12.835 [main] INFO  a00892244.Gis - create the players table
+2016-03-04 09:27:12.917 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-04 09:27:13.073 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-04 09:27:13.074 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:27:13.129 [main] INFO  a00892244.Gis - create the personas table
+2016-03-04 09:27:13.165 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-04 09:27:13.418 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-04 09:27:13.420 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:27:13.445 [main] INFO  a00892244.Gis - create the games table
+2016-03-04 09:27:13.471 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-04 09:27:13.572 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-04 09:27:13.576 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:27:13.627 [main] INFO  a00892244.Gis - create the scores table
+2016-03-04 09:27:13.649 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-04 09:27:14.161 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 09:27:14.161 [main] INFO  a00892244.Gis - closing connection
+2016-03-04 09:27:14.162 [main] INFO  a00892244.Gis - connection closed
+2016-03-04 09:27:14.249 [main] INFO  a00892244.Gis - Exiting.  Duration: 4638 ms
+
+2016-03-04 09:31:19.199 [main] INFO  a00892244.Gis - Starting program
+2016-03-04 09:31:19.202 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-04 09:31:19.204 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-04 09:31:20.700 [main] INFO  a00892244.Gis - Reading data
+2016-03-04 09:31:20.701 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:31:21.262 [main] INFO  a00892244.Gis - create the players table
+2016-03-04 09:31:21.303 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-04 09:31:21.456 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-04 09:31:21.462 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:31:21.508 [main] INFO  a00892244.Gis - create the personas table
+2016-03-04 09:31:21.543 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-04 09:31:21.806 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-04 09:31:21.807 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:31:21.843 [main] INFO  a00892244.Gis - create the games table
+2016-03-04 09:31:21.863 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-04 09:31:21.936 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-04 09:31:21.937 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 09:31:21.978 [main] INFO  a00892244.Gis - create the scores table
+2016-03-04 09:31:22.007 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-04 09:31:22.270 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 09:31:22.272 [main] INFO  a00892244.Gis - data is read:
+2016-03-04 09:31:22.273 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22, personas={}], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28, personas={}], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12, personas={}], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03, personas={}], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01, personas={}]]
+2016-03-04 09:31:22.275 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO, games={}], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS, games={}], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO, games={}], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN, games={}], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC, games={}], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS, games={}], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB, games={}], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC, games={}], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB, games={}], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC, games={}], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN, games={}]]
+2016-03-04 09:31:22.277 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer, scores=[]], Game [id=NUPI, name=Number Picker, producer=Random Numburrs, scores=[]], Game [id=QUFI, name=Quick Fingers, producer=Digitology, scores=[]]]
+2016-03-04 09:31:22.279 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 09:31:22.280 [main] INFO  a00892244.Gis - closing connection
+2016-03-04 09:31:22.282 [main] INFO  a00892244.Gis - connection closed
+2016-03-04 09:31:22.371 [main] INFO  a00892244.Gis - Exiting.  Duration: 3279 ms
+
+2016-03-04 10:54:54.323 [main] INFO  a00892244.Gis - Starting program
+2016-03-04 10:54:54.335 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-04 10:54:54.357 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-04 10:54:57.187 [main] INFO  a00892244.Gis - Reading data
+2016-03-04 10:54:57.212 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 10:54:58.106 [main] INFO  a00892244.Gis - create the players table
+2016-03-04 10:54:58.173 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-04 10:54:58.331 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-04 10:54:58.333 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 10:54:58.366 [main] INFO  a00892244.Gis - create the personas table
+2016-03-04 10:54:58.381 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-04 10:54:58.645 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-04 10:54:58.647 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 10:54:58.670 [main] INFO  a00892244.Gis - create the games table
+2016-03-04 10:54:58.684 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-04 10:54:58.790 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-04 10:54:58.792 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 10:54:58.822 [main] INFO  a00892244.Gis - create the scores table
+2016-03-04 10:54:58.837 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-04 10:54:59.037 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 10:54:59.047 [main] INFO  a00892244.Gis - data is read:
+2016-03-04 10:54:59.049 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-04 10:54:59.052 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-04 10:54:59.054 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-04 10:54:59.055 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 10:54:59.056 [main] INFO  a00892244.Gis - closing connection
+2016-03-04 10:54:59.056 [main] INFO  a00892244.Gis - connection closed
+2016-03-04 10:54:59.131 [main] INFO  a00892244.Gis - Exiting.  Duration: 4940 ms
+
+2016-03-04 11:23:50.921 [main] INFO  a00892244.Gis - Starting program
+2016-03-04 11:23:50.930 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-04 11:23:50.936 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-04 11:23:53.123 [main] INFO  a00892244.Gis - Reading data
+2016-03-04 11:23:53.154 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 11:23:53.834 [main] INFO  a00892244.Gis - create the players table
+2016-03-04 11:23:53.907 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-04 11:23:54.093 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-04 11:23:54.100 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 11:23:54.141 [main] INFO  a00892244.Gis - create the personas table
+2016-03-04 11:23:54.160 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-04 11:23:54.416 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-04 11:23:54.419 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 11:23:54.440 [main] INFO  a00892244.Gis - create the games table
+2016-03-04 11:23:54.459 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-04 11:23:54.574 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-04 11:23:54.576 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-04 11:23:54.602 [main] INFO  a00892244.Gis - create the scores table
+2016-03-04 11:23:54.637 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-04 11:23:54.952 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 11:23:54.963 [main] INFO  a00892244.Gis - data is read:
+2016-03-04 11:23:54.964 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-04 11:23:54.967 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-04 11:23:54.968 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-04 11:23:54.970 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-04 11:23:54.970 [main] INFO  a00892244.Gis - closing connection
+2016-03-04 11:23:54.971 [main] INFO  a00892244.Gis - connection closed
+2016-03-04 11:23:55.038 [main] INFO  a00892244.Gis - Exiting.  Duration: 4365 ms
+

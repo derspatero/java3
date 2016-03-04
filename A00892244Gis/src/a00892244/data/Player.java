@@ -24,13 +24,11 @@ public class Player {
 	private String lastName;
 	private String emailAddress;
 	private LocalDate birthdate;
-	private Map<Integer, Persona> personas;
 
 	/**
 	 * default constructor
 	 */
 	public Player() {
-		personas = new HashMap<Integer, Persona>();
 	}
 
 	/**
@@ -47,7 +45,6 @@ public class Player {
 		setLastName(lastName);
 		setEmailAddress(emailAddress);
 		setBirthdate(birthdate);
-		personas = new HashMap<Integer, Persona>();
 	}
 
 	/**
@@ -139,66 +136,6 @@ public class Player {
 		this.birthdate = birthdate;
 	}
 
-	/**
-	 * 
-	 * @param persona
-	 */
-	public void addPersona(Persona persona) {
-		personas.put(persona.getId(), persona);
-	}
-
-	/**
-	 * 
-	 * @param personaId
-	 * @return
-	 */
-	public Persona getPersona(Integer personaId) {
-		return personas.get(personaId);
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public Map<Integer, Persona> getPersonas() {
-		return personas;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public int getTotalGamesPlayed() {
-		int total = 0;
-		for (int personaKey : personas.keySet()) {
-			Persona persona = personas.get(personaKey);
-			for (String gameKey : persona.getGames().keySet()) {
-				total += persona.getGames().get(gameKey).getScores().size();
-			}
-		}
-		return total;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public int getTotalWins() {
-		int total = 0;
-		for (int personaKey : personas.keySet()) {
-			Persona persona = personas.get(personaKey);
-			for (String gameKey : persona.getGames().keySet()) {
-				Iterator<Score> iterator = persona.getGames().get(gameKey).getScores().iterator();
-				while (iterator.hasNext()) {
-					Score score = iterator.next();
-					if (score.getWin().equals("WIN")) {
-						total++;
-					}
-				}
-			}
-		}
-		return total;
-	}
 
 	/**
 	 * 
@@ -210,14 +147,14 @@ public class Player {
 
 	}
 
-	/*
-	 * (non-Javadoc)
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Player [identifier=" + identifier + ", firstName=" + firstName + ", lastName=" + lastName + ", emailAddress=" + emailAddress + ", birthdate=" + birthdate
-				+ ", personas=" + personas + "]";
+		return "Player [identifier=" + identifier + ", firstName=" + firstName + ", lastName=" + lastName + ", emailAddress=" + emailAddress + ", birthdate=" + birthdate + "]";
 	}
+
+
 
 }

@@ -44,7 +44,7 @@ public class PersonaDao extends Dao {
 	}
 
 	public void add(Persona persona) throws SQLException {
-		String insertString = String.format("insert into %s values('%s', '%s', '%s', '%s', '%s')", tableName, //
+		String insertString = String.format("insert into %s values('%s', '%s', '%s', '%s')", tableName, //
 				persona.getId(), //
 				persona.getPlayerId(), //
 				persona.getGamerTag(), //

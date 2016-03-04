@@ -20,13 +20,11 @@ public class Persona {
 	private int playerId;
 	private String gamerTag;
 	private String platform;
-	private Map<String, Game> games;
 
 	/**
 	 * 
 	 */
 	public Persona() {
-		games = new HashMap<String, Game>();
 	}
 
 	/**
@@ -41,7 +39,6 @@ public class Persona {
 		setPlayerId(playerId);
 		setGamerTag(gamerTag);
 		setPlatform(platform);
-		games = new HashMap<String, Game>();
 	}
 
 	/**
@@ -104,29 +101,14 @@ public class Persona {
 		this.platform = platform;
 	}
 
-	/**
-	 * 
-	 * @param game
-	 */
-	public void addGame(Game game) {
-		games.put(game.getId(), game);
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public Map<String, Game> getGames() {
-		return games;
-	}
-
-	/*
-	 * (non-Javadoc)
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Persona [id=" + id + ", playerId=" + playerId + ", gamerTag=" + gamerTag + ", platform=" + platform + ", games=" + games + "]";
+		return "Persona [id=" + id + ", playerId=" + playerId + ", gamerTag=" + gamerTag + ", platform=" + platform + "]";
 	}
+
+
 
 }

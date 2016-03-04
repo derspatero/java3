@@ -19,13 +19,11 @@ public class Game {
 	private String id;
 	private String name;
 	private String producer;
-	private List<Score> scores;
 
 	/**
 	 * 
 	 */
 	public Game() {
-		scores = new ArrayList<Score>();
 	}
 
 	/**
@@ -35,8 +33,7 @@ public class Game {
 	public Game(Game sourceGame) {
 		setId(sourceGame.getId());
 		setName(sourceGame.getName());
-		setProducer(sourceGame.getWinLossRatio());
-		scores = new ArrayList<Score>();
+		setProducer(sourceGame.getProducer());
 	}
 
 	/**
@@ -49,7 +46,6 @@ public class Game {
 		setId(id);
 		setName(name);
 		setProducer(producer);
-		scores = new ArrayList<Score>();
 	}
 
 	/**
@@ -97,47 +93,15 @@ public class Game {
 		this.producer = producer;
 	}
 
-	/**
-	 * 
-	 * @param score
-	 */
-	public void addScore(Score score) {
-		scores.add(score);
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public List<Score> getScores() {
-		return scores;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public String getWinLossRatio() {
-		int winTotal = 0;
-		int lossTotal = 0;
-
-		for (Score score : scores) {
-			if (score.getWin().equals("WIN")) {
-				winTotal++;
-			} else {
-				lossTotal++;
-			}
-		}
-		return winTotal + ":" + lossTotal;
-	}
-
-	/*
-	 * (non-Javadoc)
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", producer=" + producer + ", scores=" + scores + "]";
+		return "Game [id=" + id + ", name=" + name + ", producer=" + producer + "]";
 	}
+
+
+
 
 }
