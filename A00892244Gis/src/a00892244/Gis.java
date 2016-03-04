@@ -7,6 +7,10 @@
 
 package a00892244;
 
+import java.io.File;
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -15,6 +19,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +28,9 @@ import a00892244.data.Game;
 import a00892244.data.Persona;
 import a00892244.data.Player;
 import a00892244.data.Score;
+import a00892244.database.Database;
+import a00892244.database.PersonaDao;
+import a00892244.database.PlayerDao;
 import a00892244.io.GameReader;
 import a00892244.io.PersonaReader;
 import a00892244.io.PlayerReader;
@@ -40,6 +48,16 @@ import a00892244.utils.LeaderBoardReport;
 
 public class Gis {
 
+	private static Database database;
+	private static PlayerDao playerDao;
+	private static PersonaDao personaDao;
+
+	private static Properties dbProperties;
+	private static Connection connection;
+	public static final String DB_PROPERTIES_FILENAME = "db.properties";
+	public static final String PLAYERS_DATA_FILE_NAME = "players.dat";
+	public static final String PERSONAS_DATA_FILE_NAME = "personas.dat";
+
 	private static final Logger LOG = LogManager.getLogger(Gis.class);
 	static Map<Integer, Player> players;
 	static Map<String, Game> games;
@@ -54,6 +72,7 @@ public class Gis {
 
 		try {
 			LocalDateTime startDate = LocalDateTime.now();
+
 			LOG.info("Starting program");
 			LOG.info("program arguments: " + Arrays.toString(args));
 
@@ -143,16 +162,8 @@ public class Gis {
 		games = new HashMap<String, Game>();
 		players = new HashMap<Integer, Player>();
 
-		LOG.info("Reading from personas.dat");
-		PersonaReader personaReader = new PersonaReader("personas.dat");
 
-		while (personaReader.moreData()) {
-			Persona newPersona = personaReader.getNextPersona();
-			LOG.debug("New :  " + newPersona.toString());
-			personas.put(newPersona.getId(), newPersona);
-		}
 
-		LOG.debug(personas.toString());
 
 		LOG.info("Reading from games.dat");
 		GameReader gameReader = new GameReader("games.dat");
@@ -183,29 +194,65 @@ public class Gis {
 			throw new ApplicationException("Invalid score data. " + e);
 		}
 
-		LOG.info("Reading from players.dat");
-		PlayerReader playerReader = new PlayerReader("players.dat");
-
-		while (playerReader.moreData()) {
-			Player newPlayer = playerReader.getNextPlayer();
-			LOG.debug("New " + newPlayer.toString());
-			players.put(newPlayer.getIdentifier(), newPlayer);
+		File dbPropertiesFile = new File(DB_PROPERTIES_FILENAME);
+		if (!dbPropertiesFile.exists()) {
+			System.exit(-1);
 		}
-		LOG.debug(players.toString());
+		dbProperties = new Properties();
 
 		try {
-			LOG.info("Assigning personas to players");
-			for (int key : personas.keySet()) {
-				Player player = players.get(personas.get(key).getPlayerId());
-				player.addPersona(personas.get(key));
-				players.put(player.getIdentifier(), player);
-				LOG.debug("Added Persona " + personas.get(key) + " to player id " + player.getIdentifier());
+			dbProperties.load(new FileReader(dbPropertiesFile));
+			database = new Database(dbProperties);
+			connection = database.getConnection();
+			playerDao = new PlayerDao(database);
+
+			LOG.info("drop the tables if they exist");
+			playerDao.drop();
+
+			LOG.info("create the tables");
+			playerDao.create();
+
+			LOG.info("Reading from " + PLAYERS_DATA_FILE_NAME);
+			try {
+				PlayerReader playerReader = new PlayerReader(PLAYERS_DATA_FILE_NAME);
+
+				while (playerReader.moreData()) {
+					playerDao.add(playerReader.getNextPlayer());
+				}
+			} catch (Exception e) {
+				LOG.error("Read Error:  " + e.getMessage());
 			}
+
+			personaDao = new PersonaDao(database);
+			LOG.info("drop the tables if they exist");
+			personaDao.drop();
+
+			LOG.info("create the tables");
+			personaDao.create();
+			
+			LOG.info("Reading from personas.dat");
+			PersonaReader personaReader = new PersonaReader("personas.dat");
+
+			try {
+				personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
+
+				while (personaReader.moreData()) {
+					personaDao.add(personaReader.getNextPersona());
+				}
+			} catch (Exception e) {
+				LOG.error("Read Error:  " + e.getMessage());
+			}
+
 		} catch (Exception e) {
-			throw new ApplicationException("Invalid player id in persona data.  " + e);
+			LOG.error("SQL Exception: " + e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				LOG.error("SQL Exception: " + e.getMessage());
+			}
 		}
 
-		LOG.debug(players.toString());
 	}
 
 }

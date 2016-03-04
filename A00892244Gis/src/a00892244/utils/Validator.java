@@ -78,7 +78,7 @@ public class Validator {
 	 * @param dateString
 	 * @return
 	 */
-	public LocalDate validateBirthdate(String dateString) throws ApplicationException {
+	public static LocalDate validateBirthdate(String dateString) throws ApplicationException {
 		try {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 			LocalDate bdate = LocalDate.parse(dateString, formatter);

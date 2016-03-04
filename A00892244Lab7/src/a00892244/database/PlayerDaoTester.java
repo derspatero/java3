@@ -23,7 +23,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
-import a00892244.Lab7;
 import a00892244.data.Player;
 import a00892244.utils.PlayerReader;
 import a00892244.utils.Validator;
@@ -41,7 +40,7 @@ public class PlayerDaoTester {
 	private static Connection connection;
 	public static final String DB_PROPERTIES_FILENAME = "db.properties";
 
-	private static final Logger LOG = LogManager.getLogger(Lab7.class);
+	private static final Logger LOG = LogManager.getLogger(PlayerDaoTester.class);
 	private static PlayerReader playerReader;
 	
 	public static void main(String[] args) throws Exception {                    
