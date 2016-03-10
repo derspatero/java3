@@ -55,7 +55,13 @@ public class LeaderReportDao {
 			// Execute a statement
 
 			resultSet = statement.executeQuery(sqlStatement);
-
+/*
+ * select ADMIN.scores.win, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform from 
+ADMIN.scores join ADMIN.persona on ADMIN.persona.id = ADMIN.scores.persona_id
+join ADMIN.player 
+on ADMIN.persona.playerid = ADMIN.player.identifier
+join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id;
+ */
 			while (resultSet.next()) {
 				reportEntries.add(nextEntryResult());
 			}
