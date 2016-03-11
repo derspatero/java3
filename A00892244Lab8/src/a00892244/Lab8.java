@@ -17,18 +17,18 @@ import a00892244.threads.Thread1;
 
 public class Lab8 {
 	public static Object lockObj = new Object();
-	public static boolean isPrinted = true;
-	
+	public static boolean timeIsPrinted = false;
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+
 		Thread1 thread1 = new Thread1();
 		Thread thread2 = new Thread(new Counter());
-		
+
 		thread1.start();
-		thread2.start();	
+		thread2.start();
 
 	}
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="A00892244Gis/src"/>
+	<classpathentry kind="src" path="A00892244Lab1/src"/>
+	<classpathentry kind="src" path="A00892244Lab2/src"/>
+	<classpathentry kind="src" path="A00892244Lab3/src"/>
+	<classpathentry kind="src" path="A00892244Lab4/src"/>
+	<classpathentry kind="src" path="A00892244Lab5/src"/>
+	<classpathentry kind="src" path="A00892244Lab7/src"/>
+	<classpathentry kind="lib" path="A00892244Gis/lib/derby.jar"/>
+	<classpathentry kind="lib" path="A00892244Gis/lib/jtds-1.2.5.jar"/>
+	<classpathentry kind="lib" path="A00892244Gis/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="A00892244Gis/lib/log4j-api-2.4.jar"/>
+	<classpathentry kind="lib" path="A00892244Gis/lib/log4j-core-2.4.jar"/>
+	<classpathentry kind="lib" path="A00892244Gis/out/A00892244Gis.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab2/out/A00892244Lab2.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab3/out/A00892244Lab3.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab4/out/A00892244Lab4.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab5/lib/log4j-api-2.4.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab5/lib/log4j-core-2.4.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab7/lib/derby.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab7/lib/jtds-1.2.5.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab7/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab7/lib/log4j-api-2.4.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab7/lib/log4j-core-2.4.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab7/out/A00892244Lab7.jar"/>
+	<classpathentry kind="lib" path="A00892244Lab7/out/A00892244Lab7JUnitTests.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="A00892244Gis/bin"/>
+</classpath>

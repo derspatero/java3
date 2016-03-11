@@ -28,7 +28,7 @@ public class Thread1 extends Thread {
 			while (true) {
 				try {
 					System.out.format("=== Start: %s ===\n", LocalDateTime.now());
-					Lab8.isPrinted = true;
+					Lab8.timeIsPrinted = true;
 					Lab8.lockObj.notifyAll();
 					Lab8.lockObj.wait();
 

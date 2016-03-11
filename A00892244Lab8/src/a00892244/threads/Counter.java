@@ -30,9 +30,9 @@ public class Counter implements Runnable {
 		synchronized (Lab8.lockObj) {
 			while (true) {
 				try {
-					if (!Lab8.isPrinted) {
+					if (!Lab8.timeIsPrinted) {
 						Lab8.lockObj.notifyAll();
-						this.wait();
+						Lab8.lockObj.wait();
 					}
 				} catch (InterruptedException e) {
 				}

@@ -1121,3 +1121,72 @@ Win:Loss   Game Name            Gamertag        Platform
 2016-03-08 16:24:04.397 [main] INFO  a00892244.Gis - closing connection
 2016-03-08 16:24:04.424 [main] ERROR a00892244.Gis - java.lang.NullPointerException
 2016-03-08 16:24:04.425 [main] ERROR a00892244.Gis - Terminating Program
+2016-03-10 11:10:39.867 [main] INFO  a00892244.Gis - Starting program
+2016-03-10 11:10:39.877 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-10 11:10:39.883 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-10 11:10:41.692 [main] INFO  a00892244.Gis - Reading data
+2016-03-10 11:10:41.694 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 11:10:42.713 [main] ERROR a00892244.Gis - SQL Exception: Operation 'DROP TABLE' cannot be performed on object 'PLAYER' because VIEW 'WIN_TABLE' is dependent on that object.
+2016-03-10 11:10:42.713 [main] INFO  a00892244.Gis - closing connection
+2016-03-10 11:10:42.714 [main] INFO  a00892244.Gis - connection closed
+2016-03-10 11:10:42.801 [main] INFO  a00892244.Gis - Exiting.  Duration: 3045 ms
+
+2016-03-10 13:32:22.325 [main] INFO  a00892244.Gis - Starting program
+2016-03-10 13:32:22.335 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-10 13:32:22.341 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-10 13:32:23.787 [main] INFO  a00892244.Gis - Reading data
+2016-03-10 13:32:23.816 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 13:32:24.735 [main] ERROR a00892244.Gis - SQL Exception: Operation 'DROP TABLE' cannot be performed on object 'PLAYER' because VIEW 'WIN_TABLE' is dependent on that object.
+2016-03-10 13:32:24.736 [main] INFO  a00892244.Gis - closing connection
+2016-03-10 13:32:24.736 [main] INFO  a00892244.Gis - connection closed
+2016-03-10 13:32:24.818 [main] INFO  a00892244.Gis - Exiting.  Duration: 2604 ms
+
+2016-03-10 13:34:28.807 [main] INFO  a00892244.Gis - Starting program
+2016-03-10 13:34:28.829 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-10 13:34:28.857 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-10 13:34:29.404 [main] INFO  a00892244.Gis - Reading data
+2016-03-10 13:34:29.409 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 13:34:29.921 [main] ERROR a00892244.Gis - SQL Exception: Operation 'DROP TABLE' cannot be performed on object 'PLAYER' because VIEW 'WINS' is dependent on that object.
+2016-03-10 13:34:29.922 [main] INFO  a00892244.Gis - closing connection
+2016-03-10 13:34:29.922 [main] INFO  a00892244.Gis - connection closed
+2016-03-10 13:34:30.013 [main] INFO  a00892244.Gis - Exiting.  Duration: 1303 ms
+
+2016-03-10 13:36:26.018 [main] INFO  a00892244.Gis - Starting program
+2016-03-10 13:36:26.037 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-10 13:36:26.094 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-10 13:36:27.286 [main] INFO  a00892244.Gis - Reading data
+2016-03-10 13:36:27.316 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 13:36:28.023 [main] ERROR a00892244.Gis - SQL Exception: Operation 'DROP TABLE' cannot be performed on object 'PLAYER' because VIEW 'NUMBEROFWINS' is dependent on that object.
+2016-03-10 13:36:28.024 [main] INFO  a00892244.Gis - closing connection
+2016-03-10 13:36:28.024 [main] INFO  a00892244.Gis - connection closed
+2016-03-10 13:36:28.106 [main] INFO  a00892244.Gis - Exiting.  Duration: 2196 ms
+
+2016-03-10 13:37:18.228 [main] INFO  a00892244.Gis - Starting program
+2016-03-10 13:37:18.261 [main] INFO  a00892244.Gis - program arguments: [by_count, desc, platform=IO, total]
+2016-03-10 13:37:18.312 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-10 13:37:20.245 [main] INFO  a00892244.Gis - Reading data
+2016-03-10 13:37:20.285 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 13:37:20.973 [main] INFO  a00892244.Gis - create the players table
+2016-03-10 13:37:21.073 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-10 13:37:21.389 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-10 13:37:21.391 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 13:37:21.435 [main] INFO  a00892244.Gis - create the personas table
+2016-03-10 13:37:21.496 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-10 13:37:21.797 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-10 13:37:21.802 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 13:37:21.822 [main] INFO  a00892244.Gis - create the games table
+2016-03-10 13:37:21.863 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-10 13:37:21.970 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-10 13:37:22.005 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-10 13:37:22.027 [main] INFO  a00892244.Gis - create the scores table
+2016-03-10 13:37:22.094 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-10 13:37:22.397 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-10 13:37:22.401 [main] INFO  a00892244.Gis - data is read:
+2016-03-10 13:37:22.404 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-10 13:37:22.407 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-10 13:37:22.408 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-10 13:37:22.413 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-10 13:37:22.414 [main] INFO  a00892244.Gis - closing connection
+2016-03-10 13:37:22.414 [main] INFO  a00892244.Gis - connection closed
+2016-03-10 13:37:22.519 [main] INFO  a00892244.Gis - Exiting.  Duration: 4418 ms
+
