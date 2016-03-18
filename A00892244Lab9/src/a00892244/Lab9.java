@@ -1,6 +1,6 @@
 /**
- * Project: A00892244Lab7
- * File: Lab7.java
+ * Project: A00892244Lab9
+ * File: Lab9.java
  * Date: March 1, 2016
  * Time: 10:32:18 AM
  */
@@ -15,17 +15,18 @@ import java.awt.EventQueue;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Properties;
+
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 
 import a00892244.database.PlayerDao;
 import a00892244.ui.MainFrame;
 import a00892244.database.Database;
 import a00892244.utils.ApplicationException;
 import a00892244.utils.PlayerReader;
-import a00892244.utils.PlayerReport;
 
 /**
  * @author Edward Lambke, A00892244
@@ -35,10 +36,9 @@ import a00892244.utils.PlayerReport;
 public class Lab9 {
 
 	private static Database database;
-	private PlayerDao playerDao;
+	private static PlayerDao playerDao;
 
 	private final Properties dbProperties;
-	private Connection connection;
 	public static final String DB_PROPERTIES_FILENAME = "db.properties";
 
 	private static final Logger LOG = LogManager.getLogger(Lab9.class);
@@ -49,17 +49,6 @@ public class Lab9 {
 	 * 
 	 */
 	public static void main(String[] args) {
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainFrame frame = new MainFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
 
 		File dbPropertiesFile = new File(DB_PROPERTIES_FILENAME);
 		if (!dbPropertiesFile.exists()) {
@@ -68,16 +57,39 @@ public class Lab9 {
 		}
 
 		try {
-			Lab9 lab7 = new Lab9(dbPropertiesFile);
-			lab7.run();
+
+			Lab9 lab9 = new Lab9(dbPropertiesFile);
+			lab9.initializeDB();
+
+			try {
+				for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+					if ("Nimbus".equals(info.getName())) {
+						UIManager.setLookAndFeel(info.getClassName());
+						break;
+					}
+				}
+			} catch (Exception e) {
+				// If Nimbus is not available, use the default.
+			}
+
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						MainFrame frame = new MainFrame(playerDao);
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 		} catch (Exception e) {
 			LOG.error(e.getMessage());
 			LOG.error("Terminating Program");
 			System.exit(-1);
 		} finally {
 			database.shutdown();
-//			LOG.info("Terminating Program");
-//			System.exit(0);
+			// LOG.info("Terminating Program");
+			// System.exit(0);
 		}
 
 	}
@@ -100,10 +112,9 @@ public class Lab9 {
 	 * @throws SQLException
 	 * @throws ApplicationException
 	 */
-	private void run() throws ClassNotFoundException, SQLException, ApplicationException {
-		PlayerReport playerReport = new PlayerReport();
+	private void initializeDB() throws ClassNotFoundException, SQLException, ApplicationException {
 		PlayerReader playerReader;
-		connection = database.getConnection();
+		// connection = database.getConnection();
 		playerDao = new PlayerDao(database);
 
 		try {
@@ -114,26 +125,18 @@ public class Lab9 {
 			playerDao.create();
 
 			LOG.info("Reading from players.txt");
-			try {
-				playerReader = new PlayerReader("players.txt");
 
-				while (playerReader.morePlayers()) {
-					playerDao.add(playerReader.getNextPlayer());
-				}
+			playerReader = new PlayerReader("players.txt");
 
-				LOG.info("Writing player report to players_report.txt");
-				playerReport.writeReport(playerDao.sortDescByBirthDateDesc(), "\n\nSort by Birthdate (Descending)", startDate, "players_report.txt");
-
-			} catch (Exception e) {
-				throw new ApplicationException("Read Error:  " + e.getMessage());
-
+			while (playerReader.morePlayers()) {
+				playerDao.add(playerReader.getNextPlayer());
 			}
 
-		} catch (SQLException e) {
-			throw new ApplicationException("SQL Exception: " + e.getMessage());
-		} finally {
-			connection.close();
+		} catch (Exception e) {
+			throw new ApplicationException("Read Error:  " + e.getMessage());
+
 		}
+
 	}
 
 	/**

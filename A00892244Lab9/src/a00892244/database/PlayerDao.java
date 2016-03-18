@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab7
+ * Project: A00892244Lab9
  * File: PlayerDao.java
  * Date: Mar 1, 2016
  * Time: 8:43:46 PM
@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import a00892244.data.Player;
 
@@ -73,6 +74,11 @@ public class PlayerDao extends Dao {
 
 	public List<Player> selectAll() throws SQLException, Exception {
 		return getPlayersByQuery("SELECT * FROM %s");
+	}
+	
+	public Player getRandomPlayer() throws SQLException, Exception {
+		List<Player> players = getPlayersByQuery("SELECT * FROM %s");
+		return players.get(new Random().nextInt(players.size()));
 	}
 
 	public List<Player> sortDescByBirthDateDesc() throws SQLException, Exception {
