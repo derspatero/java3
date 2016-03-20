@@ -29,6 +29,7 @@ import a00892244.data.Player;
 import a00892244.data.Score;
 import a00892244.database.Database;
 import a00892244.database.GamesDao;
+import a00892244.database.LeaderReportDao;
 import a00892244.database.PersonaDao;
 import a00892244.database.PlayerDao;
 import a00892244.database.ScoresDao;
@@ -105,8 +106,8 @@ public class Gis {
 			LOG.info(gamesDao.selectAll().toString());
 			LOG.info(scoresDao.selectAll().toString());
 
-//			LOG.info("Writing report");
-//			writeReport(args);
+			LOG.info("Writing report");
+			writeReport(args);
 
 			} catch (Exception e) {
 				LOG.error("SQL Exception: " + e.getMessage());
@@ -135,14 +136,17 @@ public class Gis {
 	/**
 	 * 
 	 * @param args
-	 * @throws ApplicationException
+	 * @throws Exception 
+	 * @throws SQLException 
 	 */
-	private static void writeReport(String[] args) throws ApplicationException {
+	private static void writeReport(String[] args) throws SQLException, Exception {
 		List<String> arguments = new ArrayList<String>(Arrays.asList(args));
 		FileWriter fileWriter = new FileWriter();
+		LeaderBoardReport leaderBoardReport = new LeaderBoardReport(database, arguments);
 
 		if (arguments.size() == 0) {
-			LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
+			System.out.println("here");
+			leaderBoardReport = new LeaderBoardReport(database, arguments);
 			LOG.info(leaderBoardReport.getReport());
 			fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport());
 		}
@@ -158,28 +162,8 @@ public class Gis {
 
 			LOG.info("Validating arguments " + arguments.toString());
 			Validator.verifyListEntries(arguments, "(by_game|by_count|platform=(AN|IO|PC|PS|XB)|total|desc)");
+			leaderBoardReport = new LeaderBoardReport(database, arguments);
 
-			LeaderBoardReport leaderBoardReport = new LeaderBoardReport(players);
-			Iterator<String> iterator = arguments.iterator();
-			while (iterator.hasNext()) {
-				String arg = iterator.next();
-				if (arg.matches("platform=(AN|IO|PC|PS|XB)")) {
-					leaderBoardReport.filterByPlatform(arg.split("platform=")[1]);
-				}
-			}
-
-			if (arguments.contains("by_game")) {
-				if (arguments.contains("by_count")) {
-					throw new ApplicationException("Invalid arg string. Valid: [by_game|by_count] [patform=AN|IO|PC|PS|XB] [total] [desc]");
-				}
-				leaderBoardReport.sortByGame();
-			} else if (arguments.contains("by_count")) {
-				leaderBoardReport.sortByCount();
-			}
-
-			if (arguments.contains("desc")) {
-				leaderBoardReport.desc();
-			}
 
 			if (arguments.contains("total")) {
 				LOG.info(leaderBoardReport.getReportWithTotal());
@@ -202,6 +186,11 @@ public class Gis {
 			playerDao = new PlayerDao(database);
 
 			LOG.info("drop the tables if they exist");
+
+			new LeaderReportDao(database).dropView("report");
+			new LeaderReportDao(database).dropView("win");
+			new LeaderReportDao(database).dropView("loss");
+			
 			playerDao.drop();
 
 			LOG.info("create the players table");

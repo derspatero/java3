@@ -7,6 +7,7 @@
 
 package a00892244.utils;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -18,6 +19,8 @@ import java.util.Map;
 import a00892244.data.Game;
 import a00892244.data.Persona;
 import a00892244.data.Player;
+import a00892244.database.Database;
+import a00892244.database.LeaderReportDao;
 
 /**
  * @author Edward Lambke, A00892244
@@ -27,34 +30,28 @@ import a00892244.data.Player;
 public class LeaderBoardReport {
 	private List<Player> players;
 	private List<LeaderBoardReportEntry> reportLines;
+	private LeaderReportDao reportDao;
 
 	/**
 	 * 
 	 * @param players
+	 * @throws Exception 
+	 * @throws SQLException 
 	 */
-	public LeaderBoardReport(Map<Integer, Player> players) {
-		this.players = new ArrayList<Player>(players.values());
+	public LeaderBoardReport(Database database, List<String> arguments) throws SQLException, Exception {
 		reportLines = new ArrayList<LeaderBoardReportEntry>();
-		generateReport();
+		reportDao = new LeaderReportDao(database);
+		generateReport(arguments);
 	}
 
 	/**
+	 * @throws Exception 
+	 * @throws SQLException 
 	 * 
 	 */
-	
-	private void generateReport() {
-//		Iterator<Player> iterator = players.iterator();
-//		while (iterator.hasNext()) {
-//			Player player = iterator.next();
-//			for (int personaKey : player.getPersonas().keySet()) {
-//				Persona persona = player.getPersona(personaKey);
-//				for (String gameKey : persona.getGames().keySet()) {
-//					Game game = persona.getGames().get(gameKey);
-//					reportLines.add(new LeaderBoardReportEntry(game.getWinLossRatio(), game.getName(), persona.getGamerTag(), persona.getPlatform()));
-//				}
-//
-//			}
-//		}
+
+	private void generateReport(List<String> arguments) throws SQLException, Exception {
+		reportLines = reportDao.getLeaderBoardReportEntriesByQuery(arguments);
 	}
 
 	/**
@@ -111,52 +108,4 @@ public class LeaderBoardReport {
 		return getReport() + getGameTotals();
 	}
 
-	/**
-	 * 
-	 */
-	public void sortByGame() {
-		Collections.sort(reportLines, new Comparator<LeaderBoardReportEntry>() {
-			@Override
-			public int compare(LeaderBoardReportEntry o1, LeaderBoardReportEntry o2) {
-				return o1.getGameName().compareTo(o2.getGameName());
-			}
-		});
-	}
-
-	/**
-	 * 
-	 */
-	public void sortByCount() {
-		Collections.sort(reportLines, new Comparator<LeaderBoardReportEntry>() {
-			@Override
-			public int compare(LeaderBoardReportEntry o1, LeaderBoardReportEntry o2) {
-				Integer o1WinLoss = Integer.parseInt(o1.getWinLoss().split(":")[0]) + Integer.parseInt(o1.getWinLoss().split(":")[1]);
-				Integer o2WinLoss = Integer.parseInt(o2.getWinLoss().split(":")[0]) + Integer.parseInt(o2.getWinLoss().split(":")[1]);
-				return o1WinLoss.compareTo(o2WinLoss);
-			}
-		});
-	}
-
-	/**
-	 * 
-	 */
-	public void desc() {
-		Collections.reverse(reportLines);
-	}
-
-	/**
-	 * 
-	 * @param platform
-	 */
-	public void filterByPlatform(String platform) {
-		Iterator<LeaderBoardReportEntry> iterator = reportLines.iterator();
-		while (iterator.hasNext()) {
-
-			LeaderBoardReportEntry line = iterator.next();
-			if (!line.getPlatform().equals(platform)) {
-				iterator.remove();
-			}
-		}
-
-	}
 }

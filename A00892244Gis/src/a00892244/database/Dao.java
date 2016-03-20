@@ -20,6 +20,11 @@ public abstract class Dao {
 
 	protected final Database database;
 	protected final String tableName;
+	
+	protected Dao(Database database) {
+		this.database = database;
+		tableName = null;
+	}
 
 	protected Dao(Database database, String tableName) {
 		this.database = database;
@@ -57,6 +62,19 @@ public abstract class Dao {
 			statement = connection.createStatement();
 			if (DbUtil.tableExists(connection, tableName)) {
 				statement.executeUpdate("drop table " + tableName);
+			}
+		} finally {
+			close(statement);
+		}
+	}
+	
+	public void dropView(String view) throws SQLException {
+		Statement statement = null;
+		try {
+			Connection connection = database.getConnection();
+			statement = connection.createStatement();
+			if (DbUtil.tableExists(connection, view)) {
+				statement.executeUpdate("drop view " + view);
 			}
 		} finally {
 			close(statement);
