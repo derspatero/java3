@@ -1,0 +1,4 @@
+2016-03-22 23:31:51.011 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-22 23:31:51.016 [main] INFO  a00892244.Lab10 - drop the tables if they exist
+2016-03-22 23:31:52.140 [main] INFO  a00892244.Lab10 - create the tables
+2016-03-22 23:31:52.319 [main] INFO  a00892244.Lab10 - Reading from players.txt

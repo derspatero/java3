@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab7
+ * Project: A00892244Lab10
  * File: Database.java
- * Date: Mar 1, 2016
+ * Date: Mar 22, 2016
  * Time: 8:43:46 PM
  */
 
@@ -20,10 +20,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * @author scirka
+ * @author scirka, Edward Lambke A00892244
  * 
  */
 public class Database {
+
+	private static Database theInstance;
 
 	public static final String DB_DRIVER_KEY = "db.driver";
 	public static final String DB_URL_KEY = "db.url";
@@ -33,11 +35,25 @@ public class Database {
 	private static Logger LOG = LogManager.getLogger(Database.class);
 
 	private static Connection connection;
-	private final Properties properties;
+	private Properties properties;
 
-	public Database(Properties properties) throws FileNotFoundException, IOException {
+	private Database() {
+
+	}
+
+	/**
+	 * @param properties
+	 */
+	public void setProperties(Properties properties) throws FileNotFoundException, IOException {
 		LOG.debug("Loading database properties from db.properties");
 		this.properties = properties;
+	}
+
+	public static Database getTheInstance() {
+		if (theInstance == null) {
+			theInstance = new Database();
+		}
+		return theInstance;
 	}
 
 	public Connection getConnection() throws SQLException {

@@ -7,6 +7,7 @@
 
 package a00892244;
 
+import java.awt.EventQueue;
 import java.io.File;
 import java.io.FileReader;
 import java.sql.Connection;
@@ -15,10 +16,12 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,6 +41,7 @@ import a00892244.io.PersonaReader;
 import a00892244.io.PlayerReader;
 import a00892244.io.FileWriter;
 import a00892244.io.ScoreReader;
+import a00892244.ui.MainFrame;
 import a00892244.utils.ApplicationException;
 import a00892244.utils.PlayerReport;
 import a00892244.utils.Validator;
@@ -57,7 +61,6 @@ public class Gis {
 	private static ScoresDao scoresDao;
 
 	private static Properties dbProperties;
-	private static Connection connection;
 	public static final String DB_PROPERTIES_FILENAME = "db.properties";
 	public static final String PLAYERS_DATA_FILE_NAME = "players.dat";
 	public static final String PERSONAS_DATA_FILE_NAME = "personas.dat";
@@ -66,13 +69,10 @@ public class Gis {
 
 	private static final Logger LOG = LogManager.getLogger(Gis.class);
 
-
 	static Map<Integer, Player> players;
 	static Map<String, Game> games;
 	static Map<Integer, Persona> personas;
 	static List<Score> scores;
-
-	
 
 	/**
 	 * @param
@@ -85,7 +85,7 @@ public class Gis {
 
 			LOG.info("Starting program");
 			LOG.info("program arguments: " + Arrays.toString(args));
-			
+
 			File dbPropertiesFile = new File(DB_PROPERTIES_FILENAME);
 			if (!dbPropertiesFile.exists()) {
 				System.exit(-1);
@@ -94,32 +94,53 @@ public class Gis {
 
 			try {
 				dbProperties.load(new FileReader(dbPropertiesFile));
-				database = new Database(dbProperties);
-				connection = database.getConnection();
+				database = Database.getTheInstance();
+				database.setProperties(dbProperties);
 
+				LOG.info("Reading data");
+				readData();
+				LOG.info("data is read:");
+				LOG.info(playerDao.selectAll().toString());
+				LOG.info(personaDao.selectAll().toString());
+				LOG.info(gamesDao.selectAll().toString());
+				LOG.info(scoresDao.selectAll().toString());
 
-			LOG.info("Reading data");
-			readData();
-			LOG.info("data is read:");
-			LOG.info(playerDao.selectAll().toString());
-			LOG.info(personaDao.selectAll().toString());
-			LOG.info(gamesDao.selectAll().toString());
-			LOG.info(scoresDao.selectAll().toString());
+				LOG.info("Writing report");
+				writeReport(args);
 
-			LOG.info("Writing report");
-			writeReport(args);
+				try {
+					for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+						if ("Nimbus".equals(info.getName())) {
+							UIManager.setLookAndFeel(info.getClassName());
+							break;
+						}
+					}
+				} catch (Exception e) {
+					// If Nimbus is not available, use the default.
+				}
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							MainFrame frame = new MainFrame();
+							frame.setTitle("Lab10");
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 
 			} catch (Exception e) {
 				LOG.error("SQL Exception: " + e.getMessage());
 			} finally {
-				try {
-					LOG.info("closing connection");
-					connection.close();
-					LOG.info("connection closed");
-					System.gc();
-				} catch (SQLException e) {
-					LOG.error("SQL Exception: " + e.getMessage());
-				}
+//				try {
+//					LOG.info("closing connection");
+//					connection.close();
+//					LOG.info("connection closed");
+//					System.gc();
+//				} catch (SQLException e) {
+//					LOG.error("SQL Exception: " + e.getMessage());
+//				}
 			}
 
 			LocalDateTime endDate = LocalDateTime.now();
@@ -136,8 +157,8 @@ public class Gis {
 	/**
 	 * 
 	 * @param args
-	 * @throws Exception 
-	 * @throws SQLException 
+	 * @throws Exception
+	 * @throws SQLException
 	 */
 	private static void writeReport(String[] args) throws SQLException, Exception {
 		List<String> arguments = new ArrayList<String>(Arrays.asList(args));
@@ -164,7 +185,6 @@ public class Gis {
 			Validator.verifyListEntries(arguments, "(by_game|by_count|platform=(AN|IO|PC|PS|XB)|total|desc)");
 			leaderBoardReport = new LeaderBoardReport(database, arguments);
 
-
 			if (arguments.contains("total")) {
 				LOG.info(leaderBoardReport.getReportWithTotal());
 				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReportWithTotal());
@@ -178,108 +198,101 @@ public class Gis {
 
 	/**
 	 * 
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	private static void readData() throws Exception {
 
+		playerDao = new PlayerDao();
 
-			playerDao = new PlayerDao(database);
+		LOG.info("drop the tables if they exist");
 
-			LOG.info("drop the tables if they exist");
+		new LeaderReportDao(database).dropView("report");
+		new LeaderReportDao(database).dropView("win");
+		new LeaderReportDao(database).dropView("loss");
 
-			new LeaderReportDao(database).dropView("report");
-			new LeaderReportDao(database).dropView("win");
-			new LeaderReportDao(database).dropView("loss");
-			
-			playerDao.drop();
+		playerDao.drop();
 
-			LOG.info("create the players table");
-			playerDao.create();
+		LOG.info("create the players table");
+		playerDao.create();
 
-			LOG.info("Reading from " + PLAYERS_DATA_FILE_NAME);
-			try {
-				PlayerReader playerReader = new PlayerReader(PLAYERS_DATA_FILE_NAME);
+		LOG.info("Reading from " + PLAYERS_DATA_FILE_NAME);
+		try {
+			PlayerReader playerReader = new PlayerReader(PLAYERS_DATA_FILE_NAME);
 
-				while (playerReader.moreData()) {
-					playerDao.add(playerReader.getNextPlayer());
-				}
-			} catch (Exception e) {
-				LOG.error("Read Error:  " + e.getMessage());
+			while (playerReader.moreData()) {
+				playerDao.add(playerReader.getNextPlayer());
 			}
-			
+		} catch (Exception e) {
+			LOG.error("Read Error:  " + e.getMessage());
+		}
 
-			LOG.info(playerDao.selectAll().toString());
+		LOG.info(playerDao.selectAll().toString());
 
-			personaDao = new PersonaDao(database);
-			LOG.info("drop the tables if they exist");
-			personaDao.drop();
+		personaDao = new PersonaDao();
+		LOG.info("drop the tables if they exist");
+		personaDao.drop();
 
-			LOG.info("create the personas table");
-			personaDao.create();
-			
-			LOG.info("Reading from " + PERSONAS_DATA_FILE_NAME);
-			PersonaReader personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
+		LOG.info("create the personas table");
+		personaDao.create();
 
-			try {
-				personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
+		LOG.info("Reading from " + PERSONAS_DATA_FILE_NAME);
+		PersonaReader personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
 
-				while (personaReader.moreData()) {
-					personaDao.add(personaReader.getNextPersona());
-				}
-			} catch (Exception e) {
-				LOG.error("Read Error:  " + e.getMessage());
+		try {
+			personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
+
+			while (personaReader.moreData()) {
+				personaDao.add(personaReader.getNextPersona());
 			}
-			
+		} catch (Exception e) {
+			LOG.error("Read Error:  " + e.getMessage());
+		}
 
-			LOG.info(personaDao.selectAll().toString());
-			
-			gamesDao = new GamesDao(database);
-			LOG.info("drop the tables if they exist");
-			gamesDao.drop();
+		LOG.info(personaDao.selectAll().toString());
 
-			LOG.info("create the games table");
-			gamesDao.create();
-			
-			LOG.info("Reading from " + GAMES_DATA_FILE_NAME);
-			GameReader gameReader = new GameReader(GAMES_DATA_FILE_NAME);
+		gamesDao = new GamesDao(database);
+		LOG.info("drop the tables if they exist");
+		gamesDao.drop();
 
-			try {
-				gameReader = new GameReader(GAMES_DATA_FILE_NAME);
+		LOG.info("create the games table");
+		gamesDao.create();
 
-				while (gameReader.moreData()) {
-					gamesDao.add(gameReader.getNextGame());
-				}
-			} catch (Exception e) {
-				LOG.error("Games Read Error:  " + e.getMessage());
+		LOG.info("Reading from " + GAMES_DATA_FILE_NAME);
+		GameReader gameReader = new GameReader(GAMES_DATA_FILE_NAME);
+
+		try {
+			gameReader = new GameReader(GAMES_DATA_FILE_NAME);
+
+			while (gameReader.moreData()) {
+				gamesDao.add(gameReader.getNextGame());
 			}
-			
+		} catch (Exception e) {
+			LOG.error("Games Read Error:  " + e.getMessage());
+		}
 
-			LOG.info(gamesDao.selectAll().toString());
-			
-			
-			scoresDao = new ScoresDao(database);
-			LOG.info("drop the tables if they exist");
-			scoresDao.drop();
+		LOG.info(gamesDao.selectAll().toString());
 
-			LOG.info("create the scores table");
-			scoresDao.create();
-			
-			LOG.info("Reading from " + SCORES_DATA_FILE_NAME);
-			ScoreReader scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+		scoresDao = new ScoresDao();
+		LOG.info("drop the tables if they exist");
+		scoresDao.drop();
 
-			try {
-				scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+		LOG.info("create the scores table");
+		scoresDao.create();
 
-				while (scoreReader.moreData()) {
-					scoresDao.add(scoreReader.getNextScore());
-				}
-			} catch (Exception e) {
-				LOG.error("Scores Read Error:  " + e.getMessage());
+		LOG.info("Reading from " + SCORES_DATA_FILE_NAME);
+		ScoreReader scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+
+		try {
+			scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+
+			while (scoreReader.moreData()) {
+				scoresDao.add(scoreReader.getNextScore());
 			}
+		} catch (Exception e) {
+			LOG.error("Scores Read Error:  " + e.getMessage());
+		}
 
-
-			LOG.info(scoresDao.selectAll().toString());
-
+		LOG.info(scoresDao.selectAll().toString());
 
 	}
 

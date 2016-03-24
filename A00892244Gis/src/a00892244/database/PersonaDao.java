@@ -31,8 +31,8 @@ public class PersonaDao extends Dao {
 	/**
 	 * 
 	 */
-	public PersonaDao(Database database) {
-		super(database, TABLE_NAME);
+	public PersonaDao() {
+		super(Database.getTheInstance(), TABLE_NAME);
 	}
 
 	@Override

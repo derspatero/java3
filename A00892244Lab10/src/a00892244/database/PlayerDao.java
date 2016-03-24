@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab9
+ * Project: A00892244Lab10
  * File: PlayerDao.java
- * Date: Mar 1, 2016
+ * Date: Mar 22, 2016
  * Time: 8:43:46 PM
  */
 
@@ -75,7 +75,7 @@ public class PlayerDao extends Dao {
 	public List<Player> selectAll() throws SQLException, Exception {
 		return getPlayersByQuery("SELECT * FROM %s");
 	}
-	
+
 	public Player getRandomPlayer() throws SQLException, Exception {
 		List<Player> players = getPlayersByQuery("SELECT * FROM %s");
 		return players.get(new Random().nextInt(players.size()));
@@ -92,7 +92,7 @@ public class PlayerDao extends Dao {
 	public List<Player> getPlayer(String gamertag) throws SQLException, Exception {
 		return getPlayersByQuery("SELECT * FROM %s WHERE " + Fields.GAMERTAG + " = '" + gamertag + "'");
 	}
-	
+
 	public Player getPlayerByID(String id) throws SQLException, Exception {
 		return getPlayersByQuery("SELECT * FROM %s WHERE " + Fields.IDENTIFIER + " = '" + id + "'").get(0);
 	}

@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab9
- * File: Lab9.java
- * Date: March 1, 2016
+ * Project: A00892244Lab10
+ * File: Lab10.java
+ * Date: March 22, 2016
  * Time: 10:32:18 AM
  */
 
@@ -58,8 +58,8 @@ public class Lab10 {
 
 		try {
 
-			Lab10 lab9 = new Lab10(dbPropertiesFile);
-			lab9.initializeDB();
+			Lab10 lab10 = new Lab10(dbPropertiesFile);
+			lab10.initializeDB();
 
 			try {
 				for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -76,6 +76,7 @@ public class Lab10 {
 				public void run() {
 					try {
 						MainFrame frame = new MainFrame(playerDao);
+						frame.setTitle("Lab10");
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -88,8 +89,6 @@ public class Lab10 {
 			System.exit(-1);
 		} finally {
 			database.shutdown();
-			// LOG.info("Terminating Program");
-			// System.exit(0);
 		}
 
 	}

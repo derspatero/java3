@@ -58,9 +58,10 @@ public class PlayerDaoTester {
 
 		try {
 			dbProperties.load(new FileReader(dbPropertiesFile));
-			database = new Database(dbProperties);
+			database = Database.getTheInstance();
+			database.setProperties(dbProperties);
 			connection = database.getConnection();
-			playerDao = new PlayerDao(database);
+			playerDao = new PlayerDao();
 			LOG.info("drop the tables if they exist");
 			playerDao.drop();
 

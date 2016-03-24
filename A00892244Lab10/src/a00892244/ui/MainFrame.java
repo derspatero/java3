@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab9
+ * Project: A00892244Lab10
  * File: MainFrame.java
- * Date: March 16, 2016
+ * Date: March 22, 2016
  * Time: 10:32:18 AM
  */
 
@@ -11,7 +11,6 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.AbstractListModel;
@@ -47,6 +46,7 @@ public class MainFrame extends JFrame {
 	private JPanel contentPane;
 	private JList<String> playerList;
 	private PlayerDao playerDao;
+	private PlayerDialog dialog;
 
 	/**
 	 * Create the frame.
@@ -54,8 +54,14 @@ public class MainFrame extends JFrame {
 	 * @throws Exception
 	 * @throws SQLException
 	 */
+	@SuppressWarnings("unchecked")
 	public MainFrame(PlayerDao playerDao) throws SQLException, Exception {
 		this.playerDao = playerDao;
+
+		dialog = new PlayerDialog();
+		dialog.setVisible(false);
+		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 
@@ -79,9 +85,6 @@ public class MainFrame extends JFrame {
 		player.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					PlayerDialog dialog = new PlayerDialog();
-					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-					dialog.setVisible(true);
 					dialog.displayPlayer(playerDao.getRandomPlayer());
 				} catch (Exception e1) {
 					e1.printStackTrace();
@@ -138,9 +141,6 @@ public class MainFrame extends JFrame {
 		@Override
 		public void valueChanged(ListSelectionEvent event) {
 			try {
-				PlayerDialog dialog = new PlayerDialog();
-				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-				dialog.setVisible(true);
 				dialog.displayPlayer(playerDao.getPlayerByID(playerList.getSelectedValue().toString().split(" ")[0]));
 			} catch (Exception e1) {
 				e1.printStackTrace();

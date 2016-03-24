@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
  * 
  */
 public class Database {
-	
+
 	private static Database theInstance;
 
 	public static final String DB_DRIVER_KEY = "db.driver";
@@ -36,20 +36,18 @@ public class Database {
 
 	private static Connection connection;
 	private Properties properties;
-	
+
 	private Database() {
-		
+
 	}
 
-	
 	/**
-	 * @param properties 
+	 * @param properties
 	 */
 	public void setProperties(Properties properties) throws FileNotFoundException, IOException {
 		LOG.debug("Loading database properties from db.properties");
 		this.properties = properties;
 	}
-
 
 	public static Database getTheInstance() {
 		if (theInstance == null) {
@@ -57,7 +55,7 @@ public class Database {
 		}
 		return theInstance;
 	}
-	
+
 	public Connection getConnection() throws SQLException {
 		if (connection != null) {
 			return connection;

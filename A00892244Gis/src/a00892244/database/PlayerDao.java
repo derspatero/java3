@@ -30,8 +30,8 @@ public class PlayerDao extends Dao {
 	/**
 	 * 
 	 */
-	public PlayerDao(Database database) {
-		super(database, TABLE_NAME);
+	public PlayerDao() {
+		super(Database.getTheInstance(), TABLE_NAME);
 	}
 
 	@Override

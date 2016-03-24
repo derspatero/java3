@@ -1,7 +1,7 @@
 /**
- * Project: A00892244Lab9
+ * Project: A00892244Lab10
  * File: PlayerDialog.java
- * Date: March 16, 2016
+ * Date: March 22, 2016
  * Time: 10:32:18 AM
  */
 
@@ -143,6 +143,7 @@ public class PlayerDialog extends JDialog {
 		textField_3.setText(player.getEmailAddress());
 		textField_4.setText(player.getGamerTag());
 		textField_5.setText(player.getBirthdate().toString());
+		setVisible(true);
 	}
 
 }
