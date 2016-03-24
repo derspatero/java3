@@ -210,7 +210,7 @@ public class Gis {
 		new LeaderReportDao(database).dropView("win");
 		new LeaderReportDao(database).dropView("loss");
 
-		playerDao.drop();
+//		playerDao.drop();
 
 		LOG.info("create the players table");
 		playerDao.create();
@@ -230,7 +230,7 @@ public class Gis {
 
 		personaDao = new PersonaDao();
 		LOG.info("drop the tables if they exist");
-		personaDao.drop();
+//		personaDao.drop();
 
 		LOG.info("create the personas table");
 		personaDao.create();
@@ -252,7 +252,7 @@ public class Gis {
 
 		gamesDao = new GamesDao(database);
 		LOG.info("drop the tables if they exist");
-		gamesDao.drop();
+//		gamesDao.drop();
 
 		LOG.info("create the games table");
 		gamesDao.create();
@@ -274,7 +274,7 @@ public class Gis {
 
 		scoresDao = new ScoresDao();
 		LOG.info("drop the tables if they exist");
-		scoresDao.drop();
+//		scoresDao.drop();
 
 		LOG.info("create the scores table");
 		scoresDao.create();

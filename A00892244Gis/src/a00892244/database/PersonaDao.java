@@ -51,6 +51,13 @@ public class PersonaDao extends Dao {
 				persona.getPlatform());
 		executeUpdate(insertString);
 	}
+	
+	public void changeGamertag(String oldGamerTag, String newGamerTag) throws SQLException {
+		String updateString = String.format(
+				"update %s set " + Fields.GAMERTAG + "='%s' WHERE " + Fields.GAMERTAG + "='%s'",
+				tableName, newGamerTag, oldGamerTag);
+		executeUpdate(updateString);
+	}
 
 	public void update(Persona persona) throws SQLException {
 		String insertString = String.format(

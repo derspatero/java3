@@ -123,10 +123,10 @@ public class MainFrame extends JFrame {
 				}
 				dialog.dispose();
 				dialog = new ListDialog("Personas");
-				// ListSelectionModel listSelectionModel = playerList.getSelectionModel();
-				// listSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-				// PlayerListController listController = new PlayerListController();
-				// playerList.addListSelectionListener(listController);
+				ListSelectionModel listSelectionModel = personaList.getSelectionModel();
+				listSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+				PersonaListController listController = new PersonaListController();
+				personaList.addListSelectionListener(listController);
 				dialog.add(personaList, BorderLayout.CENTER);
 				dialog.setVisible(true);
 			}
@@ -136,17 +136,17 @@ public class MainFrame extends JFrame {
 		JMenuItem scores = new JMenuItem("Scores");
 		scores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					try {
-						scoresList = new JList<String>(new ScoresListModel());
-					} catch (Exception e1) {
-						e1.printStackTrace();
-					}
-					dialog.dispose();
-					dialog = new ListDialog("Scores");
-					dialog.add(scoresList, BorderLayout.CENTER);
-					dialog.setVisible(true);
+				try {
+					scoresList = new JList<String>(new ScoresListModel());
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				dialog.dispose();
+				dialog = new ListDialog("Scores");
+				dialog.add(scoresList, BorderLayout.CENTER);
+				dialog.setVisible(true);
 			}
-			
+
 		});
 		lists.add(scores);
 
@@ -245,7 +245,7 @@ public class MainFrame extends JFrame {
 
 		@Override
 		public Object getElementAt(int index) {
-			return personas.get(index).getId() + " " + personas.get(index).getGamerTag() + " " + personas.get(index).getPlayerId() + " " + personas.get(index).getPlatform();
+			return personas.get(index).getPlayerId() + " " + personas.get(index).getGamerTag() + " " + personas.get(index).getPlatform();
 		}
 
 	}
@@ -271,16 +271,21 @@ public class MainFrame extends JFrame {
 
 	}
 
-	// private class PlayerListController implements ListSelectionListener {
-	// @Override
-	// public void valueChanged(ListSelectionEvent event) {
-	// try {
-	// dialog.displayPlayer(playerDao.getPlayersById(Integer.parseInt(playerList.getSelectedValue().toString().split(" ")[0])).get(0));
-	// } catch (Exception e1) {
-	// e1.printStackTrace();
-	// }
-	//
-	// }
-	// }
+	private class PersonaListController implements ListSelectionListener {
+		@Override
+		public void valueChanged(ListSelectionEvent event) {
+			dialog.dispose();
+			dialog = new PlayerDialog("Persona");
+			try {
+				String selectedPersona = personaList.getSelectedValue().toString().split(" ")[1];
+				int playerID = Integer.parseInt(personaList.getSelectedValue().toString().split(" ")[0]);
+				System.out.println("Player ID " + playerID + " selected:  " + selectedPersona);
+				((PlayerDialog) dialog).displayPlayer(selectedPersona, playerDao.getPlayersById(playerID).get(0));
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+
+		}
+	}
 
 }

@@ -11,6 +11,8 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.time.LocalDate;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -18,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import a00892244.data.Player;
+import a00892244.database.PersonaDao;
+import a00892244.database.PlayerDao;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -41,6 +45,9 @@ public class PlayerDialog extends JDialog {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+	private PlayerDao playerDao;
+	private PersonaDao personaDao;
+	private String persona;
 
 	/**
 	 * Create the dialog.
@@ -119,6 +126,21 @@ public class PlayerDialog extends JDialog {
 				getRootPane().setDefaultButton(okButton);
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						playerDao = new PlayerDao();
+						personaDao = new PersonaDao();
+						Player player = new Player();
+						player.setIdentifier(Integer.parseInt(textField.getText()));
+						player.setFirstName(textField_1.getText());
+						player.setLastName(textField_2.getText());
+						player.setEmailAddress(textField_3.getText());
+						player.setBirthdate(LocalDate.parse(textField_5.getText()));
+						try {
+							playerDao.update(player);
+							personaDao.changeGamertag(persona, textField_4.getText());
+						} catch (SQLException e1) {
+							e1.printStackTrace();
+						}
+						
 						dispose();
 					}
 				});
@@ -137,12 +159,13 @@ public class PlayerDialog extends JDialog {
 		}
 	}
 
-	public void displayPlayer(Player player) {
+	public void displayPlayer(String persona, Player player) {
+		this.persona = persona;
 		textField.setText(player.getIdentifier() + "");
 		textField_1.setText(player.getFirstName());
 		textField_2.setText(player.getLastName());
 		textField_3.setText(player.getEmailAddress());
-//		textField_4.setText(player.getGamerTag());
+		textField_4.setText(persona);
 		textField_5.setText(player.getBirthdate().toString());
 		setVisible(true);
 	}
