@@ -21,6 +21,7 @@ Win:Loss   Game Name            Gamertag        Platform
 1:1        Colour Demon         Quinesia            XB                            
 0:0        Colour Demon         VolcanoBrawler      PC                            
 ----------------------------------------------------------
+----------------------------------------------------------
 Number Picker       10
 Quick Fingers       12
 Colour Demon        10

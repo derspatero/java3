@@ -12,8 +12,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import a00892244.utils.ApplicationException;
 import a00892244.utils.LeaderBoardReportEntry;
@@ -76,21 +78,27 @@ public class LeaderReportDao extends Dao {
 			Iterator<String> iterator = arguments.iterator();
 			while (iterator.hasNext()) {
 				String arg = iterator.next();
-				Validator.verifyListEntries(arguments, "(by_game|by_count|platform=(AN|IO|PC|PS|XB)|total|desc)");
+				Validator.verifyListEntries(arguments, "(by_gamertag|by_game|by_count|platform=(AN|IO|PC|PS|XB)|total|desc|gamertag=.*)");
 
 				if (arg.matches("platform=(AN|IO|PC|PS|XB)")) {
 					filter = "where platform=\'" + arg.split("=")[1] + "\'";
+				} else if (arg.equals("gamertag=")) {
+					filter = "";
+				} else if (arg.matches("gamertag=.*")) {
+					filter = "where gamertag=\'" + arg.split("=")[1] + "\'";
 				} else {
 					filter = "";
 				}
 			}
 			if (arguments.contains("by_game")) {
-				if (arguments.contains("by_count")) {
+				if (arguments.contains("by_count") || (arguments.contains("by_gamertag"))) {
 					throw new ApplicationException("Invalid arg string. Valid: [by_game|by_count] [patform=AN|IO|PC|PS|XB] [total] [desc]");
 				}
 				sort = " order by name";
 			} else if (arguments.contains("by_count")) {
 				sort = " order by (wins + loses)";
+			} else if (arguments.contains("by_gamertag")) {
+				sort = " order by gamertag";
 			}
 
 			if (arguments.contains("desc")) {
@@ -118,6 +126,29 @@ public class LeaderReportDao extends Dao {
 		entry.setGamerTag(resultSet.getString(Fields.GAMERTAG.name()));
 		entry.setPlatform(resultSet.getString(Fields.PLATFORM.name()));
 		return entry;
+	}
+
+	public String getGameTotals() throws SQLException, Exception {
+		List<LeaderBoardReportEntry> reportLines = this.getLeaderBoardReportEntriesByQuery(new ArrayList<String>());
+		StringBuilder report = new StringBuilder();
+		Iterator<LeaderBoardReportEntry> iterator = reportLines.iterator();
+		Map<String, Integer> games = new HashMap<String, Integer>();
+		while (iterator.hasNext()) {
+			LeaderBoardReportEntry line = iterator.next();
+			if (games.containsKey(line.getGameName())) {
+				int total = games.get(line.getGameName());
+				total += Integer.parseInt(line.getWinLoss().split(":")[0]) + Integer.parseInt(line.getWinLoss().split(":")[1]);
+				games.put(line.getGameName(), (Integer) total++);
+			} else {
+				games.put(line.getGameName(), Integer.parseInt(line.getWinLoss().split(":")[0]) + Integer.parseInt(line.getWinLoss().split(":")[1]));
+			}
+		}
+		report.append("----------------------------------------------------------\n");
+		for (String key : games.keySet()) {
+			report.append(String.format("%-20s%s\n", key, games.get(key)));
+		}
+		report.append("----------------------------------------------------------\n");
+		return report.toString();
 	}
 
 	public enum Fields {

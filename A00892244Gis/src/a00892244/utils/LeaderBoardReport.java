@@ -72,6 +72,7 @@ public class LeaderBoardReport {
 				games.put(line.getGameName(), Integer.parseInt(line.getWinLoss().split(":")[0]) + Integer.parseInt(line.getWinLoss().split(":")[1]));
 			}
 		}
+		report.append("----------------------------------------------------------\n");
 		for (String key : games.keySet()) {
 			report.append(String.format("%-20s%s\n", key, games.get(key)));
 		}

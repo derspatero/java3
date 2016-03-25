@@ -10,7 +10,6 @@ package a00892244;
 import java.awt.EventQueue;
 import java.io.File;
 import java.io.FileReader;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

@@ -8,9 +8,12 @@
 package a00892244.ui;
 
 import java.awt.BorderLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.AbstractListModel;
@@ -31,6 +34,7 @@ import a00892244.database.LeaderReportDao;
 import a00892244.database.PersonaDao;
 import a00892244.database.PlayerDao;
 import a00892244.database.ScoresDao;
+import a00892244.utils.LeaderBoardReportEntry;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -53,6 +57,7 @@ public class MainFrame extends JFrame {
 	private JList<String> playerList;
 	private JList<String> scoresList;
 	private JList<String> personaList;
+	private JList<String> reportList;
 	private PlayerDao playerDao;
 	private JDialog dialog;
 	private ScoresDao scoresDao;
@@ -70,6 +75,7 @@ public class MainFrame extends JFrame {
 		playerDao = new PlayerDao();
 		scoresDao = new ScoresDao();
 		personaDao = new PersonaDao();
+		reportDao = new LeaderReportDao();
 
 		dialog = new JDialog();
 		dialog.setVisible(false);
@@ -154,41 +160,90 @@ public class MainFrame extends JFrame {
 
 		JMenu reports = new JMenu("Reports");
 		JMenuItem totals = new JMenuItem("Totals");
-		players.addActionListener(new ActionListener() {
+		totals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Todo
+				try {
+					JOptionPane.showMessageDialog(MainFrame.this, reportDao.getGameTotals(), "Game Totals", JOptionPane.INFORMATION_MESSAGE);
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		reports.add(totals);
 
 		JCheckBoxMenuItem descending = new JCheckBoxMenuItem("Descending");
-		personas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// Todo
-			}
-		});
 		reports.add(descending);
 
 		JMenuItem byGame = new JMenuItem("By Game");
-		scores.addActionListener(new ActionListener() {
+		byGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Todo
+				try {
+					List<String> args = new ArrayList<String>();
+					args.add("by_game");
+					if (descending.isSelected()) {
+						args.add("desc");
+					}
+					reportList = new JList<String>(new ReportListModel(args));
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				dialog.dispose();
+				dialog = new ListDialog("Report");
+				dialog.add(reportList, BorderLayout.CENTER);
+				dialog.setVisible(true);
 			}
 		});
 		reports.add(byGame);
 
 		JMenuItem byCount = new JMenuItem("By Count");
-		personas.addActionListener(new ActionListener() {
+		byCount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Todo
+				try {
+					List<String> args = new ArrayList<String>();
+					args.add("by_count");
+					if (descending.isSelected()) {
+						args.add("desc");
+					}
+					reportList = new JList<String>(new ReportListModel(args));
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				dialog.dispose();
+				dialog = new ListDialog("Report");
+				dialog.add(reportList, BorderLayout.CENTER);
+				dialog.setVisible(true);
 			}
+
 		});
 		reports.add(byCount);
 
 		JMenuItem gamertag = new JMenuItem("Gamertag");
-		scores.addActionListener(new ActionListener() {
+		gamertag.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
-				// Todo
+				List<String> args = new ArrayList<String>();
+				args.add("by_gamertag");
+				String gamertag = JOptionPane.showInputDialog("enter gamertag:");
+				if (gamertag != null) {
+					args.add("gamertag=" + gamertag);
+				}
+				try {
+					if (descending.isSelected()) {
+						args.add("desc");
+					}
+					reportList = new JList<String>(new ReportListModel(args));
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				dialog.dispose();
+				if (reportList.getModel().getSize() > 0) {
+					dialog = new ListDialog("Report");
+					dialog.add(reportList, BorderLayout.CENTER);
+					dialog.setVisible(true);
+				} else {
+					JOptionPane.showMessageDialog(MainFrame.this, "Gamertag '" + gamertag + "' not found", "Error", JOptionPane.INFORMATION_MESSAGE);
+				}
+
 			}
 		});
 		reports.add(gamertag);
@@ -200,7 +255,7 @@ public class MainFrame extends JFrame {
 
 		about.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(MainFrame.this, "Lab10\nby Edward Lambke A00892244", "About Lab10", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(MainFrame.this, "Assignment 2\nby Edward Lambke A00892244", "About Assignment 2", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		help.add(about);
@@ -271,6 +326,29 @@ public class MainFrame extends JFrame {
 
 	}
 
+	private class ReportListModel extends AbstractListModel {
+
+		List<LeaderBoardReportEntry> reportEntries;
+
+		ReportListModel(List<String> args) throws SQLException, Exception {
+			System.out.println("here we are: " + args.toString());
+			reportEntries = reportDao.getLeaderBoardReportEntriesByQuery(args);
+			System.out.println(reportEntries.toString());
+		}
+
+		@Override
+		public int getSize() {
+			return reportEntries.size();
+		}
+
+		@Override
+		public Object getElementAt(int index) {
+			return reportEntries.get(index).getWinLoss() + " " + reportEntries.get(index).getGameName() + " " + reportEntries.get(index).getGamerTag() + " "
+					+ reportEntries.get(index).getPlatform();
+		}
+
+	}
+
 	private class PersonaListController implements ListSelectionListener {
 		@Override
 		public void valueChanged(ListSelectionEvent event) {
@@ -287,5 +365,4 @@ public class MainFrame extends JFrame {
 
 		}
 	}
-
 }
