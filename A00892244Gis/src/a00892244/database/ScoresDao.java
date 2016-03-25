@@ -33,7 +33,7 @@ public class ScoresDao extends Dao {
 	 * 
 	 */
 	public ScoresDao() {
-		super(Database.getTheInstance(), TABLE_NAME);
+		super(TABLE_NAME);
 	}
 
 	@Override

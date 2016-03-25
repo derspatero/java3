@@ -31,7 +31,7 @@ public class PlayerDao extends Dao {
 	 * 
 	 */
 	public PlayerDao() {
-		super(Database.getTheInstance(), TABLE_NAME);
+		super(TABLE_NAME);
 	}
 
 	@Override

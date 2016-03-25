@@ -31,8 +31,8 @@ public class GamesDao extends Dao {
 	/**
 	 * 
 	 */
-	public GamesDao(Database database) {
-		super(database, TABLE_NAME);
+	public GamesDao() {
+		super(TABLE_NAME);
 	}
 
 	@Override

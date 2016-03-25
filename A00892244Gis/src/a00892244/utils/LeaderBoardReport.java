@@ -40,7 +40,7 @@ public class LeaderBoardReport {
 	 */
 	public LeaderBoardReport(Database database, List<String> arguments) throws SQLException, Exception {
 		reportLines = new ArrayList<LeaderBoardReportEntry>();
-		reportDao = new LeaderReportDao(database);
+		reportDao = new LeaderReportDao();
 		generateReport(arguments);
 	}
 

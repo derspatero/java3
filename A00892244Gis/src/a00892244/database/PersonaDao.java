@@ -32,7 +32,7 @@ public class PersonaDao extends Dao {
 	 * 
 	 */
 	public PersonaDao() {
-		super(Database.getTheInstance(), TABLE_NAME);
+		super(TABLE_NAME);
 	}
 
 	@Override

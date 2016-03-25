@@ -133,14 +133,14 @@ public class Gis {
 			} catch (Exception e) {
 				LOG.error("SQL Exception: " + e.getMessage());
 			} finally {
-//				try {
-//					LOG.info("closing connection");
-//					connection.close();
-//					LOG.info("connection closed");
-//					System.gc();
-//				} catch (SQLException e) {
-//					LOG.error("SQL Exception: " + e.getMessage());
-//				}
+				// try {
+				// LOG.info("closing connection");
+				// connection.close();
+				// LOG.info("connection closed");
+				// System.gc();
+				// } catch (SQLException e) {
+				// LOG.error("SQL Exception: " + e.getMessage());
+				// }
 			}
 
 			LocalDateTime endDate = LocalDateTime.now();
@@ -204,96 +204,105 @@ public class Gis {
 
 		playerDao = new PlayerDao();
 
-		LOG.info("drop the tables if they exist");
+		LOG.info("drop the views if they exist");
 
-		new LeaderReportDao(database).dropView("report");
-		new LeaderReportDao(database).dropView("win");
-		new LeaderReportDao(database).dropView("loss");
+		new LeaderReportDao().dropView("report");
+		new LeaderReportDao().dropView("win");
+		new LeaderReportDao().dropView("loss");
 
-//		playerDao.drop();
+		// playerDao.drop();
 
-		LOG.info("create the players table");
-		playerDao.create();
+		if (!playerDao.tableExist()) {
+			LOG.info("create the players table");
+			playerDao.create();
 
-		LOG.info("Reading from " + PLAYERS_DATA_FILE_NAME);
-		try {
-			PlayerReader playerReader = new PlayerReader(PLAYERS_DATA_FILE_NAME);
+			LOG.info("Reading from " + PLAYERS_DATA_FILE_NAME);
+			try {
+				PlayerReader playerReader = new PlayerReader(PLAYERS_DATA_FILE_NAME);
 
-			while (playerReader.moreData()) {
-				playerDao.add(playerReader.getNextPlayer());
+				while (playerReader.moreData()) {
+					playerDao.add(playerReader.getNextPlayer());
+				}
+			} catch (Exception e) {
+				LOG.error("Read Error:  " + e.getMessage());
 			}
-		} catch (Exception e) {
-			LOG.error("Read Error:  " + e.getMessage());
-		}
 
-		LOG.info(playerDao.selectAll().toString());
+			LOG.info(playerDao.selectAll().toString());
+		}
 
 		personaDao = new PersonaDao();
-		LOG.info("drop the tables if they exist");
-//		personaDao.drop();
+		if (!personaDao.tableExist()) {
+			
+			LOG.info("drop the tables if they exist");
+			personaDao.drop();
 
-		LOG.info("create the personas table");
-		personaDao.create();
+			LOG.info("create the personas table");
+			personaDao.create();
 
-		LOG.info("Reading from " + PERSONAS_DATA_FILE_NAME);
-		PersonaReader personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
+			LOG.info("Reading from " + PERSONAS_DATA_FILE_NAME);
+			PersonaReader personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
 
-		try {
-			personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
+			try {
+				personaReader = new PersonaReader(PERSONAS_DATA_FILE_NAME);
 
-			while (personaReader.moreData()) {
-				personaDao.add(personaReader.getNextPersona());
+				while (personaReader.moreData()) {
+					personaDao.add(personaReader.getNextPersona());
+				}
+			} catch (Exception e) {
+				LOG.error("Read Error:  " + e.getMessage());
 			}
-		} catch (Exception e) {
-			LOG.error("Read Error:  " + e.getMessage());
+
+			LOG.info(personaDao.selectAll().toString());
 		}
 
-		LOG.info(personaDao.selectAll().toString());
+		gamesDao = new GamesDao();
+		if (!gamesDao.tableExist()) {
+			
+			LOG.info("drop the tables if they exist");
+			gamesDao.drop();
 
-		gamesDao = new GamesDao(database);
-		LOG.info("drop the tables if they exist");
-//		gamesDao.drop();
+			LOG.info("create the games table");
+			gamesDao.create();
 
-		LOG.info("create the games table");
-		gamesDao.create();
+			LOG.info("Reading from " + GAMES_DATA_FILE_NAME);
+			GameReader gameReader = new GameReader(GAMES_DATA_FILE_NAME);
 
-		LOG.info("Reading from " + GAMES_DATA_FILE_NAME);
-		GameReader gameReader = new GameReader(GAMES_DATA_FILE_NAME);
+			try {
+				gameReader = new GameReader(GAMES_DATA_FILE_NAME);
 
-		try {
-			gameReader = new GameReader(GAMES_DATA_FILE_NAME);
-
-			while (gameReader.moreData()) {
-				gamesDao.add(gameReader.getNextGame());
+				while (gameReader.moreData()) {
+					gamesDao.add(gameReader.getNextGame());
+				}
+			} catch (Exception e) {
+				LOG.error("Games Read Error:  " + e.getMessage());
 			}
-		} catch (Exception e) {
-			LOG.error("Games Read Error:  " + e.getMessage());
-		}
 
-		LOG.info(gamesDao.selectAll().toString());
+			LOG.info(gamesDao.selectAll().toString());
+		}
 
 		scoresDao = new ScoresDao();
-		LOG.info("drop the tables if they exist");
-//		scoresDao.drop();
+		if (!scoresDao.tableExist()) {
+			LOG.info("drop the tables if they exist");
+			scoresDao.drop();
 
-		LOG.info("create the scores table");
-		scoresDao.create();
+			LOG.info("create the scores table");
+			scoresDao.create();
 
-		LOG.info("Reading from " + SCORES_DATA_FILE_NAME);
-		ScoreReader scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+			LOG.info("Reading from " + SCORES_DATA_FILE_NAME);
+			ScoreReader scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
 
-		try {
-			scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
+			try {
+				scoreReader = new ScoreReader(SCORES_DATA_FILE_NAME);
 
-			while (scoreReader.moreData()) {
-				scoresDao.add(scoreReader.getNextScore());
+				while (scoreReader.moreData()) {
+					scoresDao.add(scoreReader.getNextScore());
+				}
+			} catch (Exception e) {
+				LOG.error("Scores Read Error:  " + e.getMessage());
 			}
-		} catch (Exception e) {
-			LOG.error("Scores Read Error:  " + e.getMessage());
+
+			LOG.info(scoresDao.selectAll().toString());
 		}
-
-		LOG.info(scoresDao.selectAll().toString());
-
 	}
 
 }

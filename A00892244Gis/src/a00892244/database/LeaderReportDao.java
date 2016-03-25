@@ -31,8 +31,8 @@ public class LeaderReportDao extends Dao {
 	/**
 	 * 
 	 */
-	public LeaderReportDao(Database database) {
-		super(database);
+	public LeaderReportDao() {
+		super();
 	}
 
 	public List<LeaderBoardReportEntry> selectAll() throws SQLException, Exception {
