@@ -4,20 +4,20 @@ Win:Loss   Game Name            Gamertag        Platform
 ----------------------------------------------------------
 2:2        Quick Fingers        Deathstar           IO                            
 1:1        Quick Fingers        Redstripe           PC                            
-1:1        Quick Fingers        Mazzzap             AN                            
+1:1        Quick Fingers        Mazzzapasdf         AN                            
 1:1        Quick Fingers        Ithroeann           IO                            
 1:1        Quick Fingers        Crayonbreath        PS                            
 0:0        Quick Fingers        VolcanoBrawler      PC                            
 0:0        Quick Fingers        CastleRock          XB                            
 1:1        Number Picker        Redstripe           PC                            
-1:1        Number Picker        Mazzzap             AN                            
+1:1        Number Picker        Mazzzapasdf         AN                            
 1:1        Number Picker        GreenPanda          AN                            
 1:1        Number Picker        TorpedoBear         PC                            
 1:1        Number Picker        Quinesia            XB                            
 0:0        Number Picker        VolcanoBrawler      PC                            
 2:2        Colour Demon         Cirronith           PS                            
 1:1        Colour Demon         Redstripe           PC                            
-1:1        Colour Demon         Mazzzap             AN                            
+1:1        Colour Demon         Mazzzapasdf         AN                            
 1:1        Colour Demon         Quinesia            XB                            
 0:0        Colour Demon         VolcanoBrawler      PC                            
 ----------------------------------------------------------

@@ -8,12 +8,11 @@
 package a00892244.ui;
 
 import java.awt.BorderLayout;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.AbstractListModel;
@@ -92,7 +91,10 @@ public class MainFrame extends JFrame {
 		setContentPane(contentPane);
 
 		JMenu file = new JMenu("File");
+		file.setMnemonic(KeyEvent.VK_F);
+		
 		JMenuItem exit = new JMenuItem("Quit");
+		exit.setMnemonic(KeyEvent.VK_Q);
 
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -103,7 +105,10 @@ public class MainFrame extends JFrame {
 		menuBar.add(file);
 
 		JMenu lists = new JMenu("Lists");
+		lists.setMnemonic(KeyEvent.VK_L);
+		
 		JMenuItem players = new JMenuItem("Players");
+		players.setMnemonic(KeyEvent.VK_P);
 		players.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -120,6 +125,7 @@ public class MainFrame extends JFrame {
 		lists.add(players);
 
 		JMenuItem personas = new JMenuItem("Personas");
+		personas.setMnemonic(KeyEvent.VK_E);
 		personas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -140,6 +146,7 @@ public class MainFrame extends JFrame {
 		lists.add(personas);
 
 		JMenuItem scores = new JMenuItem("Scores");
+		scores.setMnemonic(KeyEvent.VK_S);
 		scores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -159,7 +166,10 @@ public class MainFrame extends JFrame {
 		menuBar.add(lists);
 
 		JMenu reports = new JMenu("Reports");
+		reports.setMnemonic(KeyEvent.VK_R);
+		
 		JMenuItem totals = new JMenuItem("Totals");
+		totals.setMnemonic(KeyEvent.VK_T);
 		totals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -172,9 +182,11 @@ public class MainFrame extends JFrame {
 		reports.add(totals);
 
 		JCheckBoxMenuItem descending = new JCheckBoxMenuItem("Descending");
+		descending.setMnemonic(KeyEvent.VK_D);
 		reports.add(descending);
 
 		JMenuItem byGame = new JMenuItem("By Game");
+		byGame.setMnemonic(KeyEvent.VK_G);
 		byGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -196,6 +208,7 @@ public class MainFrame extends JFrame {
 		reports.add(byGame);
 
 		JMenuItem byCount = new JMenuItem("By Count");
+		byCount.setMnemonic(KeyEvent.VK_C);
 		byCount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -218,6 +231,7 @@ public class MainFrame extends JFrame {
 		reports.add(byCount);
 
 		JMenuItem gamertag = new JMenuItem("Gamertag");
+		gamertag.setMnemonic(KeyEvent.VK_R);
 		gamertag.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -251,7 +265,9 @@ public class MainFrame extends JFrame {
 		menuBar.add(reports);
 
 		JMenu help = new JMenu("Help");
+		help.setMnemonic(KeyEvent.VK_H);
 		JMenuItem about = new JMenuItem("About");
+		about.setMnemonic(KeyEvent.VK_A);
 
 		about.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

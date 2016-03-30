@@ -46,35 +46,14 @@ public class LeaderReportDao extends Dao {
 	}
 
 	public List<LeaderBoardReportEntry> getLeaderBoardReportEntriesByQuery(List<String> arguments) throws SQLException, Exception {
-		Connection connection;
-		Statement statement = null;
+		Connection connection = database.getConnection();
+		Statement statement = connection.createStatement();
 		List<LeaderBoardReportEntry> reportEntries = new ArrayList<LeaderBoardReportEntry>();
 		String filter = "";
 		String sort = "";
 
 		try {
-			connection = database.getConnection();
-			statement = connection.createStatement();
-			dropView("report");
-			dropView("win");
-			dropView("loss");
-
-			statement.execute("create view win as select count(*) as wins, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform "
-					+ "from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id "
-					+ "join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier " + "join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id "
-					+ "where ADMIN.scores.win = 'WIN' group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
-
-			statement.execute("create view loss as select count(*) as loses, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform  "
-					+ "from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id "
-					+ "join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier " + "join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id "
-					+ "where ADMIN.scores.win = 'LOSE'  group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
-
-			statement.execute("create view report as " + "select case when win.wins is null then 0 else win.wins end as wins, "
-					+ "case when loss.loses is null then 0 else loss.loses end as loses, " + "win.name, win.gamertag, win.platform "
-					+ "from win left outer JOIN loss on win.gamertag = loss.gamertag " + "union " + "select case when win.wins is null then 0 else win.wins end as wins, "
-					+ "case when loss.loses is null then 0 else loss.loses end as loses, " + "loss.name, loss.gamertag, loss.platform "
-					+ "from win right outer JOIN loss on win.gamertag = loss.gamertag");
-
+			create();
 			Iterator<String> iterator = arguments.iterator();
 			while (iterator.hasNext()) {
 				String arg = iterator.next();
@@ -178,8 +157,29 @@ public class LeaderReportDao extends Dao {
 
 	@Override
 	public void create() throws SQLException {
-		// TODO Auto-generated method stub
 
+		Connection connection = database.getConnection();
+		Statement statement = connection.createStatement();
+
+		dropView("report");
+		dropView("win");
+		dropView("loss");
+
+		statement.execute("create view win as select count(*) as wins, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform "
+				+ "from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id " + "join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier "
+				+ "join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id "
+				+ "where ADMIN.scores.win = 'WIN' group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
+
+		statement.execute("create view loss as select count(*) as loses, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform  "
+				+ "from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id " + "join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier "
+				+ "join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id "
+				+ "where ADMIN.scores.win = 'LOSE'  group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
+
+		statement.execute("create view report as " + "select case when win.wins is null then 0 else win.wins end as wins, "
+				+ "case when loss.loses is null then 0 else loss.loses end as loses, " + "win.name, win.gamertag, win.platform "
+				+ "from win left outer JOIN loss on win.gamertag = loss.gamertag " + "union " + "select case when win.wins is null then 0 else win.wins end as wins, "
+				+ "case when loss.loses is null then 0 else loss.loses end as loses, " + "loss.name, loss.gamertag, loss.platform "
+				+ "from win right outer JOIN loss on win.gamertag = loss.gamertag");
 	}
 
 }
