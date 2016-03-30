@@ -10,10 +10,6 @@ package a00892244;
 import java.awt.EventQueue;
 import java.io.File;
 import java.io.FileReader;
-import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -38,13 +34,8 @@ import a00892244.database.ScoresDao;
 import a00892244.io.GameReader;
 import a00892244.io.PersonaReader;
 import a00892244.io.PlayerReader;
-import a00892244.io.FileWriter;
 import a00892244.io.ScoreReader;
 import a00892244.ui.MainFrame;
-import a00892244.utils.ApplicationException;
-import a00892244.utils.PlayerReport;
-import a00892244.utils.Validator;
-import a00892244.utils.LeaderBoardReport;
 
 /**
  * @author Edward Lambke, A00892244
@@ -80,7 +71,6 @@ public class Gis {
 	public static void main(String[] args) {
 
 		try {
-			LocalDateTime startDate = LocalDateTime.now();
 
 			LOG.info("Starting program");
 			LOG.info("program arguments: " + Arrays.toString(args));
@@ -104,9 +94,6 @@ public class Gis {
 				LOG.info(gamesDao.selectAll().toString());
 				LOG.info(scoresDao.selectAll().toString());
 
-				LOG.info("Writing report");
-				writeReport(args);
-
 				try {
 					for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
 						if ("Nimbus".equals(info.getName())) {
@@ -121,7 +108,7 @@ public class Gis {
 					public void run() {
 						try {
 							MainFrame frame = new MainFrame();
-							frame.setTitle("Lab10");
+							frame.setTitle("GIS");
 							frame.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -132,66 +119,15 @@ public class Gis {
 			} catch (Exception e) {
 				LOG.error("SQL Exception: " + e.getMessage());
 			} finally {
-				// try {
-				// LOG.info("closing connection");
-				// connection.close();
-				// LOG.info("connection closed");
-				// System.gc();
-				// } catch (SQLException e) {
-				// LOG.error("SQL Exception: " + e.getMessage());
-				// }
+				LOG.info("closing connection");
+				database.shutdown();
+				LOG.info("connection closed");
 			}
-
-			LocalDateTime endDate = LocalDateTime.now();
-			long timeDelta = startDate.until(endDate, ChronoUnit.MILLIS);
-			LOG.info("Exiting.  Duration: " + timeDelta + " ms\n");
 
 		} catch (Exception e) {
 			LOG.error(e);
 			LOG.error("Terminating Program");
 			System.exit(-1);
-		}
-	}
-
-	/**
-	 * 
-	 * @param args
-	 * @throws Exception
-	 * @throws SQLException
-	 */
-	private static void writeReport(String[] args) throws SQLException, Exception {
-		List<String> arguments = new ArrayList<String>(Arrays.asList(args));
-		FileWriter fileWriter = new FileWriter();
-		LeaderBoardReport leaderBoardReport = new LeaderBoardReport(database, arguments);
-
-		if (arguments.size() == 0) {
-			System.out.println("here");
-			leaderBoardReport = new LeaderBoardReport(database, arguments);
-			LOG.info(leaderBoardReport.getReport());
-			fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport());
-		}
-
-		else if ((arguments.size() == 1) && (arguments.contains("players"))) {
-			LOG.info("arguments: " + arguments.toString());
-			PlayerReport playerReport = new PlayerReport(players);
-			LOG.info(playerReport.getReport());
-			fileWriter.writeFile("players_report.txt", playerReport.getReport());
-		}
-
-		else {
-
-			LOG.info("Validating arguments " + arguments.toString());
-			Validator.verifyListEntries(arguments, "(by_game|by_count|platform=(AN|IO|PC|PS|XB)|total|desc)");
-			leaderBoardReport = new LeaderBoardReport(database, arguments);
-
-			if (arguments.contains("total")) {
-				LOG.info(leaderBoardReport.getReportWithTotal());
-				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReportWithTotal());
-
-			} else {
-				LOG.info(leaderBoardReport.getReport());
-				fileWriter.writeFile("leaderboard_report.txt", leaderBoardReport.getReport());
-			}
 		}
 	}
 
@@ -231,7 +167,7 @@ public class Gis {
 
 		personaDao = new PersonaDao();
 		if (!personaDao.tableExist()) {
-			
+
 			LOG.info("drop the tables if they exist");
 			personaDao.drop();
 
@@ -256,7 +192,7 @@ public class Gis {
 
 		gamesDao = new GamesDao();
 		if (!gamesDao.tableExist()) {
-			
+
 			LOG.info("drop the tables if they exist");
 			gamesDao.drop();
 

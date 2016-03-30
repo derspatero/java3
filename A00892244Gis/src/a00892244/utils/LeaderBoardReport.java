@@ -9,17 +9,11 @@ package a00892244.utils;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import a00892244.data.Game;
-import a00892244.data.Persona;
-import a00892244.data.Player;
-import a00892244.database.Database;
 import a00892244.database.LeaderReportDao;
 
 /**
@@ -28,7 +22,6 @@ import a00892244.database.LeaderReportDao;
  */
 
 public class LeaderBoardReport {
-	private List<Player> players;
 	private List<LeaderBoardReportEntry> reportLines;
 	private LeaderReportDao reportDao;
 
@@ -38,7 +31,7 @@ public class LeaderBoardReport {
 	 * @throws Exception 
 	 * @throws SQLException 
 	 */
-	public LeaderBoardReport(Database database, List<String> arguments) throws SQLException, Exception {
+	public LeaderBoardReport(List<String> arguments) throws SQLException, Exception {
 		reportLines = new ArrayList<LeaderBoardReportEntry>();
 		reportDao = new LeaderReportDao();
 		generateReport(arguments);
@@ -58,7 +51,7 @@ public class LeaderBoardReport {
 	 * 
 	 * @return
 	 */
-	private String getGameTotals() {
+	public String getGameTotals() {
 		StringBuilder report = new StringBuilder();
 		Iterator<LeaderBoardReportEntry> iterator = reportLines.iterator();
 		Map<String, Integer> games = new HashMap<String, Integer>();
@@ -86,6 +79,9 @@ public class LeaderBoardReport {
 	 */
 	public String getReport() {
 		StringBuilder report = new StringBuilder();
+		if (reportLines.size()==0){
+			return "no results";
+		}
 		report.append("\n----------------------------------------------------------\n");
 		report.append("Win:Loss   Game Name            Gamertag        Platform\n");
 		report.append("----------------------------------------------------------\n");

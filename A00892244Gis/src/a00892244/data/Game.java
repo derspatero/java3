@@ -7,9 +7,6 @@
 
 package a00892244.data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author Edward Lambke, A00892244
  *

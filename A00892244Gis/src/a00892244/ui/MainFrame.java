@@ -21,6 +21,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -29,11 +30,10 @@ import javax.swing.event.ListSelectionListener;
 import a00892244.data.Persona;
 import a00892244.data.Player;
 import a00892244.data.Score;
-import a00892244.database.LeaderReportDao;
 import a00892244.database.PersonaDao;
 import a00892244.database.PlayerDao;
 import a00892244.database.ScoresDao;
-import a00892244.utils.LeaderBoardReportEntry;
+import a00892244.utils.LeaderBoardReport;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -45,7 +45,6 @@ import javax.swing.JList;
  *
  */
 
-// @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 
 	/**
@@ -56,12 +55,11 @@ public class MainFrame extends JFrame {
 	private JList<String> playerList;
 	private JList<String> scoresList;
 	private JList<String> personaList;
-	private JList<String> reportList;
+	private JTextArea reportTextArea;
 	private PlayerDao playerDao;
 	private JDialog dialog;
 	private ScoresDao scoresDao;
 	private PersonaDao personaDao;
-	private LeaderReportDao reportDao;
 
 	/**
 	 * Create the frame.
@@ -74,7 +72,6 @@ public class MainFrame extends JFrame {
 		playerDao = new PlayerDao();
 		scoresDao = new ScoresDao();
 		personaDao = new PersonaDao();
-		reportDao = new LeaderReportDao();
 
 		dialog = new JDialog();
 		dialog.setVisible(false);
@@ -92,7 +89,7 @@ public class MainFrame extends JFrame {
 
 		JMenu file = new JMenu("File");
 		file.setMnemonic(KeyEvent.VK_F);
-		
+
 		JMenuItem exit = new JMenuItem("Quit");
 		exit.setMnemonic(KeyEvent.VK_Q);
 
@@ -106,7 +103,7 @@ public class MainFrame extends JFrame {
 
 		JMenu lists = new JMenu("Lists");
 		lists.setMnemonic(KeyEvent.VK_L);
-		
+
 		JMenuItem players = new JMenuItem("Players");
 		players.setMnemonic(KeyEvent.VK_P);
 		players.addActionListener(new ActionListener() {
@@ -167,13 +164,15 @@ public class MainFrame extends JFrame {
 
 		JMenu reports = new JMenu("Reports");
 		reports.setMnemonic(KeyEvent.VK_R);
-		
+
 		JMenuItem totals = new JMenuItem("Totals");
 		totals.setMnemonic(KeyEvent.VK_T);
 		totals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					JOptionPane.showMessageDialog(MainFrame.this, reportDao.getGameTotals(), "Game Totals", JOptionPane.INFORMATION_MESSAGE);
+					List<String> args = new ArrayList<String>();
+					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
+					JOptionPane.showMessageDialog(MainFrame.this, leaderboardreport.getGameTotals(), "Game Totals", JOptionPane.INFORMATION_MESSAGE);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
@@ -195,14 +194,16 @@ public class MainFrame extends JFrame {
 					if (descending.isSelected()) {
 						args.add("desc");
 					}
-					reportList = new JList<String>(new ReportListModel(args));
+					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
+					reportTextArea = new JTextArea(leaderboardreport.getReport());
+
+					dialog.dispose();
+					dialog = new ListDialog("Report");
+					dialog.add(reportTextArea, BorderLayout.CENTER);
+					dialog.setVisible(true);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
-				dialog.dispose();
-				dialog = new ListDialog("Report");
-				dialog.add(reportList, BorderLayout.CENTER);
-				dialog.setVisible(true);
 			}
 		});
 		reports.add(byGame);
@@ -211,22 +212,24 @@ public class MainFrame extends JFrame {
 		byCount.setMnemonic(KeyEvent.VK_C);
 		byCount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				try {
 					List<String> args = new ArrayList<String>();
 					args.add("by_count");
 					if (descending.isSelected()) {
 						args.add("desc");
 					}
-					reportList = new JList<String>(new ReportListModel(args));
+					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
+					reportTextArea = new JTextArea(leaderboardreport.getReport());
+
+					dialog.dispose();
+					dialog = new ListDialog("Report");
+					dialog.add(reportTextArea, BorderLayout.CENTER);
+					dialog.setVisible(true);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
-				dialog.dispose();
-				dialog = new ListDialog("Report");
-				dialog.add(reportList, BorderLayout.CENTER);
-				dialog.setVisible(true);
 			}
-
 		});
 		reports.add(byCount);
 
@@ -245,19 +248,20 @@ public class MainFrame extends JFrame {
 					if (descending.isSelected()) {
 						args.add("desc");
 					}
-					reportList = new JList<String>(new ReportListModel(args));
+					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
+					String reportText = leaderboardreport.getReport();
+					if (reportText.equals("no results")) {
+						reportText = "Gamertag '" + gamertag + "' not found";
+					}
+					reportTextArea = new JTextArea(reportText);
+
+					dialog.dispose();
+					dialog = new ListDialog("Report");
+					dialog.add(reportTextArea, BorderLayout.CENTER);
+					dialog.setVisible(true);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
-				dialog.dispose();
-				if (reportList.getModel().getSize() > 0) {
-					dialog = new ListDialog("Report");
-					dialog.add(reportList, BorderLayout.CENTER);
-					dialog.setVisible(true);
-				} else {
-					JOptionPane.showMessageDialog(MainFrame.this, "Gamertag '" + gamertag + "' not found", "Error", JOptionPane.INFORMATION_MESSAGE);
-				}
-
 			}
 		});
 		reports.add(gamertag);
@@ -338,29 +342,6 @@ public class MainFrame extends JFrame {
 		@Override
 		public Object getElementAt(int index) {
 			return scores.get(index).getGameId() + " " + scores.get(index).getPersonaId() + " " + scores.get(index).getWin();
-		}
-
-	}
-
-	private class ReportListModel extends AbstractListModel {
-
-		List<LeaderBoardReportEntry> reportEntries;
-
-		ReportListModel(List<String> args) throws SQLException, Exception {
-			System.out.println("here we are: " + args.toString());
-			reportEntries = reportDao.getLeaderBoardReportEntriesByQuery(args);
-			System.out.println(reportEntries.toString());
-		}
-
-		@Override
-		public int getSize() {
-			return reportEntries.size();
-		}
-
-		@Override
-		public Object getElementAt(int index) {
-			return reportEntries.get(index).getWinLoss() + " " + reportEntries.get(index).getGameName() + " " + reportEntries.get(index).getGamerTag() + " "
-					+ reportEntries.get(index).getPlatform();
 		}
 
 	}

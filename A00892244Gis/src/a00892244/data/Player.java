@@ -9,9 +9,7 @@ package a00892244.data;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+
 
 /**
  * @author Edward Lambke, A00892244

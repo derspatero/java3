@@ -39,18 +39,18 @@ public class PlayerReport {
 	 */
 	public String getReport() {
 		StringBuilder report = new StringBuilder();
-//		report.append("\n----------------------------------------------------------------------------------------------\n");
-//		report.append("Player ID  Full name            Email                     Age  Total games played   Total Wins\n");
-//		report.append("----------------------------------------------------------------------------------------------\n");
-//
-//		Iterator<Player> iterator = players.iterator();
-//		while (iterator.hasNext()) {
-//			Player player = iterator.next();
-//			report.append(String.format("        %-2s %-20s %-26s%-22s%-12s %s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(),
-//					player.getEmailAddress(), player.getAge(), player.getTotalGamesPlayed(), player.getTotalWins()));
-//
-//		}
-//		report.append("----------------------------------------------------------------------------------------------\n");
+		report.append("\n----------------------------------------------------------------------------------------------\n");
+		report.append("Player ID  Full name            Email                     Age  Total games played   Total Wins\n");
+		report.append("----------------------------------------------------------------------------------------------\n");
+
+		Iterator<Player> iterator = players.iterator();
+		while (iterator.hasNext()) {
+			Player player = iterator.next();
+			report.append(String.format("        %-2s %-20s %-26s%-22s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(),
+					player.getEmailAddress(), player.getAge()));
+
+		}
+		report.append("----------------------------------------------------------------------------------------------\n");
 
 		return report.toString();
 	}

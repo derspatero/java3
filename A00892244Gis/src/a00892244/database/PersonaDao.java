@@ -11,12 +11,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import a00892244.data.Persona;
-import a00892244.data.Player;
 
 /**
  * @author Edward Lambke, A00892244

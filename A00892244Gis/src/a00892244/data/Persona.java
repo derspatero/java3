@@ -7,8 +7,6 @@
 
 package a00892244.data;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Edward Lambke, A00892244

@@ -7374,3 +7374,316 @@ Colour Demon        10
 
 2016-03-29 20:57:27.314 [main] INFO  a00892244.Gis - Exiting.  Duration: 5546 ms
 
+2016-03-29 21:13:13.978 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 21:13:13.990 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 21:13:14.013 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 21:13:14.013 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 21:13:14.029 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 21:13:16.848 [main] INFO  a00892244.Gis - create the players table
+2016-03-29 21:13:16.956 [main] INFO  a00892244.Gis - Reading from players.dat
+2016-03-29 21:13:17.190 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 21:13:17.420 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-29 21:13:17.437 [main] INFO  a00892244.Gis - create the personas table
+2016-03-29 21:13:17.462 [main] INFO  a00892244.Gis - Reading from personas.dat
+2016-03-29 21:13:17.779 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 21:13:17.796 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-29 21:13:17.803 [main] INFO  a00892244.Gis - create the games table
+2016-03-29 21:13:17.822 [main] INFO  a00892244.Gis - Reading from games.dat
+2016-03-29 21:13:17.867 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 21:13:17.883 [main] INFO  a00892244.Gis - drop the tables if they exist
+2016-03-29 21:13:17.890 [main] INFO  a00892244.Gis - create the scores table
+2016-03-29 21:13:17.917 [main] INFO  a00892244.Gis - Reading from scores.dat
+2016-03-29 21:13:18.231 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 21:13:18.233 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 21:13:18.235 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 21:13:18.238 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 21:13:18.239 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 21:13:18.241 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 21:13:18.248 [main] INFO  a00892244.Gis - Writing report
+2016-03-29 21:13:19.331 [main] INFO  a00892244.Gis - Validating arguments [by_game, desc, total]
+2016-03-29 21:13:20.324 [main] INFO  a00892244.Gis - 
+----------------------------------------------------------
+Win:Loss   Game Name            Gamertag        Platform
+----------------------------------------------------------
+2:2        Quick Fingers        Deathstar           IO                            
+1:1        Quick Fingers        Redstripe           PC                            
+1:1        Quick Fingers        Mazzzap             AN                            
+1:1        Quick Fingers        Ithroeann           IO                            
+1:1        Quick Fingers        Crayonbreath        PS                            
+0:0        Quick Fingers        VolcanoBrawler      PC                            
+0:0        Quick Fingers        CastleRock          XB                            
+1:1        Number Picker        Redstripe           PC                            
+1:1        Number Picker        Mazzzap             AN                            
+1:1        Number Picker        GreenPanda          AN                            
+1:1        Number Picker        TorpedoBear         PC                            
+1:1        Number Picker        Quinesia            XB                            
+0:0        Number Picker        VolcanoBrawler      PC                            
+2:2        Colour Demon         Cirronith           PS                            
+1:1        Colour Demon         Redstripe           PC                            
+1:1        Colour Demon         Mazzzap             AN                            
+1:1        Colour Demon         Quinesia            XB                            
+0:0        Colour Demon         VolcanoBrawler      PC                            
+----------------------------------------------------------
+----------------------------------------------------------
+Number Picker       10
+Quick Fingers       12
+Colour Demon        10
+----------------------------------------------------------
+
+2016-03-29 21:13:24.872 [main] INFO  a00892244.Gis - Exiting.  Duration: 11021 ms
+
+2016-03-29 21:25:12.500 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 21:25:12.521 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 21:25:12.524 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 21:25:12.524 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 21:25:12.525 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 21:25:13.048 [main] ERROR a00892244.Gis - SQL Exception: Failed to start database 'derby_jdbc_test' with class loader sun.misc.Launcher$AppClassLoader@1b6d3586, see the next exception for details.
+2016-03-29 21:25:13.055 [main] INFO  a00892244.Gis - Exiting.  Duration: 661 ms
+
+2016-03-29 21:25:23.692 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 21:25:23.737 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 21:25:23.751 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 21:25:23.752 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 21:25:23.772 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 21:25:25.273 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 21:25:25.384 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 21:25:25.415 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 21:25:25.427 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 21:25:25.436 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 21:25:25.436 [main] INFO  a00892244.Gis - Writing report
+2016-03-29 21:25:26.268 [main] INFO  a00892244.Gis - Validating arguments [by_game, desc, total]
+2016-03-29 21:25:26.665 [main] INFO  a00892244.Gis - 
+----------------------------------------------------------
+Win:Loss   Game Name            Gamertag        Platform
+----------------------------------------------------------
+2:2        Quick Fingers        Deathstar           IO                            
+1:1        Quick Fingers        Redstripe           PC                            
+1:1        Quick Fingers        Mazzzap             AN                            
+1:1        Quick Fingers        Ithroeann           IO                            
+1:1        Quick Fingers        Crayonbreath        PS                            
+0:0        Quick Fingers        VolcanoBrawler      PC                            
+0:0        Quick Fingers        CastleRock          XB                            
+1:1        Number Picker        Redstripe           PC                            
+1:1        Number Picker        Mazzzap             AN                            
+1:1        Number Picker        GreenPanda          AN                            
+1:1        Number Picker        TorpedoBear         PC                            
+1:1        Number Picker        Quinesia            XB                            
+0:0        Number Picker        VolcanoBrawler      PC                            
+2:2        Colour Demon         Cirronith           PS                            
+1:1        Colour Demon         Redstripe           PC                            
+1:1        Colour Demon         Mazzzap             AN                            
+1:1        Colour Demon         Quinesia            XB                            
+0:0        Colour Demon         VolcanoBrawler      PC                            
+----------------------------------------------------------
+----------------------------------------------------------
+Number Picker       10
+Quick Fingers       12
+Colour Demon        10
+----------------------------------------------------------
+
+2016-03-29 21:25:29.952 [main] INFO  a00892244.Gis - Exiting.  Duration: 6391 ms
+
+2016-03-29 21:30:10.557 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 21:30:10.580 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 21:30:10.583 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 21:30:10.584 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 21:30:10.585 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 21:30:12.541 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 21:30:12.678 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 21:30:12.691 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 21:30:12.701 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 21:30:12.712 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 21:30:12.713 [main] INFO  a00892244.Gis - Writing report
+2016-03-29 21:30:13.650 [main] INFO  a00892244.Gis - Validating arguments [by_game, desc, total]
+2016-03-29 21:30:14.128 [main] INFO  a00892244.Gis - 
+----------------------------------------------------------
+Win:Loss   Game Name            Gamertag        Platform
+----------------------------------------------------------
+2:2        Quick Fingers        Deathstar           IO                            
+1:1        Quick Fingers        Redstripe           PC                            
+1:1        Quick Fingers        Mazzzap             AN                            
+1:1        Quick Fingers        Ithroeann           IO                            
+1:1        Quick Fingers        Crayonbreath        PS                            
+0:0        Quick Fingers        VolcanoBrawler      PC                            
+0:0        Quick Fingers        CastleRock          XB                            
+1:1        Number Picker        Redstripe           PC                            
+1:1        Number Picker        Mazzzap             AN                            
+1:1        Number Picker        GreenPanda          AN                            
+1:1        Number Picker        TorpedoBear         PC                            
+1:1        Number Picker        Quinesia            XB                            
+0:0        Number Picker        VolcanoBrawler      PC                            
+2:2        Colour Demon         Cirronith           PS                            
+1:1        Colour Demon         Redstripe           PC                            
+1:1        Colour Demon         Mazzzap             AN                            
+1:1        Colour Demon         Quinesia            XB                            
+0:0        Colour Demon         VolcanoBrawler      PC                            
+----------------------------------------------------------
+----------------------------------------------------------
+Number Picker       10
+Quick Fingers       12
+Colour Demon        10
+----------------------------------------------------------
+
+2016-03-29 21:30:16.757 [main] INFO  a00892244.Gis - Exiting.  Duration: 6304 ms
+
+2016-03-29 21:36:31.945 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 21:36:31.962 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 21:36:31.972 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 21:36:31.973 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 21:36:31.974 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 21:36:34.049 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 21:36:34.215 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 21:36:34.230 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 21:36:34.240 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 21:36:34.252 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 21:36:34.253 [main] INFO  a00892244.Gis - Writing report
+2016-03-29 21:36:35.264 [main] INFO  a00892244.Gis - Validating arguments [by_game, desc, total]
+2016-03-29 21:36:35.646 [main] INFO  a00892244.Gis - 
+----------------------------------------------------------
+Win:Loss   Game Name            Gamertag        Platform
+----------------------------------------------------------
+2:2        Quick Fingers        Deathstar           IO                            
+1:1        Quick Fingers        Redstripe           PC                            
+1:1        Quick Fingers        Mazzzap             AN                            
+1:1        Quick Fingers        Ithroeann           IO                            
+1:1        Quick Fingers        Crayonbreath        PS                            
+0:0        Quick Fingers        VolcanoBrawler      PC                            
+0:0        Quick Fingers        CastleRock          XB                            
+1:1        Number Picker        Redstripe           PC                            
+1:1        Number Picker        Mazzzap             AN                            
+1:1        Number Picker        GreenPanda          AN                            
+1:1        Number Picker        TorpedoBear         PC                            
+1:1        Number Picker        Quinesia            XB                            
+0:0        Number Picker        VolcanoBrawler      PC                            
+2:2        Colour Demon         Cirronith           PS                            
+1:1        Colour Demon         Redstripe           PC                            
+1:1        Colour Demon         Mazzzap             AN                            
+1:1        Colour Demon         Quinesia            XB                            
+0:0        Colour Demon         VolcanoBrawler      PC                            
+----------------------------------------------------------
+----------------------------------------------------------
+Number Picker       10
+Quick Fingers       12
+Colour Demon        10
+----------------------------------------------------------
+
+2016-03-29 21:36:38.424 [main] INFO  a00892244.Gis - Exiting.  Duration: 6587 ms
+
+2016-03-29 21:45:02.486 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 21:45:02.558 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 21:45:02.591 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 21:45:02.591 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 21:45:02.594 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 21:45:04.187 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 21:45:04.316 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 21:45:04.330 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 21:45:04.342 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 21:45:04.351 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 21:45:04.352 [main] INFO  a00892244.Gis - Writing report
+2016-03-29 21:45:05.167 [main] INFO  a00892244.Gis - Validating arguments [by_game, desc, total]
+2016-03-29 21:45:05.583 [main] INFO  a00892244.Gis - 
+----------------------------------------------------------
+Win:Loss   Game Name            Gamertag        Platform
+----------------------------------------------------------
+2:2        Quick Fingers        Deathstar           IO                            
+1:1        Quick Fingers        Redstripe           PC                            
+1:1        Quick Fingers        Mazzzap             AN                            
+1:1        Quick Fingers        Ithroeann           IO                            
+1:1        Quick Fingers        Crayonbreath        PS                            
+0:0        Quick Fingers        VolcanoBrawler      PC                            
+0:0        Quick Fingers        CastleRock          XB                            
+1:1        Number Picker        Redstripe           PC                            
+1:1        Number Picker        Mazzzap             AN                            
+1:1        Number Picker        GreenPanda          AN                            
+1:1        Number Picker        TorpedoBear         PC                            
+1:1        Number Picker        Quinesia            XB                            
+0:0        Number Picker        VolcanoBrawler      PC                            
+2:2        Colour Demon         Cirronith           PS                            
+1:1        Colour Demon         Redstripe           PC                            
+1:1        Colour Demon         Mazzzap             AN                            
+1:1        Colour Demon         Quinesia            XB                            
+0:0        Colour Demon         VolcanoBrawler      PC                            
+----------------------------------------------------------
+----------------------------------------------------------
+Number Picker       10
+Quick Fingers       12
+Colour Demon        10
+----------------------------------------------------------
+
+2016-03-29 21:45:08.670 [main] INFO  a00892244.Gis - Exiting.  Duration: 6303 ms
+
+2016-03-29 22:04:08.782 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 22:04:08.807 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 22:04:08.822 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 22:04:08.822 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 22:04:08.843 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 22:04:09.359 [main] ERROR a00892244.Gis - SQL Exception: Failed to start database 'derby_jdbc_test' with class loader sun.misc.Launcher$AppClassLoader@1b6d3586, see the next exception for details.
+2016-03-29 22:04:09.364 [main] INFO  a00892244.Gis - Exiting.  Duration: 672 ms
+
+2016-03-29 22:04:17.569 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 22:04:17.573 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 22:04:17.575 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 22:04:17.576 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 22:04:17.577 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 22:04:19.230 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 22:04:19.358 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 22:04:19.373 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 22:04:19.384 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 22:04:19.395 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 22:04:19.395 [main] INFO  a00892244.Gis - Writing report
+2016-03-29 22:04:20.198 [main] INFO  a00892244.Gis - Validating arguments [by_game, desc, total]
+2016-03-29 22:04:20.541 [main] INFO  a00892244.Gis - 
+----------------------------------------------------------
+Win:Loss   Game Name            Gamertag        Platform
+----------------------------------------------------------
+2:2        Quick Fingers        Deathstar           IO                            
+1:1        Quick Fingers        Redstripe           PC                            
+1:1        Quick Fingers        Mazzzap             AN                            
+1:1        Quick Fingers        Ithroeann           IO                            
+1:1        Quick Fingers        Crayonbreath        PS                            
+0:0        Quick Fingers        VolcanoBrawler      PC                            
+0:0        Quick Fingers        CastleRock          XB                            
+1:1        Number Picker        Redstripe           PC                            
+1:1        Number Picker        Mazzzap             AN                            
+1:1        Number Picker        GreenPanda          AN                            
+1:1        Number Picker        TorpedoBear         PC                            
+1:1        Number Picker        Quinesia            XB                            
+0:0        Number Picker        VolcanoBrawler      PC                            
+2:2        Colour Demon         Cirronith           PS                            
+1:1        Colour Demon         Redstripe           PC                            
+1:1        Colour Demon         Mazzzap             AN                            
+1:1        Colour Demon         Quinesia            XB                            
+0:0        Colour Demon         VolcanoBrawler      PC                            
+----------------------------------------------------------
+----------------------------------------------------------
+Number Picker       10
+Quick Fingers       12
+Colour Demon        10
+----------------------------------------------------------
+
+2016-03-29 22:04:23.393 [main] INFO  a00892244.Gis - Exiting.  Duration: 5925 ms
+
+2016-03-29 22:12:08.209 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 22:12:08.226 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 22:12:08.236 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 22:12:08.236 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 22:12:08.238 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 22:12:09.661 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 22:12:09.910 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 22:12:09.923 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 22:12:09.932 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 22:12:09.942 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 22:12:13.068 [main] INFO  a00892244.Gis - closing connection
+2016-03-29 22:12:13.069 [main] INFO  a00892244.Gis - connection closed
+2016-03-29 22:13:22.455 [main] INFO  a00892244.Gis - Starting program
+2016-03-29 22:13:22.477 [main] INFO  a00892244.Gis - program arguments: [by_game, desc, total]
+2016-03-29 22:13:22.488 [main] DEBUG a00892244.database.Database - Loading database properties from db.properties
+2016-03-29 22:13:22.488 [main] INFO  a00892244.Gis - Reading data
+2016-03-29 22:13:22.504 [main] INFO  a00892244.Gis - drop the views if they exist
+2016-03-29 22:13:23.905 [main] INFO  a00892244.Gis - data is read:
+2016-03-29 22:13:24.157 [main] INFO  a00892244.Gis - [Player [identifier=1, firstName=Fred, lastName=Fish, emailAddress=fredfish@gamer.net, birthdate=1977-03-22], Player [identifier=2, firstName=Laurie, lastName=Nash, emailAddress=laurieeenash@gmail.com, birthdate=1982-08-28], Player [identifier=3, firstName=Conrad, lastName=Washington, emailAddress=fredfish@gamer.net, birthdate=1972-07-12], Player [identifier=4, firstName=Jeanette, lastName=Price, emailAddress=priceizrite@hotmail.com, birthdate=2001-10-03], Player [identifier=5, firstName=Mark, lastName=Chan, emailAddress=mchan@oneminutemail.com, birthdate=1995-04-01]]
+2016-03-29 22:13:24.171 [main] INFO  a00892244.Gis - [Persona [id=1, playerId=1, gamerTag=Ithroeann, platform=IO], Persona [id=2, playerId=1, gamerTag=Cirronith, platform=PS], Persona [id=3, playerId=1, gamerTag=Deathstar, platform=IO], Persona [id=4, playerId=2, gamerTag=Mazzzap, platform=AN], Persona [id=5, playerId=2, gamerTag=Redstripe, platform=PC], Persona [id=6, playerId=3, gamerTag=Crayonbreath, platform=PS], Persona [id=7, playerId=4, gamerTag=Quinesia, platform=XB], Persona [id=8, playerId=4, gamerTag=VolcanoBrawler, platform=PC], Persona [id=9, playerId=5, gamerTag=CastleRock, platform=XB], Persona [id=10, playerId=5, gamerTag=TorpedoBear, platform=PC], Persona [id=11, playerId=5, gamerTag=GreenPanda, platform=AN]]
+2016-03-29 22:13:24.185 [main] INFO  a00892244.Gis - [Game [id=CODE, name=Colour Demon, producer=Magenta Boxer], Game [id=NUPI, name=Number Picker, producer=Random Numburrs], Game [id=QUFI, name=Quick Fingers, producer=Digitology]]
+2016-03-29 22:13:24.199 [main] INFO  a00892244.Gis - [Score [personaId=11, gameId=NUPI, win=WIN], Score [personaId=8, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=CODE, win=LOSE], Score [personaId=5, gameId=QUFI, win=WIN], Score [personaId=1, gameId=QUFI, win=LOSE], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=7, gameId=CODE, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=4, gameId=NUPI, win=LOSE], Score [personaId=10, gameId=NUPI, win=WIN], Score [personaId=9, gameId=QUFI, win=LOSE], Score [personaId=4, gameId=QUFI, win=WIN], Score [personaId=5, gameId=CODE, win=LOSE], Score [personaId=1, gameId=QUFI, win=WIN], Score [personaId=6, gameId=QUFI, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=7, gameId=NUPI, win=WIN], Score [personaId=5, gameId=NUPI, win=WIN], Score [personaId=3, gameId=QUFI, win=WIN], Score [personaId=2, gameId=CODE, win=WIN], Score [personaId=5, gameId=CODE, win=WIN], Score [personaId=8, gameId=NUPI, win=LOSE], Score [personaId=11, gameId=NUPI, win=LOSE], Score [personaId=8, gameId=CODE, win=LOSE], Score [personaId=3, gameId=QUFI, win=LOSE]]
+2016-03-29 22:13:26.561 [main] INFO  a00892244.Gis - closing connection
+2016-03-29 22:13:26.562 [main] INFO  a00892244.Gis - connection closed
