@@ -28,8 +28,8 @@ public class LeaderBoardReport {
 	/**
 	 * 
 	 * @param players
-	 * @throws Exception 
-	 * @throws SQLException 
+	 * @throws Exception
+	 * @throws SQLException
 	 */
 	public LeaderBoardReport(List<String> arguments) throws SQLException, Exception {
 		reportLines = new ArrayList<LeaderBoardReportEntry>();
@@ -38,8 +38,8 @@ public class LeaderBoardReport {
 	}
 
 	/**
-	 * @throws Exception 
-	 * @throws SQLException 
+	 * @throws Exception
+	 * @throws SQLException
 	 * 
 	 */
 
@@ -79,7 +79,7 @@ public class LeaderBoardReport {
 	 */
 	public String getReport() {
 		StringBuilder report = new StringBuilder();
-		if (reportLines.size()==0){
+		if (reportLines.size() == 0) {
 			return "no results";
 		}
 		report.append("\n----------------------------------------------------------\n");

@@ -1,4 +1,5 @@
-/**Project: A00892244Lab7
+/**
+ * Project: A00892244Gis
  * File: PlayerDao.java
  * Date: Mar 1, 2016
  * Time: 8:43:46 PM
@@ -34,8 +35,8 @@ public class GamesDao extends Dao {
 
 	@Override
 	public void create() throws SQLException {
-		String createStatement = String.format("create table %s(%s VARCHAR(8), %s VARCHAR(16), %s VARCHAR(16), primary key (%s) )",
-				tableName, Fields.ID, Fields.NAME, Fields.PRODUCER, Fields.ID);
+		String createStatement = String.format("create table %s(%s VARCHAR(8), %s VARCHAR(16), %s VARCHAR(16), primary key (%s) )", tableName, Fields.ID, Fields.NAME,
+				Fields.PRODUCER, Fields.ID);
 		System.out.println(createStatement);
 		super.create(createStatement);
 	}
@@ -49,10 +50,7 @@ public class GamesDao extends Dao {
 	}
 
 	public void update(Game game) throws SQLException {
-		String insertString = String.format(
-				"update %s set " + Fields.NAME + "='%s', " + Fields.PRODUCER + 
-				"='%s' WHERE " + Fields.ID + "='%s'",
-				tableName, //
+		String insertString = String.format("update %s set " + Fields.NAME + "='%s', " + Fields.PRODUCER + "='%s' WHERE " + Fields.ID + "='%s'", tableName, //
 				game.getName(), //
 				game.getProducer(), //
 				game.getId());
@@ -67,7 +65,7 @@ public class GamesDao extends Dao {
 	public List<Game> selectAll() throws SQLException, Exception {
 		return getGamesByQuery("SELECT * FROM %s");
 	}
-	
+
 	public List<Game> getGameById(int id) throws SQLException, Exception {
 		return getGamesByQuery("SELECT * FROM %s WHERE " + Fields.ID + "='" + id + "'");
 	}
@@ -100,7 +98,6 @@ public class GamesDao extends Dao {
 		game.setProducer(resultSet.getString(Fields.PRODUCER.name()));
 		return game;
 	}
-
 
 	public enum Fields {
 

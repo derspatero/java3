@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab7
+ * Project: A00892244Gis
  * File: PlayerDao.java
  * Date: Mar 1, 2016
  * Time: 8:43:46 PM
@@ -36,8 +36,8 @@ public class PlayerDao extends Dao {
 
 	@Override
 	public void create() throws SQLException {
-		String createStatement = String.format("create table %s(%s VARCHAR(8), %s VARCHAR(32), %s VARCHAR(32), %s VARCHAR(64), %s DATE, primary key (%s) )",
-				tableName, Fields.IDENTIFIER, Fields.FIRSTNAME, Fields.LASTNAME, Fields.EMAILADDRESS, Fields.BIRTHDATE, Fields.IDENTIFIER);
+		String createStatement = String.format("create table %s(%s VARCHAR(8), %s VARCHAR(32), %s VARCHAR(32), %s VARCHAR(64), %s DATE, primary key (%s) )", tableName,
+				Fields.IDENTIFIER, Fields.FIRSTNAME, Fields.LASTNAME, Fields.EMAILADDRESS, Fields.BIRTHDATE, Fields.IDENTIFIER);
 		System.out.println(createStatement);
 		super.create(createStatement);
 	}
@@ -54,8 +54,8 @@ public class PlayerDao extends Dao {
 
 	public void update(Player player) throws SQLException {
 		String insertString = String.format(
-				"update %s set " + Fields.FIRSTNAME + "='%s', " + Fields.LASTNAME + "='%s', " + Fields.EMAILADDRESS + "='%s', " + Fields.BIRTHDATE
-						+ "='%s' WHERE " + Fields.IDENTIFIER + "='%s'",
+				"update %s set " + Fields.FIRSTNAME + "='%s', " + Fields.LASTNAME + "='%s', " + Fields.EMAILADDRESS + "='%s', " + Fields.BIRTHDATE + "='%s' WHERE "
+						+ Fields.IDENTIFIER + "='%s'",
 				tableName, //
 				player.getFirstName(), //
 				player.getLastName(), //
@@ -80,7 +80,7 @@ public class PlayerDao extends Dao {
 	public List<Player> sortByBirthDate() throws SQLException, Exception {
 		return getPlayersByQuery("SELECT * FROM %s ORDER BY BIRTHDATE");
 	}
-	
+
 	public List<Player> getPlayersById(int id) throws SQLException, Exception {
 		return getPlayersByQuery("SELECT * FROM %s WHERE " + Fields.IDENTIFIER + "='" + id + "'");
 	}
@@ -115,7 +115,6 @@ public class PlayerDao extends Dao {
 		player.setBirthdate(LocalDate.parse(resultSet.getString(Fields.BIRTHDATE.name())));
 		return player;
 	}
-
 
 	public enum Fields {
 

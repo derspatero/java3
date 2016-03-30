@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab7
+ * Project: A00892244Gis
  * File: PlayerDao.java
  * Date: Mar 1, 2016
  * Time: 8:43:46 PM
@@ -35,8 +35,8 @@ public class PersonaDao extends Dao {
 
 	@Override
 	public void create() throws SQLException {
-		String createStatement = String.format("create table %s(%s VARCHAR(8), %s VARCHAR(8), %s VARCHAR(32), %s VARCHAR(16), primary key (%s) )",
-				tableName, Fields.ID, Fields.PLAYERID, Fields.GAMERTAG, Fields.PLATFORM, Fields.ID);
+		String createStatement = String.format("create table %s(%s VARCHAR(8), %s VARCHAR(8), %s VARCHAR(32), %s VARCHAR(16), primary key (%s) )", tableName, Fields.ID,
+				Fields.PLAYERID, Fields.GAMERTAG, Fields.PLATFORM, Fields.ID);
 		System.out.println(createStatement);
 		super.create(createStatement);
 	}
@@ -49,18 +49,14 @@ public class PersonaDao extends Dao {
 				persona.getPlatform());
 		executeUpdate(insertString);
 	}
-	
+
 	public void changeGamertag(String oldGamerTag, String newGamerTag) throws SQLException {
-		String updateString = String.format(
-				"update %s set " + Fields.GAMERTAG + "='%s' WHERE " + Fields.GAMERTAG + "='%s'",
-				tableName, newGamerTag, oldGamerTag);
+		String updateString = String.format("update %s set " + Fields.GAMERTAG + "='%s' WHERE " + Fields.GAMERTAG + "='%s'", tableName, newGamerTag, oldGamerTag);
 		executeUpdate(updateString);
 	}
 
 	public void update(Persona persona) throws SQLException {
-		String insertString = String.format(
-				"update %s set " + Fields.PLAYERID + "='%s', " + Fields.GAMERTAG + "='%s', " + Fields.PLATFORM + 
-				"='%s' WHERE " + Fields.ID + "='%s'",
+		String insertString = String.format("update %s set " + Fields.PLAYERID + "='%s', " + Fields.GAMERTAG + "='%s', " + Fields.PLATFORM + "='%s' WHERE " + Fields.ID + "='%s'",
 				tableName, //
 				persona.getPlayerId(), //
 				persona.getGamerTag(), //
@@ -81,12 +77,11 @@ public class PersonaDao extends Dao {
 	public List<Persona> sortDescByBirthDateDesc() throws SQLException, Exception {
 		return getPersonasByQuery("SELECT * FROM %s ORDER BY BIRTHDATE DESC");
 	}
-	
 
 	public List<Persona> sortByBirthDate() throws SQLException, Exception {
 		return getPersonasByQuery("SELECT * FROM %s ORDER BY BIRTHDATE");
 	}
-	
+
 	public List<Persona> getPersonaById(int id) throws SQLException, Exception {
 		return getPersonasByQuery("SELECT * FROM %s WHERE " + Fields.ID + "='" + id + "'");
 	}
@@ -120,7 +115,6 @@ public class PersonaDao extends Dao {
 		persona.setPlatform(resultSet.getString(Fields.PLATFORM.name()));
 		return persona;
 	}
-
 
 	public enum Fields {
 

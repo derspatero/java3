@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab7
+ * Project: A00892244Gis
  * File: Dao.java
  * Date: Mar 1, 2016
  * Time: 8:43:46 PM
@@ -20,7 +20,7 @@ public abstract class Dao {
 
 	protected final Database database;
 	protected final String tableName;
-	
+
 	protected Dao() {
 		database = Database.getTheInstance();
 		tableName = null;
@@ -67,12 +67,12 @@ public abstract class Dao {
 			close(statement);
 		}
 	}
-	
+
 	public boolean tableExist() throws SQLException {
 		Connection connection = database.getConnection();
 		return DbUtil.tableExists(connection, tableName);
 	}
-	
+
 	public void dropView(String view) throws SQLException {
 		Statement statement = null;
 		try {

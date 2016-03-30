@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab10
+ * Project: A00892244Gis
  * File: PlayerDialog.java
  * Date: March 22, 2016
  * Time: 10:32:18 AM
@@ -48,7 +48,6 @@ public class ListDialog extends JDialog {
 		lblId.setBounds(98, 33, 19, 16);
 		contentPanel.add(lblId);
 
-
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -77,6 +76,5 @@ public class ListDialog extends JDialog {
 			}
 		}
 	}
-
 
 }

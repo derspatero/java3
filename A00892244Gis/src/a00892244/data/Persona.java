@@ -7,7 +7,6 @@
 
 package a00892244.data;
 
-
 /**
  * @author Edward Lambke, A00892244
  *
@@ -99,14 +98,13 @@ public class Persona {
 		this.platform = platform;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", playerId=" + playerId + ", gamerTag=" + gamerTag + ", platform=" + platform + "]";
 	}
-
-
 
 }

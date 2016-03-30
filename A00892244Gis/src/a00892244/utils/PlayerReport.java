@@ -46,8 +46,8 @@ public class PlayerReport {
 		Iterator<Player> iterator = players.iterator();
 		while (iterator.hasNext()) {
 			Player player = iterator.next();
-			report.append(String.format("        %-2s %-20s %-26s%-22s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(),
-					player.getEmailAddress(), player.getAge()));
+			report.append(String.format("        %-2s %-20s %-26s%-22s \n", player.getIdentifier(), player.getFirstName() + " " + player.getLastName(), player.getEmailAddress(),
+					player.getAge()));
 
 		}
 		report.append("----------------------------------------------------------------------------------------------\n");

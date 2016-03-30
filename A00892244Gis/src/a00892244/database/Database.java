@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab10
+ * Project: A00892244Gis
  * File: Database.java
  * Date: Mar 22, 2016
  * Time: 8:43:46 PM

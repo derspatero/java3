@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab10
+ * Project: A00892244Gis
  * File: PlayerDialog.java
  * Date: March 22, 2016
  * Time: 10:32:18 AM
@@ -140,7 +140,7 @@ public class PlayerDialog extends JDialog {
 						} catch (SQLException e1) {
 							e1.printStackTrace();
 						}
-						
+
 						dispose();
 					}
 				});

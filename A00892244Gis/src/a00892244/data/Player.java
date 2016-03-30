@@ -10,7 +10,6 @@ package a00892244.data;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-
 /**
  * @author Edward Lambke, A00892244
  *
@@ -134,7 +133,6 @@ public class Player {
 		this.birthdate = birthdate;
 	}
 
-
 	/**
 	 * 
 	 * @return
@@ -145,14 +143,13 @@ public class Player {
 
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Player [identifier=" + identifier + ", firstName=" + firstName + ", lastName=" + lastName + ", emailAddress=" + emailAddress + ", birthdate=" + birthdate + "]";
 	}
-
-
 
 }

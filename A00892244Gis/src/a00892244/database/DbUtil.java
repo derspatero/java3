@@ -1,5 +1,5 @@
 /**
- * Project: A00892244Lab7
+ * Project: A00892244Gis
  * File: DbUtil.java
  * Date: Mar 1, 2016
  * Time: 8:43:46 PM
