@@ -152,7 +152,7 @@ public class LeaderReportDao extends Dao {
 				statement.close();
 			}
 		} catch (SQLException e) {
-			LOG.error(e.getMessage());;
+			LOG.error(e.getMessage());
 		}
 	}
 

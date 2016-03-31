@@ -27,6 +27,7 @@ import a00892244.database.PersonaDao;
 import a00892244.database.PlayerDao;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -137,16 +138,21 @@ public class PlayerDialog extends JDialog {
 						player.setFirstName(textField_1.getText());
 						player.setLastName(textField_2.getText());
 						player.setEmailAddress(textField_3.getText());
-						player.setBirthdate(LocalDate.parse(textField_5.getText()));
 						try {
-							playerDao.update(player);
-							personaDao.changeGamertag(persona, textField_4.getText());
-						} catch (SQLException e1) {
+							player.setBirthdate(LocalDate.parse(textField_5.getText()));
+							try {
+								playerDao.update(player);
+								personaDao.changeGamertag(persona, textField_4.getText());
+							} catch (SQLException e1) {
+								LOG.error(e1.getMessage());
+								JOptionPane.showMessageDialog(PlayerDialog.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+							}
+							dispose();
+						} catch (Exception e1) {
 							LOG.error(e1.getMessage());
-							;
+							JOptionPane.showMessageDialog(PlayerDialog.this, "Invalid date format", "Invalid Input", JOptionPane.INFORMATION_MESSAGE);
 						}
 
-						dispose();
 					}
 				});
 			}

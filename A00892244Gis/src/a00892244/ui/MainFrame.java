@@ -64,7 +64,7 @@ public class MainFrame extends JFrame {
 	private JDialog dialog;
 	private ScoresDao scoresDao;
 	private PersonaDao personaDao;
-	
+
 	private static final Logger LOG = LogManager.getLogger(MainFrame.class);
 
 	/**
@@ -124,7 +124,7 @@ public class MainFrame extends JFrame {
 				dialog.dispose();
 				dialog = new ListDialog("Players");
 				dialog.add(playerList, BorderLayout.CENTER);
-				dialog.setMinimumSize(new Dimension(350,200));
+				dialog.setMinimumSize(new Dimension(350, 200));
 				dialog.pack();
 				dialog.setVisible(true);
 			}
@@ -148,7 +148,7 @@ public class MainFrame extends JFrame {
 				PersonaListController listController = new PersonaListController();
 				personaList.addListSelectionListener(listController);
 				dialog.add(personaList, BorderLayout.CENTER);
-				dialog.setMinimumSize(new Dimension(350,200));
+				dialog.setMinimumSize(new Dimension(350, 200));
 				dialog.pack();
 				dialog.setVisible(true);
 			}
@@ -168,7 +168,7 @@ public class MainFrame extends JFrame {
 				dialog.dispose();
 				dialog = new ListDialog("Scores");
 				dialog.add(scoresList, BorderLayout.CENTER);
-				dialog.setMinimumSize(new Dimension(350,200));
+				dialog.setMinimumSize(new Dimension(350, 200));
 				dialog.pack();
 				dialog.setVisible(true);
 			}
@@ -219,7 +219,7 @@ public class MainFrame extends JFrame {
 					dialog.dispose();
 					dialog = new ListDialog("Report - by game");
 					dialog.add(reportTextArea, BorderLayout.CENTER);
-					dialog.setMinimumSize(new Dimension(350,200));
+					dialog.setMinimumSize(new Dimension(350, 200));
 					dialog.pack();
 					dialog.setVisible(true);
 				} catch (Exception e1) {
@@ -247,7 +247,7 @@ public class MainFrame extends JFrame {
 					dialog.dispose();
 					dialog = new ListDialog("Report - by count");
 					dialog.add(reportTextArea, BorderLayout.CENTER);
-					dialog.setMinimumSize(new Dimension(350,200));
+					dialog.setMinimumSize(new Dimension(350, 200));
 					dialog.pack();
 					dialog.setVisible(true);
 				} catch (Exception e1) {
@@ -279,7 +279,7 @@ public class MainFrame extends JFrame {
 					dialog.dispose();
 					dialog = new ListDialog("Report");
 					dialog.add(reportTextArea, BorderLayout.CENTER);
-					dialog.setMinimumSize(new Dimension(350,200));
+					dialog.setMinimumSize(new Dimension(350, 200));
 					dialog.pack();
 					dialog.setVisible(true);
 				} catch (Exception e1) {
