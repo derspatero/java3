@@ -38,7 +38,7 @@ public class PlayerDao extends Dao {
 	public void create() throws SQLException {
 		String createStatement = String.format("create table %s(%s VARCHAR(8), %s VARCHAR(32), %s VARCHAR(32), %s VARCHAR(64), %s DATE, primary key (%s) )", tableName,
 				Fields.IDENTIFIER, Fields.FIRSTNAME, Fields.LASTNAME, Fields.EMAILADDRESS, Fields.BIRTHDATE, Fields.IDENTIFIER);
-		System.out.println(createStatement);
+		LOG.info(createStatement);
 		super.create(createStatement);
 	}
 

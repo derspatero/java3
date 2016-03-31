@@ -111,7 +111,7 @@ public class Gis {
 							frame.setTitle("GIS");
 							frame.setVisible(true);
 						} catch (Exception e) {
-							e.printStackTrace();
+							LOG.error(e.getMessage());
 						}
 					}
 				});

@@ -34,16 +34,6 @@ public class LeaderBoardReport {
 	public LeaderBoardReport(List<String> arguments) throws SQLException, Exception {
 		reportLines = new ArrayList<LeaderBoardReportEntry>();
 		reportDao = new LeaderReportDao();
-		generateReport(arguments);
-	}
-
-	/**
-	 * @throws Exception
-	 * @throws SQLException
-	 * 
-	 */
-
-	private void generateReport(List<String> arguments) throws SQLException, Exception {
 		reportLines = reportDao.getLeaderBoardReportEntriesByQuery(arguments);
 	}
 
@@ -94,7 +84,6 @@ public class LeaderBoardReport {
 
 		}
 		report.append("----------------------------------------------------------\n");
-		System.out.println(report.toString());
 		return report.toString();
 	}
 

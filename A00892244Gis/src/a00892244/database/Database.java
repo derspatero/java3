@@ -72,9 +72,9 @@ public class Database {
 
 	private void connect() throws ClassNotFoundException, SQLException {
 		Class.forName(properties.getProperty(DB_DRIVER_KEY));
-		System.out.println("Driver loaded");
+		LOG.info("Driver loaded");
 		connection = DriverManager.getConnection(properties.getProperty(DB_URL_KEY), properties.getProperty(DB_USER_KEY), properties.getProperty(DB_PASSWORD_KEY));
-		System.out.println("Database connected");
+		LOG.info("Database connected");
 	}
 
 	public void shutdown() {
@@ -83,7 +83,7 @@ public class Database {
 				connection.close();
 				connection = null;
 			} catch (SQLException e) {
-				e.printStackTrace();
+				LOG.error(e.getMessage());
 			}
 		}
 	}

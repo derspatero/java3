@@ -28,6 +28,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import a00892244.data.Persona;
 import a00892244.data.Player;
 import a00892244.data.Score;
@@ -61,6 +64,8 @@ public class MainFrame extends JFrame {
 	private JDialog dialog;
 	private ScoresDao scoresDao;
 	private PersonaDao personaDao;
+	
+	private static final Logger LOG = LogManager.getLogger(MainFrame.class);
 
 	/**
 	 * Create the frame.
@@ -96,6 +101,7 @@ public class MainFrame extends JFrame {
 
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				LOG.info("Exiting");
 				System.exit(0);
 			}
 		});
@@ -112,7 +118,8 @@ public class MainFrame extends JFrame {
 				try {
 					playerList = new JList<String>(new PlayerListModel());
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					LOG.error(e1.getMessage());
+					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 				dialog.dispose();
 				dialog = new ListDialog("Players");
@@ -131,7 +138,8 @@ public class MainFrame extends JFrame {
 				try {
 					personaList = new JList<String>(new PersonaListModel());
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					LOG.error(e1.getMessage());
+					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 				dialog.dispose();
 				dialog = new ListDialog("Personas");
@@ -154,7 +162,8 @@ public class MainFrame extends JFrame {
 				try {
 					scoresList = new JList<String>(new ScoresListModel());
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					LOG.error(e1.getMessage());
+					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 				dialog.dispose();
 				dialog = new ListDialog("Scores");
@@ -179,9 +188,12 @@ public class MainFrame extends JFrame {
 				try {
 					List<String> args = new ArrayList<String>();
 					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
-					JOptionPane.showMessageDialog(MainFrame.this, leaderboardreport.getGameTotals(), "Game Totals", JOptionPane.INFORMATION_MESSAGE);
+					String gametotals = leaderboardreport.getGameTotals();
+					LOG.info("game totals\n" + gametotals);
+					JOptionPane.showMessageDialog(MainFrame.this, gametotals, "Game Totals", JOptionPane.INFORMATION_MESSAGE);
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					LOG.error(e1.getMessage());
+					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -203,15 +215,16 @@ public class MainFrame extends JFrame {
 					}
 					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
 					reportTextArea = new JTextArea(leaderboardreport.getReport());
-
+					LOG.info("Report - by game\n" + reportTextArea.getText());
 					dialog.dispose();
-					dialog = new ListDialog("Report");
+					dialog = new ListDialog("Report - by game");
 					dialog.add(reportTextArea, BorderLayout.CENTER);
 					dialog.setMinimumSize(new Dimension(350,200));
 					dialog.pack();
 					dialog.setVisible(true);
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					LOG.error(e1.getMessage());
+					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -230,15 +243,16 @@ public class MainFrame extends JFrame {
 					}
 					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
 					reportTextArea = new JTextArea(leaderboardreport.getReport());
-
+					LOG.info("Report - by count\n" + reportTextArea.getText());
 					dialog.dispose();
-					dialog = new ListDialog("Report");
+					dialog = new ListDialog("Report - by count");
 					dialog.add(reportTextArea, BorderLayout.CENTER);
 					dialog.setMinimumSize(new Dimension(350,200));
 					dialog.pack();
 					dialog.setVisible(true);
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					LOG.error(e1.getMessage());
+					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -250,22 +264,18 @@ public class MainFrame extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 				List<String> args = new ArrayList<String>();
-				args.add("by_gamertag");
 				String gamertag = JOptionPane.showInputDialog("enter gamertag:");
 				if (gamertag != null) {
 					args.add("gamertag=" + gamertag);
 				}
 				try {
-					if (descending.isSelected()) {
-						args.add("desc");
-					}
 					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
 					String reportText = leaderboardreport.getReport();
 					if (reportText.equals("no results")) {
 						reportText = "Gamertag '" + gamertag + "' not found";
 					}
 					reportTextArea = new JTextArea(reportText);
-
+					LOG.info(reportTextArea.getText());
 					dialog.dispose();
 					dialog = new ListDialog("Report");
 					dialog.add(reportTextArea, BorderLayout.CENTER);
@@ -273,7 +283,8 @@ public class MainFrame extends JFrame {
 					dialog.pack();
 					dialog.setVisible(true);
 				} catch (Exception e1) {
-					e1.printStackTrace();
+					LOG.error(e1.getMessage());
+					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -323,7 +334,7 @@ public class MainFrame extends JFrame {
 
 		PersonaListModel() throws SQLException, Exception {
 			personas = personaDao.selectAll();
-			System.out.println("Personas: " + personas.toString());
+			LOG.info("Personas: " + personas.toString());
 		}
 
 		@Override
@@ -367,10 +378,11 @@ public class MainFrame extends JFrame {
 			try {
 				String selectedPersona = personaList.getSelectedValue().toString().split(" ")[1];
 				int playerID = Integer.parseInt(personaList.getSelectedValue().toString().split(" ")[0]);
-				System.out.println("Player ID " + playerID + " selected:  " + selectedPersona);
+				LOG.info("Player ID " + playerID + " selected:  " + selectedPersona);
 				((PlayerDialog) dialog).displayPlayer(selectedPersona, playerDao.getPlayersById(playerID).get(0));
 			} catch (Exception e1) {
-				e1.printStackTrace();
+				LOG.error(e1.getMessage());
+				JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
 			}
 
 		}

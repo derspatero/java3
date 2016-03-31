@@ -84,9 +84,10 @@ public class LeaderReportDao extends Dao {
 				sort += " desc";
 			}
 
-			System.out.println("select * from report " + filter + sort);
+			String query = "select * from report " + filter + sort;
+			LOG.info(query);
 
-			resultSet = statement.executeQuery("select * from report" + filter + sort);
+			resultSet = statement.executeQuery(query);
 
 			while (resultSet.next()) {
 				reportEntries.add(nextEntryResult());
@@ -151,7 +152,7 @@ public class LeaderReportDao extends Dao {
 				statement.close();
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOG.error(e.getMessage());;
 		}
 	}
 

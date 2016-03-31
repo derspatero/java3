@@ -10,6 +10,9 @@ package a00892244.io;
 import java.io.FileNotFoundException;
 import java.util.Formatter;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import a00892244.utils.ApplicationException;
 
 /**
@@ -21,6 +24,8 @@ public class FileWriter {
 	private String filename;
 	private String text;
 	private Formatter output;
+
+	private static final Logger LOG = LogManager.getLogger(FileWriter.class);
 
 	public FileWriter() {
 		super();
@@ -42,7 +47,7 @@ public class FileWriter {
 	 * @throws ApplicationException
 	 */
 	public void writeReport() throws ApplicationException {
-		System.out.println(text);
+		LOG.info(text);
 		writeFile(filename, text);
 	}
 
@@ -53,7 +58,7 @@ public class FileWriter {
 	 * @throws ApplicationException
 	 */
 	public void writeFile(String filename, String text) throws ApplicationException {
-		System.out.println(text);
+		LOG.info(text);
 		try {
 			output = new Formatter(filename);
 		} catch (FileNotFoundException e) {

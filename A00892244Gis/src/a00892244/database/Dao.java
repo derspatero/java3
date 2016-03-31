@@ -11,6 +11,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * @author Edward Lambke, A00892244
  *
@@ -20,6 +23,8 @@ public abstract class Dao {
 
 	protected final Database database;
 	protected final String tableName;
+
+	protected static final Logger LOG = LogManager.getLogger(Dao.class);
 
 	protected Dao() {
 		database = Database.getTheInstance();
@@ -92,6 +97,7 @@ public abstract class Dao {
 			Connection connection = database.getConnection();
 			statement = connection.createStatement();
 			statement.executeUpdate(sqlString);
+			LOG.info("executed update: " + sqlString);
 		} finally {
 			close(statement);
 		}
@@ -103,7 +109,7 @@ public abstract class Dao {
 				statement.close();
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOG.error(e.getMessage());
 		}
 	}
 

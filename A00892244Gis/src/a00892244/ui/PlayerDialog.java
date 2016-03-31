@@ -19,6 +19,9 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import a00892244.data.Player;
 import a00892244.database.PersonaDao;
 import a00892244.database.PlayerDao;
@@ -48,6 +51,7 @@ public class PlayerDialog extends JDialog {
 	private PlayerDao playerDao;
 	private PersonaDao personaDao;
 	private String persona;
+	private static final Logger LOG = LogManager.getLogger(PlayerDialog.class);
 
 	/**
 	 * Create the dialog.
@@ -138,7 +142,8 @@ public class PlayerDialog extends JDialog {
 							playerDao.update(player);
 							personaDao.changeGamertag(persona, textField_4.getText());
 						} catch (SQLException e1) {
-							e1.printStackTrace();
+							LOG.error(e1.getMessage());
+							;
 						}
 
 						dispose();

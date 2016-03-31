@@ -38,7 +38,7 @@ public class ScoresDao extends Dao {
 		String createStatement = String.format(
 				"create table %s(%s INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), %s VARCHAR(8), %s VARCHAR(8), %s VARCHAR(8), primary key (%s) )",
 				tableName, Fields.UIDPK, Fields.PERSONA_ID, Fields.GAME_ID, Fields.WIN, Fields.UIDPK);
-		System.out.println(createStatement);
+		LOG.info(createStatement);
 		super.create(createStatement);
 	}
 
