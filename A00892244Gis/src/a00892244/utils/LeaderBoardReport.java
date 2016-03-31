@@ -94,6 +94,7 @@ public class LeaderBoardReport {
 
 		}
 		report.append("----------------------------------------------------------\n");
+		System.out.println(report.toString());
 		return report.toString();
 	}
 

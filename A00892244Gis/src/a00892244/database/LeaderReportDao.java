@@ -86,7 +86,7 @@ public class LeaderReportDao extends Dao {
 
 			System.out.println("select * from report " + filter + sort);
 
-			resultSet = statement.executeQuery("select * from report " + filter + sort);
+			resultSet = statement.executeQuery("select * from report" + filter + sort);
 
 			while (resultSet.next()) {
 				reportEntries.add(nextEntryResult());
@@ -100,7 +100,7 @@ public class LeaderReportDao extends Dao {
 
 	public LeaderBoardReportEntry nextEntryResult() throws SQLException {
 		LeaderBoardReportEntry entry = new LeaderBoardReportEntry();
-		entry.setWinLoss(resultSet.getString(Fields.WINS.name()) + ":" + resultSet.getString(Fields.WINS.name()));
+		entry.setWinLoss(resultSet.getString(Fields.WINS.name()) + ":" + resultSet.getString(Fields.LOSES.name()));
 		entry.setGameName(resultSet.getString(Fields.NAME.name()));
 		entry.setGamerTag(resultSet.getString(Fields.GAMERTAG.name()));
 		entry.setPlatform(resultSet.getString(Fields.PLATFORM.name()));
@@ -165,21 +165,14 @@ public class LeaderReportDao extends Dao {
 		dropView("win");
 		dropView("loss");
 
-		statement.execute("create view win as select count(*) as wins, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform "
-				+ "from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id " + "join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier "
-				+ "join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id "
-				+ "where ADMIN.scores.win = 'WIN' group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
+		statement.execute(
+				"create view win as select count(*) as wins, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id where ADMIN.scores.win = 'WIN' group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
 
-		statement.execute("create view loss as select count(*) as loses, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform  "
-				+ "from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id " + "join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier "
-				+ "join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id "
-				+ "where ADMIN.scores.win = 'LOSE'  group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
+		statement.execute(
+				"create view loss as select count(*) as loses, ADMIN.games.name, ADMIN.persona.gamertag, ADMIN.persona.platform  from ADMIN.persona join ADMIN.scores on ADMIN.persona.id = ADMIN.scores.persona_id join ADMIN.player on ADMIN.persona.playerid = ADMIN.player.identifier join ADMIN.games on ADMIN.scores.game_id = ADMIN.games.id where ADMIN.scores.win = 'LOSE'  group by ADMIN.persona.gamertag, ADMIN.games.name, ADMIN.persona.platform");
 
-		statement.execute("create view report as " + "select case when win.wins is null then 0 else win.wins end as wins, "
-				+ "case when loss.loses is null then 0 else loss.loses end as loses, " + "win.name, win.gamertag, win.platform "
-				+ "from win left outer JOIN loss on win.gamertag = loss.gamertag " + "union " + "select case when win.wins is null then 0 else win.wins end as wins, "
-				+ "case when loss.loses is null then 0 else loss.loses end as loses, " + "loss.name, loss.gamertag, loss.platform "
-				+ "from win right outer JOIN loss on win.gamertag = loss.gamertag");
+		statement.execute(
+				"create view report as select case when win.wins is null then 0 else win.wins end as wins, case when loss.loses is null then 0 else loss.loses end as loses, win.name, win.gamertag, win.platform from win left outer JOIN loss on win.gamertag = loss.gamertag and win.name = loss.name union select case when win.wins is null then 0 else win.wins end as wins, case when loss.loses is null then 0 else loss.loses end as loses, loss.name, loss.gamertag, loss.platform from win right outer JOIN loss on win.gamertag = loss.gamertag  and win.name = loss.name");
 	}
 
 }
