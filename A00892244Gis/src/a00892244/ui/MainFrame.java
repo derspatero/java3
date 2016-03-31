@@ -22,7 +22,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -59,7 +59,6 @@ public class MainFrame extends JFrame {
 	private JList<String> playerList;
 	private JList<String> scoresList;
 	private JList<String> personaList;
-	private JTextArea reportTextArea;
 	private PlayerDao playerDao;
 	private JDialog dialog;
 	private ScoresDao scoresDao;
@@ -214,11 +213,13 @@ public class MainFrame extends JFrame {
 						args.add("desc");
 					}
 					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
-					reportTextArea = new JTextArea(leaderboardreport.getReport());
-					LOG.info("Report - by game\n" + reportTextArea.getText());
+					JTextPane reportTextPane = new JTextPane();
+					reportTextPane.setContentType("text/html");
+					reportTextPane.setText(leaderboardreport.getReportHTML());
+					LOG.info("Report - by count\n" + leaderboardreport.getReport());
 					dialog.dispose();
 					dialog = new ListDialog("Report - by game");
-					dialog.add(reportTextArea, BorderLayout.CENTER);
+					dialog.add(reportTextPane, BorderLayout.CENTER);
 					dialog.setMinimumSize(new Dimension(350, 200));
 					dialog.pack();
 					dialog.setVisible(true);
@@ -242,11 +243,13 @@ public class MainFrame extends JFrame {
 						args.add("desc");
 					}
 					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
-					reportTextArea = new JTextArea(leaderboardreport.getReport());
-					LOG.info("Report - by count\n" + reportTextArea.getText());
+					JTextPane reportTextPane = new JTextPane();
+					reportTextPane.setContentType("text/html");
+					reportTextPane.setText(leaderboardreport.getReportHTML());
+					LOG.info("Report - by count\n" + leaderboardreport.getReport());
 					dialog.dispose();
 					dialog = new ListDialog("Report - by count");
-					dialog.add(reportTextArea, BorderLayout.CENTER);
+					dialog.add(reportTextPane, BorderLayout.CENTER);
 					dialog.setMinimumSize(new Dimension(350, 200));
 					dialog.pack();
 					dialog.setVisible(true);
@@ -270,18 +273,21 @@ public class MainFrame extends JFrame {
 				}
 				try {
 					LeaderBoardReport leaderboardreport = new LeaderBoardReport(args);
-					String reportText = leaderboardreport.getReport();
+					String reportText = leaderboardreport.getReportHTML();
 					if (reportText.equals("no results")) {
 						reportText = "Gamertag '" + gamertag + "' not found";
 					}
-					reportTextArea = new JTextArea(reportText);
-					LOG.info(reportTextArea.getText());
+					LOG.info("Report - by count\n" + reportText);
+					JTextPane reportTextPane = new JTextPane();
+					reportTextPane.setContentType("text/html");
+					reportTextPane.setText(reportText);
 					dialog.dispose();
-					dialog = new ListDialog("Report");
-					dialog.add(reportTextArea, BorderLayout.CENTER);
+					dialog = new ListDialog("Report - by gamertag");
+					dialog.add(reportTextPane, BorderLayout.CENTER);
 					dialog.setMinimumSize(new Dimension(350, 200));
 					dialog.pack();
 					dialog.setVisible(true);
+
 				} catch (Exception e1) {
 					LOG.error(e1.getMessage());
 					JOptionPane.showMessageDialog(MainFrame.this, e1.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);

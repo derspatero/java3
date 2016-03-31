@@ -77,13 +77,26 @@ public class LeaderBoardReport {
 		report.append("----------------------------------------------------------\n");
 		Iterator<LeaderBoardReportEntry> iterator = reportLines.iterator();
 		while (iterator.hasNext()) {
-
 			LeaderBoardReportEntry line = iterator.next();
-
 			report.append(String.format("%-10s %-20s %-20s%-30s\n", line.getWinLoss(), line.getGameName(), line.getGamerTag(), line.getPlatform()));
-
 		}
 		report.append("----------------------------------------------------------\n");
+		return report.toString();
+	}
+
+	public String getReportHTML() {
+		StringBuilder report = new StringBuilder();
+		if (reportLines.size() == 0) {
+			return "no results";
+		}
+		report.append("<!DOCTYPE html><html><head><style>th {text-align:left;}</style></head><table'>");
+		report.append("<tr><th>Win:Loss</th><th>Game Name</th><th>Gamertag</th><th>Platform</th></tr>");
+		Iterator<LeaderBoardReportEntry> iterator = reportLines.iterator();
+		while (iterator.hasNext()) {
+			LeaderBoardReportEntry line = iterator.next();
+			report.append(String.format("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", line.getWinLoss(), line.getGameName(), line.getGamerTag(), line.getPlatform()));
+		}
+		report.append("</table>");
 		return report.toString();
 	}
 
